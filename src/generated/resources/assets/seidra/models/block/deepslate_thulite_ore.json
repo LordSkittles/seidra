@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "seidra:block/ores/deepslate_thulite_ore"
-  }
-}

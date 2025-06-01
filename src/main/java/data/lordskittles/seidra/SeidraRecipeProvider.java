@@ -1,14 +1,15 @@
-/*
 package data.lordskittles.seidra;
 
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+
+import java.util.concurrent.CompletableFuture;
 
 public class SeidraRecipeProvider extends RecipeProvider
 {
-    public SeidraRecipeProvider(DataGenerator p_125973_)
+    public SeidraRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries)
     {
-        super(p_125973_);
+        super(output, registries);
     }
 }
-*/
