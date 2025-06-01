@@ -1,15 +1,25 @@
+/*
 package data.lordskittles.seidra;
 
 import com.lordskittles.seidra.Seidra;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
+import net.neoforged.neoforge.common.data.BlockTagsProvider;
+
+import java.util.concurrent.CompletableFuture;
 
 public class SeidraBlockTagsProvider extends BlockTagsProvider
 {
-    public SeidraBlockTagsProvider(DataGenerator p_126511_, @Nullable ExistingFileHelper existingFileHelper)
+
+    public SeidraBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider)
     {
-        super(p_126511_, Seidra.MODID, existingFileHelper);
+        super(output, lookupProvider, Seidra.MODID);
+    }
+
+    @Override
+    protected void addTags(HolderLookup.Provider provider)
+    {
+
     }
 }
+*/

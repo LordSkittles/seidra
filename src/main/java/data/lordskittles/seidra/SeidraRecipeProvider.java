@@ -1,3 +1,4 @@
+/*
 package data.lordskittles.seidra;
 
 import net.minecraft.data.DataGenerator;
@@ -10,3 +11,4 @@ public class SeidraRecipeProvider extends RecipeProvider
         super(p_125973_);
     }
 }
+*/

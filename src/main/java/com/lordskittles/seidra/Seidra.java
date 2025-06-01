@@ -2,12 +2,12 @@ package com.lordskittles.seidra;
 
 import com.lordskittles.seidra.common.SeidraCommon;
 import com.mojang.logging.LogUtils;
-import data.lordskittles.seidra.SeidraData;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
 import org.slf4j.Logger;
 
 @Mod(Seidra.MODID)
@@ -16,13 +16,20 @@ public class Seidra
     public static final String MODID = "seidra";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public Seidra(FMLJavaModLoadingContext context)
+    public Seidra(IEventBus modEventBus, ModContainer modContainer)
     {
-        IEventBus modEventBus = context.getModEventBus();
-        modEventBus.addListener(SeidraData::gatherData);
+        // Register the commonSetup method for modloading
+        modEventBus.addListener(this::commonSetup);
 
-        MinecraftForge.EVENT_BUS.register(SeidraCommon.initialise(modEventBus));
+        SeidraCommon.INSTANCE.initialiseRegistries(modEventBus);
 
-        context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        /*NeoForge.EVENT_BUS.register(SeidraCommon.INSTANCE);*/
+
+        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+    }
+
+    private void commonSetup(final FMLCommonSetupEvent event)
+    {
+        SeidraCommon.INSTANCE.onCommonSetup(event);
     }
 }

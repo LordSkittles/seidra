@@ -1,21 +1,21 @@
+/*
 package data.lordskittles.seidra;
 
 import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.blocks.SeidraBlock;
 import com.lordskittles.seidra.common.blocks.SeidraLogBlock;
 import com.lordskittles.seidra.common.registries.Blocks;
+import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 
-public class SeidraBlockStateProvider extends BlockStateProvider
+public class SeidraBlockStateProvider extends ModelProvider
 {
-    public SeidraBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper)
+    public SeidraBlockStateProvider(PackOutput output)
     {
-        super(gen, Seidra.MODID, exFileHelper);
+        super(output);
     }
 
     @Override
@@ -72,4 +72,11 @@ public class SeidraBlockStateProvider extends BlockStateProvider
     {
         return ResourceLocation.fromNamespaceAndPath(rl.getNamespace(), rl.getPath() + suffix);
     }
+
+    @Override
+    public ResourceLocation modLocation(String modelPath)
+    {
+        return super.modLocation(modelPath);
+    }
 }
+*/

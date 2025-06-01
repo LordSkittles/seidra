@@ -1,3 +1,4 @@
+/*
 package data.lordskittles.seidra;
 
 import com.lordskittles.seidra.Seidra;
@@ -14,3 +15,4 @@ public class SeidraItemTagsProvider extends ItemTagsProvider
         super(p_126530_, p_126531_, Seidra.MODID, existingFileHelper);
     }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package data.lordskittles.seidra;
 
 import net.minecraft.data.DataGenerator;
@@ -15,10 +16,13 @@ public class SeidraData
         generator.addProvider(event.includeClient(), new SeidraItemModelProvider(generator, fileHelper));
         generator.addProvider(event.includeClient(), new SeidraLanguageProvider(generator, "en_us"));
 
-        /*SeidraBlockTagsProvider blockTags = new SeidraBlockTagsProvider(generator, fileHelper);
+        */
+/*SeidraBlockTagsProvider blockTags = new SeidraBlockTagsProvider(generator, fileHelper);
         generator.addProvider(event.includeServer(), blockTags);
         generator.addProvider(event.includeServer(), new SeidraItemTagsProvider(generator, blockTags, fileHelper));
         generator.addProvider(event.includeServer(), new SeidraLootTableProvider(generator));
-        generator.addProvider(event.includeServer(), new SeidraRecipeProvider(generator));*/
+        generator.addProvider(event.includeServer(), new SeidraRecipeProvider(generator));*//*
+
     }
 }
+*/

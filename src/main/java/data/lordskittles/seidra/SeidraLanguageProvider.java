@@ -1,3 +1,4 @@
+/*
 package data.lordskittles.seidra;
 
 import com.lordskittles.seidra.Seidra;
@@ -39,3 +40,4 @@ public class SeidraLanguageProvider extends LanguageProvider
         add(block.get(), block.get().getPrettyName());
     }
 }
+*/

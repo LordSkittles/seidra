@@ -1,3 +1,4 @@
+/*
 package data.lordskittles.seidra;
 
 import com.lordskittles.seidra.Seidra;
@@ -44,3 +45,4 @@ public class SeidraItemModelProvider extends ItemModelProvider
                 .parent(new ModelFile.UncheckedModelFile(modid + ":block/" + resource.getPath()));
     }
 }
+*/
