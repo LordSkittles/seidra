@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "seidra:block/wood/stripped_yew_log_top",
+    "side": "seidra:block/wood/stripped_yew_log"
+  }
+}
