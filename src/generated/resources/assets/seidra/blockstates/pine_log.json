@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "seidra:block/pine_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "seidra:block/pine_log"
+    },
+    "axis=z": {
+      "model": "seidra:block/pine_log",
+      "x": 90
+    }
+  }
+}

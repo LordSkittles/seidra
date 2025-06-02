@@ -1,0 +1,13 @@
+{
+  "values": [
+    "seidra:juniper_log",
+    "seidra:pine_log",
+    "seidra:yew_log",
+    "seidra:stripped_juniper_log",
+    "seidra:stripped_pine_log",
+    "seidra:stripped_yew_log",
+    "seidra:juniper_planks",
+    "seidra:pine_planks",
+    "seidra:yew_planks"
+  ]
+}
