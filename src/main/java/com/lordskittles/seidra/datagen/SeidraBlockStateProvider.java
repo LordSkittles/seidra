@@ -6,8 +6,9 @@ import com.lordskittles.seidra.common.registries.Blocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -53,11 +54,26 @@ public class SeidraBlockStateProvider extends BlockStateProvider
         {
             blockWithItemSubFolder(leaf, "plants");
         }
+
+        for (DeferredBlock<SeidraSaplingBlock> leaf : Blocks.SAPLINGS)
+        {
+            saplingBlockWithItem(leaf);
+        }
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock)
     {
         simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));
+    }
+
+    private void saplingBlockWithItem(DeferredBlock<SeidraSaplingBlock> deferredBlock)
+    {
+        ResourceLocation location = ResourceLocation.fromNamespaceAndPath(
+                deferredBlock.getId().getNamespace(), "block/plants/" + deferredBlock.getId().getPath()
+        );
+
+        BlockModelBuilder blockModel = this.models().cross(deferredBlock.getId().getPath(), location).renderType("cutout");
+        simpleBlock(deferredBlock.get(), blockModel);
     }
 
     private void blockWithItemSubFolder(DeferredBlock<?> deferredBlock, String subFolder)

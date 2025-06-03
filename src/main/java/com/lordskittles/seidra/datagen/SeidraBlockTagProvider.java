@@ -55,12 +55,20 @@ public class SeidraBlockTagProvider extends BlockTagsProvider
         tag(BlockTags.MINEABLE_WITH_HOE)
                 .add(Blocks.JUNIPER_LEAVES.get())
                 .add(Blocks.PINE_LEAVES.get())
-                .add(Blocks.YEW_LEAVES.get());
+                .add(Blocks.YEW_LEAVES.get())
+                .add(Blocks.JUNIPER_SAPLING.get())
+                .add(Blocks.PINE_SAPLING.get())
+                .add(Blocks.YEW_SAPLING.get());
 
         tag(BlockTags.LEAVES)
                 .add(Blocks.JUNIPER_LEAVES.get())
                 .add(Blocks.PINE_LEAVES.get())
                 .add(Blocks.YEW_LEAVES.get());
+
+        tag(BlockTags.SAPLINGS)
+                .add(Blocks.JUNIPER_SAPLING.get())
+                .add(Blocks.PINE_SAPLING.get())
+                .add(Blocks.YEW_SAPLING.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(Blocks.BISMUTH_ORE.get())

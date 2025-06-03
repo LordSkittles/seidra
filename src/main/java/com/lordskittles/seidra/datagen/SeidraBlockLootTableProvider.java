@@ -1,9 +1,6 @@
 package com.lordskittles.seidra.datagen;
 
-import com.lordskittles.seidra.common.blocks.SeidraLeafBlock;
-import com.lordskittles.seidra.common.blocks.SeidraLogBlock;
-import com.lordskittles.seidra.common.blocks.SeidraOreBlock;
-import com.lordskittles.seidra.common.blocks.SeidraPlankBlock;
+import com.lordskittles.seidra.common.blocks.*;
 import com.lordskittles.seidra.common.registries.Blocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
@@ -62,7 +59,12 @@ public class SeidraBlockLootTableProvider extends BlockLootSubProvider
 
         for (DeferredBlock<SeidraLeafBlock> leaf : Blocks.LEAVES)
         {
-            dropSelf(leaf.get());
+            add(leaf.get(), block -> createLeavesDrops(block, leaf.get().getSapling().get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        }
+
+        for (DeferredBlock<SeidraSaplingBlock> sapling : Blocks.SAPLINGS)
+        {
+            dropSelf(sapling.get());
         }
     }
 

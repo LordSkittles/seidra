@@ -35,6 +35,7 @@ public class DataGenerators
                 )
         );
         generator.addProvider(event.includeServer(), new SeidraRecipeProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new SeidraDatapackProvider(packOutput, lookupProvider));
 
         BlockTagsProvider blockTagsProvider = new SeidraBlockTagProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);

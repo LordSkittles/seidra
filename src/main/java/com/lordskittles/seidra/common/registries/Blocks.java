@@ -1,10 +1,8 @@
 package com.lordskittles.seidra.common.registries;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.blocks.SeidraLeafBlock;
-import com.lordskittles.seidra.common.blocks.SeidraLogBlock;
-import com.lordskittles.seidra.common.blocks.SeidraOreBlock;
-import com.lordskittles.seidra.common.blocks.SeidraPlankBlock;
+import com.lordskittles.seidra.common.blocks.*;
+import com.lordskittles.seidra.worldgen.tree.SeidraTreeGrowers;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -40,9 +38,13 @@ public class Blocks
     public static final DeferredBlock<SeidraPlankBlock> PINE_PLANKS = registerBlock("pine_planks", "Pine Planks", SeidraPlankBlock.class);
     public static final DeferredBlock<SeidraPlankBlock> YEW_PLANKS = registerBlock("yew_planks", "Yew Planks", SeidraPlankBlock.class);
 
-    public static final DeferredBlock<SeidraLeafBlock> JUNIPER_LEAVES = registerBlock("juniper_leaves", "Juniper Leaves", SeidraLeafBlock.class);
-    public static final DeferredBlock<SeidraLeafBlock> PINE_LEAVES = registerBlock("pine_leaves", "Pine Leaves", SeidraLeafBlock.class);
-    public static final DeferredBlock<SeidraLeafBlock> YEW_LEAVES = registerBlock("yew_leaves", "Yew Leaves", SeidraLeafBlock.class);
+    public static final DeferredBlock<SeidraSaplingBlock> JUNIPER_SAPLING = registerBlock("juniper_sapling", "Juniper Sapling", SeidraSaplingBlock.class, SeidraTreeGrowers.JUNIPER);
+    public static final DeferredBlock<SeidraSaplingBlock> PINE_SAPLING = registerBlock("pine_sapling", "Pine Sapling", SeidraSaplingBlock.class, SeidraTreeGrowers.PINE);
+    public static final DeferredBlock<SeidraSaplingBlock> YEW_SAPLING = registerBlock("yew_sapling", "Yew Sapling", SeidraSaplingBlock.class, SeidraTreeGrowers.YEW);
+
+    public static final DeferredBlock<SeidraLeafBlock> JUNIPER_LEAVES = registerBlock("juniper_leaves", "Juniper Leaves", SeidraLeafBlock.class, JUNIPER_SAPLING);
+    public static final DeferredBlock<SeidraLeafBlock> PINE_LEAVES = registerBlock("pine_leaves", "Pine Leaves", SeidraLeafBlock.class, PINE_SAPLING);
+    public static final DeferredBlock<SeidraLeafBlock> YEW_LEAVES = registerBlock("yew_leaves", "Yew Leaves", SeidraLeafBlock.class, YEW_SAPLING);
 
     public static final DeferredBlock<SeidraOreBlock> BISMUTH_ORE = registerBlock("bismuth_ore", "Bismuth Ore", SeidraOreBlock.class, 3.0F, 3.0F);
     public static final DeferredBlock<SeidraOreBlock> COBALT_ORE = registerBlock("cobalt_ore", "Cobalt Ore", SeidraOreBlock.class, 3.0F, 3.0F);
@@ -66,10 +68,13 @@ public class Blocks
             PINE_WOOD, STRIPPED_PINE_WOOD,
             YEW_WOOD, STRIPPED_YEW_WOOD
     );
+
+    // TODO: Don't do this... it's stupid
     public static final List<DeferredBlock<SeidraLogBlock>> LOGS = List.of(JUNIPER_LOG, PINE_LOG, YEW_LOG, STRIPPED_JUNIPER_LOG, STRIPPED_PINE_LOG, STRIPPED_YEW_LOG);
     public static final List<DeferredBlock<SeidraLogBlock>> WOOD = List.of(JUNIPER_WOOD, PINE_WOOD, YEW_WOOD, STRIPPED_JUNIPER_WOOD, STRIPPED_PINE_WOOD, STRIPPED_YEW_WOOD);
     public static final List<DeferredBlock<SeidraPlankBlock>> PLANKS = List.of(JUNIPER_PLANKS, PINE_PLANKS, YEW_PLANKS);
     public static final List<DeferredBlock<SeidraLeafBlock>> LEAVES = List.of(JUNIPER_LEAVES, PINE_LEAVES, YEW_LEAVES);
+    public static final List<DeferredBlock<SeidraSaplingBlock>> SAPLINGS = List.of(JUNIPER_SAPLING, PINE_SAPLING, YEW_SAPLING);
 
     public static final List<DeferredBlock<SeidraOreBlock>> ORES = List.of(BISMUTH_ORE, COBALT_ORE, TUNGSTEN_ORE, IOLITE_ORE, THULITE_ORE, ZOISITE_ORE);
     public static final List<DeferredBlock<SeidraOreBlock>> DEEPSLATE_ORES = List.of(DEEPSLATE_BISMUTH_ORE, DEEPSLATE_COBALT_ORE, DEEPSLATE_TUNGSTEN_ORE, DEEPSLATE_IOLITE_ORE, DEEPSLATE_THULITE_ORE, DEEPSLATE_ZOISITE_ORE);

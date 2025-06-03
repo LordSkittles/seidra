@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-03T11:53:19.0085147	Loot Tables
+// 1.21.1	2025-06-03T12:43:29.3803592	Loot Tables
 24c673ff58e43bb4dd39369cef53d5c7f7d4ac70 data/seidra/loot_table/blocks/bismuth_ore.json
 44797476ff915630dc333092d2f89d4b7fd145d5 data/seidra/loot_table/blocks/cobalt_ore.json
 32cac13768fa12644ede3b87c68b5eb0eb4cc3f6 data/seidra/loot_table/blocks/deepslate_bismuth_ore.json
@@ -8,13 +8,15 @@ fcf4b3468863479dd16755cb2f6dd106916445a5 data/seidra/loot_table/blocks/deepslate
 a55d3613507ca0da0083478c8896ba7f8927d750 data/seidra/loot_table/blocks/deepslate_tungsten_ore.json
 6b7a4a0bb16d8f2b3fa626ac8671d7d72a3459fd data/seidra/loot_table/blocks/deepslate_zoisite_ore.json
 191084831608325d7732fb64e2df15191fe1c883 data/seidra/loot_table/blocks/iolite_ore.json
-e14cdf38fdfd9adcfacfe70d8894ff98a1e1f507 data/seidra/loot_table/blocks/juniper_leaves.json
+4247cb180c1998f330d42416ef7d8d3ba522c2d4 data/seidra/loot_table/blocks/juniper_leaves.json
 ab4020f70e27c958cae02e2e87b888b91a32bf62 data/seidra/loot_table/blocks/juniper_log.json
 db5005aad8c6cd435d5ff05569580f70f5940d69 data/seidra/loot_table/blocks/juniper_planks.json
+90ae6d2bbfb2abd7554de79a674060be19323a80 data/seidra/loot_table/blocks/juniper_sapling.json
 d8aeeca5876e033c5c9b8a4b87d07d60b5a85caf data/seidra/loot_table/blocks/juniper_wood.json
-8e175cbb09fe06d350d7cfa8bcafa9f5c0b7d7d5 data/seidra/loot_table/blocks/pine_leaves.json
+4c850a8a9e32a189dd21f716c5cadd8c164325e6 data/seidra/loot_table/blocks/pine_leaves.json
 635b8245856f0e79ee6743167e941aad7acd052d data/seidra/loot_table/blocks/pine_log.json
 dcbb095b7792b9ca239dcc794ce523a0b5ee3779 data/seidra/loot_table/blocks/pine_planks.json
+f0dda497a35c4fa23c3b97e49d55f212d97fcac2 data/seidra/loot_table/blocks/pine_sapling.json
 fbc9daad5edc1bbd4cad87e76ce655fc35cc0239 data/seidra/loot_table/blocks/pine_wood.json
 0ae86024216f5cd03d62e697080f1ed70b3af059 data/seidra/loot_table/blocks/stripped_juniper_log.json
 26087b6c9ff063af66d9396d93b3c9ba26b283c7 data/seidra/loot_table/blocks/stripped_juniper_wood.json
@@ -24,8 +26,9 @@ a2cca8e62d7e1ca32b4aefd2bc0965c29d5bbc4b data/seidra/loot_table/blocks/stripped_
 cfa0706944554fb64c8182f922d79881fb622144 data/seidra/loot_table/blocks/stripped_yew_wood.json
 536e1b7650a0c38e914878c10e55ddbdae2ca28b data/seidra/loot_table/blocks/thulite_ore.json
 b053619f5c08722567de2c07eef0e06a6abd4bef data/seidra/loot_table/blocks/tungsten_ore.json
-4b3da79f838ce798ce104420b1d04fabe00a30a4 data/seidra/loot_table/blocks/yew_leaves.json
+de5c301d4626a0cccf5b0cb8dd767795a57f8823 data/seidra/loot_table/blocks/yew_leaves.json
 77159478858fcadbe48305974cb8ba0addcdb3f8 data/seidra/loot_table/blocks/yew_log.json
 23ed3d02809b852c130f6d1a6cccf4599a39d2f9 data/seidra/loot_table/blocks/yew_planks.json
+bee6e1db7a62feeec6a9f63d191cf5e6f9e982f9 data/seidra/loot_table/blocks/yew_sapling.json
 519e20e431dd91ec44627aaf02a9926738691cf0 data/seidra/loot_table/blocks/yew_wood.json
 a0e86bb5dc04520a774402bb75049cfae8ac1255 data/seidra/loot_table/blocks/zoisite_ore.json
