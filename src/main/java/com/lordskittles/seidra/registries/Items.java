@@ -1,4 +1,4 @@
-package com.lordskittles.seidra.common.registries;
+package com.lordskittles.seidra.registries;
 
 import com.lordskittles.seidra.Seidra;
 import net.minecraft.world.item.BlockItem;

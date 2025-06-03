@@ -1,7 +1,7 @@
 package com.lordskittles.seidra.datagen;
 
-import com.lordskittles.seidra.common.blocks.*;
-import com.lordskittles.seidra.common.registries.Blocks;
+import com.lordskittles.seidra.blocks.*;
+import com.lordskittles.seidra.registries.Blocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;

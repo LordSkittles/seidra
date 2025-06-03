@@ -1,7 +1,7 @@
-package com.lordskittles.seidra.common.registries;
+package com.lordskittles.seidra.registries;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.blocks.*;
+import com.lordskittles.seidra.blocks.*;
 import com.lordskittles.seidra.worldgen.tree.SeidraTreeGrowers;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;

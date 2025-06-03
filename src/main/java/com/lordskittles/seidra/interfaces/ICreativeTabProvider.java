@@ -1,4 +1,4 @@
-package com.lordskittles.seidra.common.interfaces;
+package com.lordskittles.seidra.interfaces;
 
 import net.minecraft.world.item.CreativeModeTab;
 

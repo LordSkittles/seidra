@@ -1,8 +1,8 @@
-package com.lordskittles.seidra.common.blocks;
+package com.lordskittles.seidra.blocks;
 
-import com.lordskittles.seidra.common.interfaces.ICreativeTabProvider;
-import com.lordskittles.seidra.common.interfaces.IPrettyNameProvider;
-import com.lordskittles.seidra.common.registries.CreativeTabs;
+import com.lordskittles.seidra.interfaces.ICreativeTabProvider;
+import com.lordskittles.seidra.interfaces.IPrettyNameProvider;
+import com.lordskittles.seidra.registries.CreativeTabs;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.CreativeModeTab;

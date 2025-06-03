@@ -1,6 +1,6 @@
-package com.lordskittles.seidra.common.blocks;
+package com.lordskittles.seidra.blocks;
 
-import com.lordskittles.seidra.common.registries.CreativeTabs;
+import com.lordskittles.seidra.registries.CreativeTabs;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;

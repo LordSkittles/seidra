@@ -1,7 +1,7 @@
-package com.lordskittles.seidra.common.blocks;
+package com.lordskittles.seidra.blocks;
 
-import com.lordskittles.seidra.common.registries.Blocks;
-import com.lordskittles.seidra.common.registries.CreativeTabs;
+import com.lordskittles.seidra.registries.Blocks;
+import com.lordskittles.seidra.registries.CreativeTabs;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.AxeItem;

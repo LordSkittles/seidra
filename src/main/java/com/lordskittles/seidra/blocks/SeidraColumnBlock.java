@@ -1,7 +1,7 @@
-package com.lordskittles.seidra.common.blocks;
+package com.lordskittles.seidra.blocks;
 
-import com.lordskittles.seidra.common.interfaces.ICreativeTabProvider;
-import com.lordskittles.seidra.common.interfaces.IPrettyNameProvider;
+import com.lordskittles.seidra.interfaces.ICreativeTabProvider;
+import com.lordskittles.seidra.interfaces.IPrettyNameProvider;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 
 public abstract class SeidraColumnBlock extends RotatedPillarBlock implements IPrettyNameProvider, ICreativeTabProvider

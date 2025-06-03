@@ -1,16 +1,14 @@
-package com.lordskittles.seidra.common;
+package com.lordskittles.seidra;
 
-import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.interfaces.ICreativeTabProvider;
-import com.lordskittles.seidra.common.registries.Blocks;
-import com.lordskittles.seidra.common.registries.Items;
-import com.lordskittles.seidra.common.registries.CreativeTabs;
+import com.lordskittles.seidra.interfaces.ICreativeTabProvider;
+import com.lordskittles.seidra.registries.Blocks;
+import com.lordskittles.seidra.registries.Items;
+import com.lordskittles.seidra.registries.CreativeTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
-import net.neoforged.neoforge.registries.DeferredBlock;
 
 @EventBusSubscriber(modid = Seidra.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class SeidraCommon

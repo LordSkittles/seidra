@@ -1,6 +1,6 @@
 package com.lordskittles.seidra.datagen;
 
-import com.lordskittles.seidra.common.registries.Blocks;
+import com.lordskittles.seidra.registries.Blocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
