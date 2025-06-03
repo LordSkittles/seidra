@@ -5,6 +5,8 @@ import com.lordskittles.seidra.common.blocks.SeidraLeafBlock;
 import com.lordskittles.seidra.common.blocks.SeidraLogBlock;
 import com.lordskittles.seidra.common.blocks.SeidraOreBlock;
 import com.lordskittles.seidra.common.blocks.SeidraPlankBlock;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -74,7 +76,10 @@ public class Blocks
 
     private static <BLOCK extends Block> DeferredBlock<BLOCK> registerBlock(String id, String prettyName, Class<BLOCK> clazz, Object... params)
     {
-        return BLOCKS.register(id, () -> instantiateBlock(clazz, prettyName, params));
+        DeferredBlock<BLOCK> deferredBlock = BLOCKS.register(id, () -> instantiateBlock(clazz, prettyName, params));
+        Items.ITEMS.register(id, () -> new BlockItem(deferredBlock.get(), new Item.Properties()));
+
+        return deferredBlock;
     }
 
     private static <BLOCK> BLOCK instantiateBlock(Class<BLOCK> clazz, String prettyName, Object... params)
