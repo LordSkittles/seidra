@@ -1,10 +1,7 @@
 package com.lordskittles.seidra.datagen;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.blocks.SeidraColumnBlock;
-import com.lordskittles.seidra.common.blocks.SeidraLogBlock;
-import com.lordskittles.seidra.common.blocks.SeidraOreBlock;
-import com.lordskittles.seidra.common.blocks.SeidraPlankBlock;
+import com.lordskittles.seidra.common.blocks.*;
 import com.lordskittles.seidra.common.registries.Blocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -42,14 +39,19 @@ public class SeidraBlockStateProvider extends BlockStateProvider
             axisBlockSubFolder(log.get(), "wood", "top");
         }
 
-        for (DeferredBlock<SeidraLogBlock> log : Blocks.STRIPPED_LOGS)
+        for (DeferredBlock<SeidraLogBlock> wood : Blocks.WOOD)
         {
-            axisBlockSubFolder(log.get(), "wood", "top");
+            axisBlockSubFolder(wood.get(), "wood", "", "wood", "log");
         }
 
         for (DeferredBlock<SeidraPlankBlock> plank : Blocks.PLANKS)
         {
             blockWithItemSubFolder(plank, "wood");
+        }
+
+        for (DeferredBlock<SeidraLeafBlock> leaf : Blocks.LEAVES)
+        {
+            blockWithItemSubFolder(leaf, "plants");
         }
     }
 
@@ -72,15 +74,25 @@ public class SeidraBlockStateProvider extends BlockStateProvider
         return this.models().cubeAll(deferredBlock.getId().getPath(), location);
     }
 
+    private void axisBlockSubFolder(SeidraColumnBlock deferredBlock, String subFolder)
+    {
+        axisBlockSubFolder(deferredBlock, subFolder, "");
+    }
+
     private void axisBlockSubFolder(SeidraColumnBlock deferredBlock, String subFolder, String endName)
+    {
+        axisBlockSubFolder(deferredBlock, subFolder, endName, "", "");
+    }
+
+    private void axisBlockSubFolder(SeidraColumnBlock deferredBlock, String subFolder, String endName, String toReplace, String replacement)
     {
         ResourceLocation blockId = BuiltInRegistries.BLOCK.getKey(deferredBlock);
 
         ResourceLocation location = ResourceLocation.fromNamespaceAndPath(
-                blockId.getNamespace(), "block/" + subFolder + "/" + blockId.getPath()
+                blockId.getNamespace(), "block/" + subFolder + "/" + blockId.getPath().replace(toReplace, replacement)
         );
 
-        ResourceLocation end = extend(location, "_" + endName);
+        ResourceLocation end = !endName.isEmpty() ? extend(location, "_" + endName) : location;
 
         axisBlock(deferredBlock,
                   this.models().cubeColumn(blockId.getPath(), location, end),

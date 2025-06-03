@@ -14,17 +14,21 @@ public class Items
 {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Seidra.MODID);
 
-    public static final DeferredItem<Item> JUNIPER_LOG = registerColumnItemBlock(Blocks.JUNIPER_LOG);
-    public static final DeferredItem<Item> PINE_LOG = registerColumnItemBlock(Blocks.PINE_LOG);
-    public static final DeferredItem<Item> YEW_LOG = registerColumnItemBlock(Blocks.YEW_LOG);
+    public static final DeferredItem<Item> JUNIPER_LOG = registerItemBlock(Blocks.JUNIPER_LOG);
+    public static final DeferredItem<Item> PINE_LOG = registerItemBlock(Blocks.PINE_LOG);
+    public static final DeferredItem<Item> YEW_LOG = registerItemBlock(Blocks.YEW_LOG);
 
-    public static final DeferredItem<Item> STRIPPED_JUNIPER_LOG = registerColumnItemBlock(Blocks.STRIPPED_JUNIPER_LOG);
-    public static final DeferredItem<Item> STRIPPED_PINE_LOG = registerColumnItemBlock(Blocks.STRIPPED_PINE_LOG);
-    public static final DeferredItem<Item> STRIPPED_YEW_LOG = registerColumnItemBlock(Blocks.STRIPPED_YEW_LOG);
+    public static final DeferredItem<Item> STRIPPED_JUNIPER_LOG = registerItemBlock(Blocks.STRIPPED_JUNIPER_LOG);
+    public static final DeferredItem<Item> STRIPPED_PINE_LOG = registerItemBlock(Blocks.STRIPPED_PINE_LOG);
+    public static final DeferredItem<Item> STRIPPED_YEW_LOG = registerItemBlock(Blocks.STRIPPED_YEW_LOG);
 
     public static final DeferredItem<Item> JUNIPER_PLANKS = registerItemBlock(Blocks.JUNIPER_PLANKS);
     public static final DeferredItem<Item> PINE_PLANKS = registerItemBlock(Blocks.PINE_PLANKS);
     public static final DeferredItem<Item> YEW_PLANKS = registerItemBlock(Blocks.YEW_PLANKS);
+
+    public static final DeferredItem<Item> JUNIPER_LEAVES = registerItemBlock(Blocks.JUNIPER_LEAVES);
+    public static final DeferredItem<Item> PINE_LEAVES = registerItemBlock(Blocks.PINE_LEAVES);
+    public static final DeferredItem<Item> YEW_LEAVES = registerItemBlock(Blocks.YEW_LEAVES);
 
 
     public static final DeferredItem<Item> BISMUTH_ORE = registerItemBlock(Blocks.BISMUTH_ORE);
@@ -41,12 +45,7 @@ public class Items
     public static final DeferredItem<Item> DEEPSLATE_THULITE_ORE = registerItemBlock(Blocks.DEEPSLATE_THULITE_ORE);
     public static final DeferredItem<Item> DEEPSLATE_ZIOSITE_ORE = registerItemBlock(Blocks.DEEPSLATE_ZOISITE_ORE);
 
-    private static <BLOCK extends SeidraBlock> DeferredItem<Item> registerItemBlock(DeferredBlock<BLOCK> block)
-    {
-        return ITEMS.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
-    }
-
-    private static <BLOCK extends SeidraColumnBlock> DeferredItem<Item> registerColumnItemBlock(DeferredBlock<BLOCK> block)
+    private static DeferredItem<Item> registerItemBlock(DeferredBlock<?> block)
     {
         return ITEMS.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
     }

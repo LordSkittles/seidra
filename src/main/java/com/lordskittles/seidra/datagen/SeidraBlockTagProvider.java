@@ -25,9 +25,15 @@ public class SeidraBlockTagProvider extends BlockTagsProvider
                 .add(Blocks.JUNIPER_LOG.get())
                 .add(Blocks.PINE_LOG.get())
                 .add(Blocks.YEW_LOG.get())
+                .add(Blocks.JUNIPER_WOOD.get())
+                .add(Blocks.PINE_WOOD.get())
+                .add(Blocks.YEW_WOOD.get())
                 .add(Blocks.STRIPPED_JUNIPER_LOG.get())
                 .add(Blocks.STRIPPED_PINE_LOG.get())
                 .add(Blocks.STRIPPED_YEW_LOG.get())
+                .add(Blocks.STRIPPED_JUNIPER_WOOD.get())
+                .add(Blocks.STRIPPED_PINE_WOOD.get())
+                .add(Blocks.STRIPPED_YEW_WOOD.get())
                 .add(Blocks.JUNIPER_PLANKS.get())
                 .add(Blocks.PINE_PLANKS.get())
                 .add(Blocks.YEW_PLANKS.get());
@@ -45,6 +51,16 @@ public class SeidraBlockTagProvider extends BlockTagsProvider
                 .add(Blocks.DEEPSLATE_IOLITE_ORE.get())
                 .add(Blocks.DEEPSLATE_THULITE_ORE.get())
                 .add(Blocks.DEEPSLATE_ZOISITE_ORE.get());
+
+        tag(BlockTags.MINEABLE_WITH_HOE)
+                .add(Blocks.JUNIPER_LEAVES.get())
+                .add(Blocks.PINE_LEAVES.get())
+                .add(Blocks.YEW_LEAVES.get());
+
+        tag(BlockTags.LEAVES)
+                .add(Blocks.JUNIPER_LEAVES.get())
+                .add(Blocks.PINE_LEAVES.get())
+                .add(Blocks.YEW_LEAVES.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(Blocks.BISMUTH_ORE.get())

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "seidra:block/wood/juniper_log",
+    "side": "seidra:block/wood/juniper_log"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "seidra:block/wood/pine_log",
+    "side": "seidra:block/wood/pine_log"
+  }
+}

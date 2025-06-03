@@ -1,31 +1,46 @@
 package com.lordskittles.seidra.common.registries;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.blocks.*;
+import com.lordskittles.seidra.common.blocks.SeidraLeafBlock;
+import com.lordskittles.seidra.common.blocks.SeidraLogBlock;
+import com.lordskittles.seidra.common.blocks.SeidraOreBlock;
+import com.lordskittles.seidra.common.blocks.SeidraPlankBlock;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.IntStream;
 
 public class Blocks
 {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Seidra.MODID);
 
-    public static final DeferredBlock<SeidraLogBlock> JUNIPER_LOG = registerColumnBlock("juniper_log", "Juniper Log", SeidraLogBlock.class);
-    public static final DeferredBlock<SeidraLogBlock> PINE_LOG = registerColumnBlock("pine_log", "Pine Log", SeidraLogBlock.class);
-    public static final DeferredBlock<SeidraLogBlock> YEW_LOG = registerColumnBlock("yew_log", "Yew Log", SeidraLogBlock.class);
+    public static final DeferredBlock<SeidraLogBlock> JUNIPER_LOG = registerBlock("juniper_log", "Juniper Log", SeidraLogBlock.class);
+    public static final DeferredBlock<SeidraLogBlock> PINE_LOG = registerBlock("pine_log", "Pine Log", SeidraLogBlock.class);
+    public static final DeferredBlock<SeidraLogBlock> YEW_LOG = registerBlock("yew_log", "Yew Log", SeidraLogBlock.class);
 
-    public static final DeferredBlock<SeidraLogBlock> STRIPPED_JUNIPER_LOG = registerColumnBlock("stripped_juniper_log", "Stripped Juniper Log", SeidraLogBlock.class);
-    public static final DeferredBlock<SeidraLogBlock> STRIPPED_PINE_LOG = registerColumnBlock("stripped_pine_log", "Stripped Pine Log", SeidraLogBlock.class);
-    public static final DeferredBlock<SeidraLogBlock> STRIPPED_YEW_LOG = registerColumnBlock("stripped_yew_log", "Stripped Yew Log", SeidraLogBlock.class);
+    public static final DeferredBlock<SeidraLogBlock> JUNIPER_WOOD = registerBlock("juniper_wood", "Juniper wood", SeidraLogBlock.class);
+    public static final DeferredBlock<SeidraLogBlock> PINE_WOOD = registerBlock("pine_wood", "Pine wood", SeidraLogBlock.class);
+    public static final DeferredBlock<SeidraLogBlock> YEW_WOOD = registerBlock("yew_wood", "Yew wood", SeidraLogBlock.class);
+
+    public static final DeferredBlock<SeidraLogBlock> STRIPPED_JUNIPER_LOG = registerBlock("stripped_juniper_log", "Stripped Juniper Log", SeidraLogBlock.class);
+    public static final DeferredBlock<SeidraLogBlock> STRIPPED_PINE_LOG = registerBlock("stripped_pine_log", "Stripped Pine Log", SeidraLogBlock.class);
+    public static final DeferredBlock<SeidraLogBlock> STRIPPED_YEW_LOG = registerBlock("stripped_yew_log", "Stripped Yew Log", SeidraLogBlock.class);
+
+    public static final DeferredBlock<SeidraLogBlock> STRIPPED_JUNIPER_WOOD = registerBlock("stripped_juniper_wood", "Stripped Juniper Wood", SeidraLogBlock.class);
+    public static final DeferredBlock<SeidraLogBlock> STRIPPED_PINE_WOOD = registerBlock("stripped_pine_wood", "Stripped Pine Wood", SeidraLogBlock.class);
+    public static final DeferredBlock<SeidraLogBlock> STRIPPED_YEW_WOOD = registerBlock("stripped_yew_wood", "Stripped Yew Wood", SeidraLogBlock.class);
 
     public static final DeferredBlock<SeidraPlankBlock> JUNIPER_PLANKS = registerBlock("juniper_planks", "Juniper Planks", SeidraPlankBlock.class);
     public static final DeferredBlock<SeidraPlankBlock> PINE_PLANKS = registerBlock("pine_planks", "Pine Planks", SeidraPlankBlock.class);
     public static final DeferredBlock<SeidraPlankBlock> YEW_PLANKS = registerBlock("yew_planks", "Yew Planks", SeidraPlankBlock.class);
+
+    public static final DeferredBlock<SeidraLeafBlock> JUNIPER_LEAVES = registerBlock("juniper_leaves", "Juniper Leaves", SeidraLeafBlock.class);
+    public static final DeferredBlock<SeidraLeafBlock> PINE_LEAVES = registerBlock("pine_leaves", "Pine Leaves", SeidraLeafBlock.class);
+    public static final DeferredBlock<SeidraLeafBlock> YEW_LEAVES = registerBlock("yew_leaves", "Yew Leaves", SeidraLeafBlock.class);
 
     public static final DeferredBlock<SeidraOreBlock> BISMUTH_ORE = registerBlock("bismuth_ore", "Bismuth Ore", SeidraOreBlock.class, 3.0F, 3.0F);
     public static final DeferredBlock<SeidraOreBlock> COBALT_ORE = registerBlock("cobalt_ore", "Cobalt Ore", SeidraOreBlock.class, 3.0F, 3.0F);
@@ -41,9 +56,18 @@ public class Blocks
     public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_THULITE_ORE = registerBlock("deepslate_thulite_ore", "Deepslate Thulite Ore", SeidraOreBlock.class, 3.0F, 3.0F);
     public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_ZOISITE_ORE = registerBlock("deepslate_zoisite_ore", "Deepslate Zoisite Ore", SeidraOreBlock.class, 3.0F, 3.0F);
 
-    public static final List<DeferredBlock<SeidraLogBlock>> LOGS = List.of(JUNIPER_LOG, PINE_LOG, YEW_LOG);
-    public static final List<DeferredBlock<SeidraLogBlock>> STRIPPED_LOGS = List.of(STRIPPED_JUNIPER_LOG, STRIPPED_PINE_LOG, STRIPPED_YEW_LOG);
+    public static final Map<DeferredBlock<SeidraLogBlock>, DeferredBlock<SeidraLogBlock>> STRIPPING_MAP = Map.of(
+            JUNIPER_LOG, STRIPPED_JUNIPER_LOG,
+            PINE_LOG, STRIPPED_PINE_LOG,
+            YEW_LOG, STRIPPED_YEW_LOG,
+            JUNIPER_WOOD, STRIPPED_JUNIPER_WOOD,
+            PINE_WOOD, STRIPPED_PINE_WOOD,
+            YEW_WOOD, STRIPPED_YEW_WOOD
+    );
+    public static final List<DeferredBlock<SeidraLogBlock>> LOGS = List.of(JUNIPER_LOG, PINE_LOG, YEW_LOG, STRIPPED_JUNIPER_LOG, STRIPPED_PINE_LOG, STRIPPED_YEW_LOG);
+    public static final List<DeferredBlock<SeidraLogBlock>> WOOD = List.of(JUNIPER_WOOD, PINE_WOOD, YEW_WOOD, STRIPPED_JUNIPER_WOOD, STRIPPED_PINE_WOOD, STRIPPED_YEW_WOOD);
     public static final List<DeferredBlock<SeidraPlankBlock>> PLANKS = List.of(JUNIPER_PLANKS, PINE_PLANKS, YEW_PLANKS);
+    public static final List<DeferredBlock<SeidraLeafBlock>> LEAVES = List.of(JUNIPER_LEAVES, PINE_LEAVES, YEW_LEAVES);
 
     public static final List<DeferredBlock<SeidraOreBlock>> ORES = List.of(BISMUTH_ORE, COBALT_ORE, TUNGSTEN_ORE, IOLITE_ORE, THULITE_ORE, ZOISITE_ORE);
     public static final List<DeferredBlock<SeidraOreBlock>> DEEPSLATE_ORES = List.of(DEEPSLATE_BISMUTH_ORE, DEEPSLATE_COBALT_ORE, DEEPSLATE_TUNGSTEN_ORE, DEEPSLATE_IOLITE_ORE, DEEPSLATE_THULITE_ORE, DEEPSLATE_ZOISITE_ORE);
@@ -51,11 +75,6 @@ public class Blocks
     private static <BLOCK extends Block> DeferredBlock<BLOCK> registerBlock(String id, String prettyName, Class<BLOCK> clazz, Object... params)
     {
         return BLOCKS.register(id, () -> instantiateBlock(clazz, prettyName, params));
-    }
-
-    private static <BLOCK extends SeidraColumnBlock> DeferredBlock<BLOCK> registerColumnBlock(String registryName, String prettyName, Class<BLOCK> clazz, Object... params)
-    {
-        return registerBlock(registryName, prettyName, clazz, params);
     }
 
     private static <BLOCK> BLOCK instantiateBlock(Class<BLOCK> clazz, String prettyName, Object... params)

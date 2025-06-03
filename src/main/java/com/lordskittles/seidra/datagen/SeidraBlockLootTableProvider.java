@@ -1,5 +1,6 @@
 package com.lordskittles.seidra.datagen;
 
+import com.lordskittles.seidra.common.blocks.SeidraLeafBlock;
 import com.lordskittles.seidra.common.blocks.SeidraLogBlock;
 import com.lordskittles.seidra.common.blocks.SeidraOreBlock;
 import com.lordskittles.seidra.common.blocks.SeidraPlankBlock;
@@ -49,7 +50,7 @@ public class SeidraBlockLootTableProvider extends BlockLootSubProvider
             dropSelf(log.get());
         }
 
-        for (DeferredBlock<SeidraLogBlock> log : Blocks.STRIPPED_LOGS)
+        for (DeferredBlock<SeidraLogBlock> log : Blocks.WOOD)
         {
             dropSelf(log.get());
         }
@@ -57,6 +58,11 @@ public class SeidraBlockLootTableProvider extends BlockLootSubProvider
         for (DeferredBlock<SeidraPlankBlock> plank : Blocks.PLANKS)
         {
             dropSelf(plank.get());
+        }
+
+        for (DeferredBlock<SeidraLeafBlock> leaf : Blocks.LEAVES)
+        {
+            dropSelf(leaf.get());
         }
     }
 
