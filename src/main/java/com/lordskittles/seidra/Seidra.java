@@ -1,5 +1,6 @@
 package com.lordskittles.seidra;
 
+import com.lordskittles.seidra.common.CommonProxy;
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -15,7 +16,7 @@ public class Seidra
 
     public Seidra(IEventBus modEventBus, ModContainer modContainer)
     {
-        SeidraCommon.initialiseRegistries(modEventBus);
+        CommonProxy.initialiseRegistries(modEventBus);
 
         /*NeoForge.EVENT_BUS.register(SeidraCommon.INSTANCE);*/
 

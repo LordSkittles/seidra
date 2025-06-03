@@ -1,6 +1,6 @@
 package com.lordskittles.seidra.client.tabs;
 
-import com.lordskittles.seidra.interfaces.IPrettyNameProvider;
+import api.lordskittles.seidra.interfaces.IPrettyNameProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;

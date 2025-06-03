@@ -1,9 +1,9 @@
 package com.lordskittles.seidra.datagen;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.worldgen.SeidraBiomeModifiers;
-import com.lordskittles.seidra.worldgen.SeidraConfiguredFeatures;
-import com.lordskittles.seidra.worldgen.SeidraPlacedFeatures;
+import com.lordskittles.seidra.common.worldgen.SeidraBiomeModifiers;
+import com.lordskittles.seidra.common.worldgen.SeidraConfiguredFeatures;
+import com.lordskittles.seidra.common.worldgen.SeidraPlacedFeatures;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;

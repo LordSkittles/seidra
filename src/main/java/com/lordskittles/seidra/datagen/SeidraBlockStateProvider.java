@@ -1,8 +1,8 @@
 package com.lordskittles.seidra.datagen;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.block.*;
-import com.lordskittles.seidra.registries.Blocks;
+import com.lordskittles.seidra.common.block.*;
+import com.lordskittles.seidra.common.registries.Blocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;

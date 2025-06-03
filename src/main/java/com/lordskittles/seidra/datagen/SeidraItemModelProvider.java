@@ -1,10 +1,10 @@
 package com.lordskittles.seidra.datagen;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.block.SeidraSaplingBlock;
-import com.lordskittles.seidra.interfaces.IItemModelProvider;
-import com.lordskittles.seidra.registries.Blocks;
-import com.lordskittles.seidra.registries.Items;
+import com.lordskittles.seidra.common.block.SeidraSaplingBlock;
+import api.lordskittles.seidra.interfaces.IItemModelProvider;
+import com.lordskittles.seidra.common.registries.Blocks;
+import com.lordskittles.seidra.common.registries.Items;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;

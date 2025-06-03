@@ -1,6 +1,6 @@
 package com.lordskittles.seidra.client.tabs;
 
-import com.lordskittles.seidra.registries.Blocks;
+import com.lordskittles.seidra.common.registries.Blocks;
 
 public class SeidraWorldTab extends SeidraCreativeTab
 {

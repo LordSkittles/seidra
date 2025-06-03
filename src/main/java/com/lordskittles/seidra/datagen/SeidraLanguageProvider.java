@@ -1,10 +1,10 @@
 package com.lordskittles.seidra.datagen;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.interfaces.IPrettyNameProvider;
-import com.lordskittles.seidra.registries.Blocks;
-import com.lordskittles.seidra.registries.CreativeTabs;
-import com.lordskittles.seidra.registries.Items;
+import api.lordskittles.seidra.interfaces.IPrettyNameProvider;
+import com.lordskittles.seidra.common.registries.Blocks;
+import com.lordskittles.seidra.common.registries.CreativeTabs;
+import com.lordskittles.seidra.common.registries.Items;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 

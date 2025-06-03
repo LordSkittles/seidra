@@ -6,26 +6,25 @@ plugins {
 }
 
 tasks.named('wrapper', Wrapper).configure {
-    // Define wrapper values here so as to not have to always do so when updating gradlew.properties.
-    // Switching this to Wrapper.DistributionType.ALL will download the full gradle sources that comes with
-    // documentation attached on cursor hover of gradle classes and methods. However, this comes with increased
-    // file size for Gradle. If you do switch this to ALL, run the Gradle wrapper task twice afterwards.
-    // (Verify by checking gradle/wrapper/gradle-wrapper.properties to see if distributionUrl now points to `-all`)
     distributionType = Wrapper.DistributionType.BIN
 }
 
 version = mod_version
 group = mod_group_id
 
+base {
+    archivesName = mod_id
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
 repositories {
     mavenLocal()
     maven {
-        // location of the maven that hosts JEI files since January 2023
         name = "Jared's maven"
         url = "https://maven.blamejared.com/"
     }
     maven {
-        // location of a maven mirror for JEI files, as a fallback
         name = "ModMaven"
         url = "https://modmaven.dev"
     }
@@ -38,15 +37,32 @@ repositories {
     }
 }
 
-base {
-    archivesName = mod_id
+// Configure source sets for multi-source layout
+sourceSets {
+    api {
+        java {
+            srcDir 'src/api/java'
+        }
+        resources {
+            srcDir 'src/api/resources'
+        }
+        // API source set needs access to the same compile classpath as main
+        compileClasspath += configurations.compileClasspath
+    }
+
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+        resources {
+            srcDir 'src/main/resources'
+        }
+        compileClasspath += sourceSets.api.output
+        runtimeClasspath += sourceSets.api.output
+    }
 }
 
-// Mojang ships Java 21 to end users starting in 1.20.5, so mods should target Java 21.
-java.toolchain.languageVersion = JavaLanguageVersion.of(21)
-
 neoForge {
-    // Specify the version of NeoForge to use.
     version = project.neo_version
 
     parchment {
@@ -54,16 +70,9 @@ neoForge {
         minecraftVersion = project.parchment_minecraft_version
     }
 
-    // This line is optional. Access Transformers are automatically detected
-    // accessTransformers = project.files('src/main/resources/META-INF/accesstransformer.cfg')
-
-    // Default run configurations.
-    // These can be tweaked, removed, or duplicated as needed.
     runs {
         client {
             client()
-
-            // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
         }
 
@@ -73,9 +82,6 @@ neoForge {
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
         }
 
-        // This run config launches GameTestServer and runs all registered gametests, then exits.
-        // By default, the server will crash when no gametests are provided.
-        // The gametest system is also enabled by default for other run configs under the /test command.
         gameTestServer {
             type = "gameTestServer"
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
@@ -83,67 +89,118 @@ neoForge {
 
         data {
             data()
-
-            // example of overriding the workingDirectory set in configureEach above, uncomment if you want to use it
-            // gameDirectory = project.file('run-data')
-
-            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
         }
 
-        // applies to all the run configs above
         configureEach {
-            // Recommended logging data for a userdev environment
-            // The markers can be added/remove as needed separated by commas.
-            // "SCAN": For mods scan.
-            // "REGISTRIES": For firing of registry events.
-            // "REGISTRYDUMP": For getting the contents of all registries.
             systemProperty 'forge.logging.markers', 'REGISTRIES'
-
-            // Recommended logging level for the console
-            // You can set various levels here.
-            // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
             logLevel = org.slf4j.event.Level.DEBUG
         }
     }
 
     mods {
-        // define mod <-> source bindings
-        // these are used to tell the game which sources are for which mod
-        // multi mod projects should define one per mod
         "${mod_id}" {
             sourceSet(sourceSets.main)
+            sourceSet(sourceSets.api)
         }
     }
 }
 
-// Include resources generated by data generators.
+// Apply NeoForge configuration to API source set
+configurations {
+    // Make API source set use NeoForge configurations
+    apiCompileClasspath.extendsFrom(compileClasspath)
+    apiRuntimeClasspath.extendsFrom(runtimeClasspath)
+}
+
+// Include resources generated by data generators
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
-// Sets up a dependency configuration called 'localRuntime'.
-// This configuration should be used instead of 'runtimeOnly' to declare
-// a dependency that will be present for runtime testing but that is
-// "optional", meaning it will not be pulled by dependents of this mod.
+// Sets up a dependency configuration called 'localRuntime'
 configurations {
     runtimeClasspath.extendsFrom localRuntime
+
+    // Make API source set use NeoForge configurations
+    apiCompileClasspath.extendsFrom(compileClasspath)
+    apiRuntimeClasspath.extendsFrom(runtimeClasspath)
+
+    // Configuration for API elements
+    apiElements {
+        canBeConsumed = true
+        canBeResolved = false
+    }
 }
 
 dependencies {
-    // compile against the JEI API but do not include it at runtime
+    // Main implementation gets full NeoForge (this will be inherited by API)
+    implementation("net.neoforged:neoforge:${neo_version}")
+
+    // JEI integration
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
-    // at runtime, use the full JEI jar for NeoForge
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
 
-    // Compile against only the API artifact
+    // Curios integration
     compileOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}+${minecraft_version}:api"
-    // Use the full Curios API jar at runtime
     runtimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}+${minecraft_version}"
 
     implementation "maven.modrinth:jade:${jade_version}+neoforge"
 }
 
-// This block of code expands all declared replace properties in the specified resource targets.
-// A missing property will result in an error. Properties are expanded using ${} Groovy notation.
+// Create separate JARs for API and full mod
+jar {
+    from sourceSets.main.output
+    from sourceSets.api.output
+
+    manifest {
+        attributes([
+                'Specification-Title': project.mod_name,
+                'Specification-Vendor': project.mod_authors,
+                'Specification-Version': '1',
+                'Implementation-Title': project.mod_name,
+                'Implementation-Version': project.mod_version,
+                'Implementation-Vendor': project.mod_authors,
+                'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
+
+// Create API-only JAR
+task apiJar(type: Jar) {
+    from sourceSets.api.output
+    archiveClassifier = 'api'
+
+    manifest {
+        attributes([
+                'Specification-Title': project.mod_name + ' API',
+                'Specification-Vendor': project.mod_authors,
+                'Specification-Version': '1',
+                'Implementation-Title': project.mod_name + ' API',
+                'Implementation-Version': project.mod_version,
+                'Implementation-Vendor': project.mod_authors
+        ])
+    }
+}
+
+// Create sources JAR
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allJava
+    from sourceSets.api.allJava
+    archiveClassifier = 'sources'
+}
+
+// Create API sources JAR
+task apiSourcesJar(type: Jar) {
+    from sourceSets.api.allJava
+    archiveClassifier = 'api-sources'
+}
+
+artifacts {
+    archives apiJar
+    archives sourcesJar
+    archives apiSourcesJar
+}
+
+// Generate mod metadata with property replacement
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
     var replaceProperties = [
             minecraft_version      : minecraft_version,
@@ -163,17 +220,19 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
     from "src/main/templates"
     into "build/generated/sources/modMetadata"
 }
-// Include the output of "generateModMetadata" as an input directory for the build
-// this works with both building through Gradle and the IDE.
+
 sourceSets.main.resources.srcDir generateModMetadata
-// To avoid having to run "generateModMetadata" manually, make it run on every project reload
 neoForge.ideSyncTask generateModMetadata
 
-// Example configuration to allow publishing using the maven-publish plugin
+// Maven publishing configuration
 publishing {
     publications {
         register('mavenJava', MavenPublication) {
             from components.java
+
+            // Also publish the API JAR
+            artifact apiJar
+            artifact apiSourcesJar
         }
     }
     repositories {
@@ -184,10 +243,10 @@ publishing {
 }
 
 tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+    options.encoding = 'UTF-8'
 }
 
-// IDEA no longer automatically downloads sources/javadoc jars for dependencies, so we need to explicitly enable the behavior.
+// IDEA configuration
 idea {
     module {
         downloadSources = true
