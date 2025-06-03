@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_pine_log": {
+    "has_raw_cobalt": {
       "conditions": {
         "items": [
           {
-            "items": "seidra:pine_log"
+            "items": "seidra:raw_cobalt"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "seidra:pine_planks"
+        "recipe": "seidra:cobalt_ingot_from_blasting_raw_cobalt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_pine_log"
+      "has_raw_cobalt"
     ]
   ],
   "rewards": {
     "recipes": [
-      "seidra:pine_planks"
+      "seidra:cobalt_ingot_from_blasting_raw_cobalt"
     ]
   }
 }

@@ -1,14 +1,14 @@
-package com.lordskittles.seidra.blocks;
+package com.lordskittles.seidra.block;
 
 import com.lordskittles.seidra.interfaces.ICreativeTabProvider;
 import com.lordskittles.seidra.interfaces.IPrettyNameProvider;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 
-public abstract class SeidraBlock extends Block implements IPrettyNameProvider, ICreativeTabProvider
+public abstract class SeidraColumnBlock extends RotatedPillarBlock implements IPrettyNameProvider, ICreativeTabProvider
 {
     private final String prettyName;
 
-    public SeidraBlock(String prettyName, Properties properties)
+    public SeidraColumnBlock(String prettyName, Properties properties)
     {
         super(properties);
 

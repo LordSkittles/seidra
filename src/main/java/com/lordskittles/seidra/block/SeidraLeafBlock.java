@@ -1,4 +1,4 @@
-package com.lordskittles.seidra.blocks;
+package com.lordskittles.seidra.block;
 
 import com.lordskittles.seidra.interfaces.ICreativeTabProvider;
 import com.lordskittles.seidra.interfaces.IPrettyNameProvider;
@@ -31,7 +31,7 @@ public class SeidraLeafBlock extends LeavesBlock implements IPrettyNameProvider,
     @Override
     public Supplier<CreativeModeTab> getTab()
     {
-        return CreativeTabs.WORLD_TAB;
+        return CreativeTabs.WORLD;
     }
 
     @Override

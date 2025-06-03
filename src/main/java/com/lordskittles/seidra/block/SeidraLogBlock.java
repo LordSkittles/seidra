@@ -1,4 +1,4 @@
-package com.lordskittles.seidra.blocks;
+package com.lordskittles.seidra.block;
 
 import com.lordskittles.seidra.registries.Blocks;
 import com.lordskittles.seidra.registries.CreativeTabs;
@@ -30,7 +30,7 @@ public class SeidraLogBlock extends SeidraColumnBlock
     @Override
     public Supplier<CreativeModeTab> getTab()
     {
-        return CreativeTabs.WORLD_TAB;
+        return CreativeTabs.WORLD;
     }
 
     @Override

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "seidra:yew_planks"
+        "recipe": "seidra:yew_planks_from_log"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "seidra:yew_planks"
+      "seidra:yew_planks_from_log"
     ]
   }
 }

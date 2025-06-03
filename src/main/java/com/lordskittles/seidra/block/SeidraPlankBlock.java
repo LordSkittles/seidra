@@ -1,4 +1,4 @@
-package com.lordskittles.seidra.blocks;
+package com.lordskittles.seidra.block;
 
 import com.lordskittles.seidra.registries.CreativeTabs;
 import net.minecraft.world.item.CreativeModeTab;
@@ -18,6 +18,6 @@ public class SeidraPlankBlock extends SeidraBlock
     @Override
     public Supplier<CreativeModeTab> getTab()
     {
-        return CreativeTabs.WORLD_TAB;
+        return CreativeTabs.WORLD;
     }
 }

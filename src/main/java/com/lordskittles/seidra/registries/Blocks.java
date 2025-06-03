@@ -1,7 +1,7 @@
 package com.lordskittles.seidra.registries;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.blocks.*;
+import com.lordskittles.seidra.block.*;
 import com.lordskittles.seidra.worldgen.tree.SeidraTreeGrowers;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -46,19 +46,19 @@ public class Blocks
     public static final DeferredBlock<SeidraLeafBlock> PINE_LEAVES = registerBlock("pine_leaves", "Pine Leaves", SeidraLeafBlock.class, PINE_SAPLING);
     public static final DeferredBlock<SeidraLeafBlock> YEW_LEAVES = registerBlock("yew_leaves", "Yew Leaves", SeidraLeafBlock.class, YEW_SAPLING);
 
-    public static final DeferredBlock<SeidraOreBlock> BISMUTH_ORE = registerBlock("bismuth_ore", "Bismuth Ore", SeidraOreBlock.class, 3.0F, 3.0F);
-    public static final DeferredBlock<SeidraOreBlock> COBALT_ORE = registerBlock("cobalt_ore", "Cobalt Ore", SeidraOreBlock.class, 3.0F, 3.0F);
-    public static final DeferredBlock<SeidraOreBlock> TUNGSTEN_ORE = registerBlock("tungsten_ore", "Tungsten Ore", SeidraOreBlock.class, 3.0F, 3.0F);
-    public static final DeferredBlock<SeidraOreBlock> IOLITE_ORE = registerBlock("iolite_ore", "Iolite Ore", SeidraOreBlock.class, 3.0F, 3.0F);
-    public static final DeferredBlock<SeidraOreBlock> THULITE_ORE = registerBlock("thulite_ore", "Thulite Ore", SeidraOreBlock.class, 3.0F, 3.0F);
-    public static final DeferredBlock<SeidraOreBlock> ZOISITE_ORE = registerBlock("zoisite_ore", "Zoisite Ore", SeidraOreBlock.class, 3.0F, 3.0F);
+    public static final DeferredBlock<SeidraOreBlock> BISMUTH_ORE = registerBlock("bismuth_ore", "Bismuth Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.RAW_BISMUTH);
+    public static final DeferredBlock<SeidraOreBlock> COBALT_ORE = registerBlock("cobalt_ore", "Cobalt Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.RAW_COBALT);
+    public static final DeferredBlock<SeidraOreBlock> TUNGSTEN_ORE = registerBlock("tungsten_ore", "Tungsten Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.RAW_TUNGSTEN);
+    public static final DeferredBlock<SeidraOreBlock> IOLITE_ORE = registerBlock("iolite_ore", "Iolite Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.IOLITE_GEM);
+    public static final DeferredBlock<SeidraOreBlock> THULITE_ORE = registerBlock("thulite_ore", "Thulite Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.THULITE_GEM);
+    public static final DeferredBlock<SeidraOreBlock> ZOISITE_ORE = registerBlock("zoisite_ore", "Zoisite Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.ZOISITE_GEM);
 
-    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_BISMUTH_ORE = registerBlock("deepslate_bismuth_ore", "Deepslate Bismuth Ore", SeidraOreBlock.class, 3.0F, 3.0F);
-    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_COBALT_ORE = registerBlock("deepslate_cobalt_ore", "Deepslate Cobalt Ore", SeidraOreBlock.class, 3.0F, 3.0F);
-    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_TUNGSTEN_ORE = registerBlock("deepslate_tungsten_ore", "Deepslate Tungsten Ore", SeidraOreBlock.class, 3.0F, 3.0F);
-    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_IOLITE_ORE = registerBlock("deepslate_iolite_ore", "Deepslate Iolite Ore", SeidraOreBlock.class, 3.0F, 3.0F);
-    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_THULITE_ORE = registerBlock("deepslate_thulite_ore", "Deepslate Thulite Ore", SeidraOreBlock.class, 3.0F, 3.0F);
-    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_ZOISITE_ORE = registerBlock("deepslate_zoisite_ore", "Deepslate Zoisite Ore", SeidraOreBlock.class, 3.0F, 3.0F);
+    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_BISMUTH_ORE = registerBlock("deepslate_bismuth_ore", "Deepslate Bismuth Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.RAW_BISMUTH);
+    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_COBALT_ORE = registerBlock("deepslate_cobalt_ore", "Deepslate Cobalt Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.RAW_COBALT);
+    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_TUNGSTEN_ORE = registerBlock("deepslate_tungsten_ore", "Deepslate Tungsten Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.RAW_TUNGSTEN);
+    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_IOLITE_ORE = registerBlock("deepslate_iolite_ore", "Deepslate Iolite Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.IOLITE_GEM);
+    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_THULITE_ORE = registerBlock("deepslate_thulite_ore", "Deepslate Thulite Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.THULITE_GEM);
+    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_ZOISITE_ORE = registerBlock("deepslate_zoisite_ore", "Deepslate Zoisite Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.ZOISITE_GEM);
 
     public static final Map<DeferredBlock<SeidraLogBlock>, DeferredBlock<SeidraLogBlock>> STRIPPING_MAP = Map.of(
             JUNIPER_LOG, STRIPPED_JUNIPER_LOG,

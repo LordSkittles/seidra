@@ -32,5 +32,14 @@
   "block.seidra.yew_sapling": "Yew Sapling",
   "block.seidra.yew_wood": "Yew wood",
   "block.seidra.zoisite_ore": "Zoisite Ore",
-  "creativetab.seidra.world": "Seidra: World"
+  "creativetab.seidra.world": "Seidra: World",
+  "item.seidra.bismuth_ingot": "Bismuth Ingot",
+  "item.seidra.cobalt_ingot": "Cobalt Ingot",
+  "item.seidra.iolite_gem": "Iolite",
+  "item.seidra.raw_bismuth": "Raw Bismuth",
+  "item.seidra.raw_cobalt": "Raw Cobalt",
+  "item.seidra.raw_tungsten": "Raw Tungsten",
+  "item.seidra.thulite_gem": "Thulite",
+  "item.seidra.tungsten_ingot": "Tungsten Ingot",
+  "item.seidra.zoisite_gem": "Zoisite"
 }

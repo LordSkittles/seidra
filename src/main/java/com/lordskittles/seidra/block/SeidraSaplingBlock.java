@@ -1,4 +1,4 @@
-package com.lordskittles.seidra.blocks;
+package com.lordskittles.seidra.block;
 
 import com.lordskittles.seidra.interfaces.ICreativeTabProvider;
 import com.lordskittles.seidra.interfaces.IPrettyNameProvider;
@@ -25,7 +25,7 @@ public class SeidraSaplingBlock extends SaplingBlock implements IPrettyNameProvi
 	@Override
 	public Supplier<CreativeModeTab> getTab()
 	{
-		return CreativeTabs.WORLD_TAB;
+		return CreativeTabs.WORLD;
 	}
 
 	@Override

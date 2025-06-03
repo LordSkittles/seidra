@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "seidra:raw_tungsten"
+  },
+  "result": {
+    "count": 1,
+    "id": "seidra:tungsten_ingot"
+  }
+}

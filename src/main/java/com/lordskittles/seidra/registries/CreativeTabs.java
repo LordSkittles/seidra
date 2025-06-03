@@ -12,5 +12,5 @@ public class CreativeTabs
 {
     public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Seidra.MODID);
 
-    public static final Supplier<CreativeModeTab> WORLD_TAB = TABS.register("world", SeidraWorldTab::new);
+    public static final Supplier<CreativeModeTab> WORLD = TABS.register("world", SeidraWorldTab::new);
 }

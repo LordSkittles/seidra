@@ -1,8 +1,10 @@
 package com.lordskittles.seidra.datagen;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.blocks.SeidraSaplingBlock;
+import com.lordskittles.seidra.block.SeidraSaplingBlock;
+import com.lordskittles.seidra.interfaces.IItemModelProvider;
 import com.lordskittles.seidra.registries.Blocks;
+import com.lordskittles.seidra.registries.Items;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
@@ -20,6 +22,14 @@ public class SeidraItemModelProvider extends ItemModelProvider
 	@Override
 	protected void registerModels()
 	{
+		Items.ITEMS.getEntries().stream().forEach(item ->
+		{
+			if (item.get() instanceof IItemModelProvider modelProvider)
+			{
+				modelProvider.modelBuilder(this, item.getId());
+			}
+		});
+
 		saplingItem(Blocks.JUNIPER_SAPLING);
 		saplingItem(Blocks.PINE_SAPLING);
 		saplingItem(Blocks.YEW_SAPLING);

@@ -1,6 +1,6 @@
 package com.lordskittles.seidra.datagen;
 
-import com.lordskittles.seidra.blocks.*;
+import com.lordskittles.seidra.block.*;
 import com.lordskittles.seidra.registries.Blocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
@@ -32,9 +32,15 @@ public class SeidraBlockLootTableProvider extends BlockLootSubProvider
     {
         for (DeferredBlock<SeidraOreBlock> ore : Blocks.ORES)
         {
-            dropSelf(ore.get());
+            add(ore.get(), block ->
+            {
+                if (block instanceof SeidraOreBlock oreBlock)
+                {
+                    return createOreDrop(ore.get(), oreBlock.getDrop().get());
+                }
 
-            // add(ore.get(), block -> createOreDrop(ore.get(), ore.get().drop()));
+                return null;
+            });
         }
 
         for (DeferredBlock<SeidraOreBlock> ore : Blocks.DEEPSLATE_ORES)
@@ -68,7 +74,7 @@ public class SeidraBlockLootTableProvider extends BlockLootSubProvider
         }
     }
 
-    protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops)
+    /*protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops)
     {
         HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
         return this.createSilkTouchDispatchTable(
@@ -77,7 +83,7 @@ public class SeidraBlockLootTableProvider extends BlockLootSubProvider
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrops, maxDrops)))
                         .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE))))
         );
-    }
+    }*/
 
     @Override
     protected Iterable<Block> getKnownBlocks()

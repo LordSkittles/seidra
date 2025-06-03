@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_juniper_log": {
+    "has_pine_log": {
       "conditions": {
         "items": [
           {
-            "items": "seidra:juniper_log"
+            "items": "seidra:pine_log"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "seidra:juniper_planks"
+        "recipe": "seidra:pine_planks_from_log"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_juniper_log"
+      "has_pine_log"
     ]
   ],
   "rewards": {
     "recipes": [
-      "seidra:juniper_planks"
+      "seidra:pine_planks_from_log"
     ]
   }
 }
