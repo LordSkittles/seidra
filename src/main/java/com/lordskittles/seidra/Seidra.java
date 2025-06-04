@@ -18,8 +18,6 @@ public class Seidra
     {
         CommonProxy.initialiseRegistries(modEventBus);
 
-        /*NeoForge.EVENT_BUS.register(SeidraCommon.INSTANCE);*/
-
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 }

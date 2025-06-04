@@ -2,9 +2,7 @@ package com.lordskittles.seidra.common;
 
 import api.lordskittles.seidra.interfaces.ICreativeTabProvider;
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.registries.Blocks;
-import com.lordskittles.seidra.common.registries.Items;
-import com.lordskittles.seidra.common.registries.CreativeTabs;
+import com.lordskittles.seidra.common.registries.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -19,6 +17,8 @@ public class CommonProxy
         Blocks.BLOCKS.register(eventBus);
         Items.ITEMS.register(eventBus);
         CreativeTabs.TABS.register(eventBus);
+        Spells.SPELLS.register(eventBus);
+        Schools.SCHOOLS.register(eventBus);
     }
 
     @SubscribeEvent

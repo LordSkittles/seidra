@@ -146,8 +146,14 @@ dependencies {
     implementation "maven.modrinth:jade:${jade_version}+neoforge"
 }
 
-// Create separate JARs for API and full mod
+// Configure duplicate handling for resource processing
+processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+// Create unified JAR with both API and main source sets
 jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from sourceSets.main.output
     from sourceSets.api.output
 
@@ -166,6 +172,7 @@ jar {
 
 // Create API-only JAR
 task apiJar(type: Jar) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from sourceSets.api.output
     archiveClassifier = 'api'
 
@@ -183,6 +190,7 @@ task apiJar(type: Jar) {
 
 // Create sources JAR
 task sourcesJar(type: Jar) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from sourceSets.main.allJava
     from sourceSets.api.allJava
     archiveClassifier = 'sources'
@@ -190,6 +198,7 @@ task sourcesJar(type: Jar) {
 
 // Create API sources JAR
 task apiSourcesJar(type: Jar) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from sourceSets.api.allJava
     archiveClassifier = 'api-sources'
 }
