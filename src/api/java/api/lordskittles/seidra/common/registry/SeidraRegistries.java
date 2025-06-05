@@ -1,8 +1,8 @@
 package api.lordskittles.seidra.common.registry;
 
 import api.lordskittles.seidra.SeidraAPI;
-import api.lordskittles.seidra.common.sai.School;
-import api.lordskittles.seidra.common.sai.Spell;
+import api.lordskittles.seidra.common.sai.schools.School;
+import api.lordskittles.seidra.common.sai.spells.Spell;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -12,10 +12,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NewRegistryEvent;
 import net.neoforged.neoforge.registries.RegistryBuilder;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.function.Function;
-import java.util.function.Supplier;
 
 @EventBusSubscriber(modid = SeidraAPI.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class SeidraRegistries

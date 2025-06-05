@@ -1,6 +1,6 @@
 package api.lordskittles.seidra.common.registry;
 
-import api.lordskittles.seidra.common.sai.School;
+import api.lordskittles.seidra.common.sai.schools.School;
 import net.minecraft.resources.ResourceKey;
 import net.neoforged.neoforge.registries.DeferredHolder;
 

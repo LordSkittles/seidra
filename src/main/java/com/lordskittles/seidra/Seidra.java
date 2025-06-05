@@ -1,6 +1,7 @@
 package com.lordskittles.seidra;
 
 import com.lordskittles.seidra.common.CommonProxy;
+import com.lordskittles.seidra.common.Config;
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;

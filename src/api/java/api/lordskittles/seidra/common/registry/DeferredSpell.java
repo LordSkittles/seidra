@@ -1,6 +1,6 @@
 package api.lordskittles.seidra.common.registry;
 
-import api.lordskittles.seidra.common.sai.Spell;
+import api.lordskittles.seidra.common.sai.spells.Spell;
 import net.minecraft.resources.ResourceKey;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
