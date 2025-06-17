@@ -40,6 +40,7 @@ public class DataGenerators
         BlockTagsProvider blockTagsProvider = new SeidraBlockTagProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new SeidraItemTagProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new SeidraBiomeTagProvider(packOutput, lookupProvider, existingFileHelper));
 
         generator.addProvider(event.includeClient(), new SeidraItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new SeidraBlockStateProvider(packOutput, existingFileHelper));

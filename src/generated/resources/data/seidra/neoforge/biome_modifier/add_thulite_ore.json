@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#seidra:is_floral",
+  "features": "seidra:thulite_ore",
+  "step": "underground_ores"
+}

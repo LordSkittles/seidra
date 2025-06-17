@@ -1,7 +1,0 @@
-// 1.21.1	2025-06-03T12:31:09.2621754	Tags for minecraft:block mod id seidra
-ddba46ce9de35adc8298f2a5176465af85f293c0 data/minecraft/tags/block/leaves.json
-c073d98c55ca6be98e5c0dd22f7d34e5fe639a0a data/minecraft/tags/block/mineable/axe.json
-ef6041885c0c10e3cab81dc1b12247b1c7e2c926 data/minecraft/tags/block/mineable/hoe.json
-5888e2749c144676be6af9f95efc8133ebb5a02e data/minecraft/tags/block/mineable/pickaxe.json
-5888e2749c144676be6af9f95efc8133ebb5a02e data/minecraft/tags/block/needs_iron_tool.json
-7ab0eb04b92f9c557941d129fe511b5a6fefa94a data/minecraft/tags/block/saplings.json
