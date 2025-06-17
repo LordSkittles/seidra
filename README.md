@@ -55,7 +55,7 @@ Perform rituals, protect your home, and reshape the wild.
 ---
 
 ## ⚙️ Installation  
-> *Requires Minecraft Forge. Drop the Seidra mod `.jar` into your mods folder. Full compatibility and setup instructions coming soon.*
+> *Requires NeoForge. Drop the Seidra mod `.jar` into your mods folder. Full compatibility and setup instructions coming soon.*
 
 ---
 
