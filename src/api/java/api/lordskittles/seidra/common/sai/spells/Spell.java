@@ -3,17 +3,21 @@ package api.lordskittles.seidra.common.sai.spells;
 import api.lordskittles.seidra.common.sai.ConsumtionType;
 import api.lordskittles.seidra.common.sai.interfaces.ISaiConsumer;
 import api.lordskittles.seidra.common.sai.interfaces.ISaiContainer;
-import api.lordskittles.seidra.common.sai.schools.School;
 
 public class Spell implements ISaiConsumer
 {
 	private final int saiCost;
-	private final School school;
+	private final String name;
 
-	public Spell(int saiCost, School school)
+	public Spell(int saiCost, String name)
 	{
 		this.saiCost = saiCost;
-		this.school = school;
+		this.name = name;
+	}
+
+	public String getName()
+	{
+		return name;
 	}
 
 	@Override
@@ -38,10 +42,5 @@ public class Spell implements ISaiConsumer
 	public ConsumtionType getConsumtionType()
 	{
 		return ConsumtionType.ENTITY_ONLY;
-	}
-
-	public School getSchool()
-	{
-		return school;
 	}
 }
