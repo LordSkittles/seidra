@@ -68,6 +68,10 @@ public class SeidraBlockLootTableProvider extends BlockLootSubProvider
         {
             dropSelf(sapling.get());
         }
+
+        dropSelf(Blocks.WAKESTONE.get());
+        dropSelf(Blocks.CRACKED_DEEPSLATE_BRICK_SLAB.get());
+        dropSelf(Blocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get());
     }
 
     /*protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops)

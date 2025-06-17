@@ -3,12 +3,12 @@ package com.lordskittles.seidra.datagen;
 import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.block.*;
 import com.lordskittles.seidra.common.registries.Blocks;
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
-import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
-import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
@@ -61,6 +61,57 @@ public class SeidraBlockStateProvider extends BlockStateProvider
         {
             saplingBlockWithItem(leaf);
         }
+
+        registerWakestone();
+
+        ResourceLocation crackedDeepslateBricks = ResourceLocation.fromNamespaceAndPath("minecraft", "block/cracked_deepslate_bricks");
+
+        stairsBlock(Blocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(), crackedDeepslateBricks);
+        slabBlock(Blocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), crackedDeepslateBricks, crackedDeepslateBricks);
+        simpleBlockItem(Blocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), this.models().slab(Blocks.CRACKED_DEEPSLATE_BRICK_SLAB.getId().getPath(), crackedDeepslateBricks, crackedDeepslateBricks, crackedDeepslateBricks));
+        simpleBlockItem(Blocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(), this.models().stairs(Blocks.CRACKED_DEEPSLATE_BRICK_STAIRS.getId().getPath(), crackedDeepslateBricks, crackedDeepslateBricks, crackedDeepslateBricks));
+    }
+
+    private void registerWakestone()
+    {
+        ResourceLocation dormantWakestoneSide = ResourceLocation.fromNamespaceAndPath(
+                Seidra.MODID, "block/stone/wakestone_pillar"
+        );
+        ResourceLocation activeWakestoneSide = ResourceLocation.fromNamespaceAndPath(
+                Seidra.MODID, "block/stone/activated_wakestone_pillar"
+        );
+        ResourceLocation wakestoneEnd = ResourceLocation.fromNamespaceAndPath(
+                Seidra.MODID, "block/stone/wakestone_pillar_end"
+        );
+
+        ModelFile dormantVertical = this.models().cubeColumn(
+                "dormant_wakestone", dormantWakestoneSide, wakestoneEnd
+        );
+        ModelFile dormantHorizontal = this.models().cubeColumnHorizontal(
+                "dormant_wakestone", dormantWakestoneSide, wakestoneEnd
+        );
+
+        ModelFile activeVertical = this.models().cubeColumn(
+                "active_wakestone", activeWakestoneSide, wakestoneEnd
+        );
+        ModelFile activeHorizontal = this.models().cubeColumnHorizontal(
+                "active_wakestone", activeWakestoneSide, wakestoneEnd
+        );
+
+        wakestoneState(false, Direction.Axis.Y).modelForState().modelFile(dormantVertical).addModel();
+        wakestoneState(true, Direction.Axis.Y).modelForState().modelFile(activeVertical).addModel();
+        wakestoneState(false, Direction.Axis.X).modelForState().modelFile(dormantHorizontal).rotationX(90).rotationY(90).addModel();
+        wakestoneState(true, Direction.Axis.X).modelForState().modelFile(activeHorizontal).rotationX(90).rotationY(90).addModel();
+        wakestoneState(false, Direction.Axis.Z).modelForState().modelFile(dormantHorizontal).rotationX(90).addModel();
+        wakestoneState(true, Direction.Axis.Z).modelForState().modelFile(activeHorizontal).rotationX(90).addModel();
+
+        simpleBlockItem(Blocks.WAKESTONE.get(), dormantVertical);
+    }
+
+    private VariantBlockStateBuilder.PartialBlockstate wakestoneState(boolean active, Direction.Axis axis)
+    {
+        return this.getVariantBuilder(Blocks.WAKESTONE.get()).partialState()
+            .with(RotatedPillarBlock.AXIS, axis).with(SeidraWakestoneBlock.ACTIVE, active);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock)

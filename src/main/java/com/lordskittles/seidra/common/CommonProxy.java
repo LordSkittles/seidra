@@ -3,6 +3,10 @@ package com.lordskittles.seidra.common;
 import api.lordskittles.seidra.interfaces.ICreativeTabProvider;
 import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.registries.*;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -30,6 +34,12 @@ public class CommonProxy
     @SubscribeEvent
     public static void buildContents(BuildCreativeModeTabContentsEvent event)
     {
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
+        {
+            event.accept(Blocks.CRACKED_DEEPSLATE_BRICK_SLAB.get());
+            event.accept(Blocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get());
+        }
+
         Blocks.BLOCKS.getEntries().forEach(block ->
                                            {
                                                if (block.get() instanceof ICreativeTabProvider provider)

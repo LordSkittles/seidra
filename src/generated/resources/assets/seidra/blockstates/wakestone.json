@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "active=false,axis=x": {
+      "model": "seidra:block/dormant_wakestone",
+      "x": 90,
+      "y": 90
+    },
+    "active=false,axis=y": {
+      "model": "seidra:block/dormant_wakestone"
+    },
+    "active=false,axis=z": {
+      "model": "seidra:block/dormant_wakestone",
+      "x": 90
+    },
+    "active=true,axis=x": {
+      "model": "seidra:block/active_wakestone",
+      "x": 90,
+      "y": 90
+    },
+    "active=true,axis=y": {
+      "model": "seidra:block/active_wakestone"
+    },
+    "active=true,axis=z": {
+      "model": "seidra:block/active_wakestone",
+      "x": 90
+    }
+  }
+}

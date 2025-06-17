@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "seidra:block/stone/wakestone_pillar_end",
+    "side": "seidra:block/stone/activated_wakestone_pillar"
+  }
+}

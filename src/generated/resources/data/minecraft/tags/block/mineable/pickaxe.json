@@ -17,6 +17,9 @@
     "seidra:tungsten_block",
     "seidra:iolite_block",
     "seidra:thulite_block",
-    "seidra:zoisite_block"
+    "seidra:zoisite_block",
+    "seidra:wakestone",
+    "seidra:cracked_deepslate_brick_slab",
+    "seidra:cracked_deepslate_brick_stairs"
   ]
 }

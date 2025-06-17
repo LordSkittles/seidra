@@ -6,6 +6,7 @@ import com.lordskittles.seidra.common.registries.Blocks;
 import com.lordskittles.seidra.common.registries.CreativeTabs;
 import com.lordskittles.seidra.common.registries.Items;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
 public class SeidraLanguageProvider extends LanguageProvider
@@ -33,6 +34,9 @@ public class SeidraLanguageProvider extends LanguageProvider
 				add(item.get(), provider.getPrettyName());
 			}
 		});
+
+		add(Blocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), "Cracked Deepslate Brick Slab");
+		add(Blocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(), "Cracked Deepslate Brick Stairs");
 
 		add(CreativeTabs.WORLD.get().getDisplayName().getString(), "Seidra: World");
 	}

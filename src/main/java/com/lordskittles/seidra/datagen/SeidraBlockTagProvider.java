@@ -57,7 +57,10 @@ public class SeidraBlockTagProvider extends BlockTagsProvider
 						Blocks.TUNGSTEN_BLOCK.get(),
 						Blocks.IOLITE_BLOCK.get(),
 						Blocks.THULITE_BLOCK.get(),
-						Blocks.ZOISITE_BLOCK.get()
+						Blocks.ZOISITE_BLOCK.get(),
+						Blocks.WAKESTONE.get(),
+						Blocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(),
+						Blocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get()
 				);
 
 		tag(BlockTags.MINEABLE_WITH_HOE)
