@@ -1,6 +1,10 @@
 package com.lordskittles.seidra.datagen;
 
+import com.klikli_dev.modonomicon.api.datagen.LanguageProviderCache;
+import com.klikli_dev.modonomicon.api.datagen.NeoBookProvider;
+import com.klikli_dev.modonomicon.datagen.EnUsProvider;
 import com.lordskittles.seidra.Seidra;
+import com.lordskittles.seidra.datagen.book.SeidraBook;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -45,5 +49,11 @@ public class DataGenerators
         generator.addProvider(event.includeClient(), new SeidraItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new SeidraBlockStateProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new SeidraLanguageProvider(packOutput, "en_us"));
+
+        var enUsCache = new LanguageProviderCache("en_us");
+
+        generator.addProvider(event.includeServer(), NeoBookProvider.of(event, new SeidraBook(enUsCache)));
+
+        generator.addProvider(event.includeClient(), new EnUsProvider(generator.getPackOutput(), enUsCache));
     }
 }
