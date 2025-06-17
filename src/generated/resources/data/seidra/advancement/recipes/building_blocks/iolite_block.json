@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_iolite_gem": {
+      "conditions": {
+        "items": [
+          {
+            "items": "seidra:iolite_gem"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "seidra:iolite_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_iolite_gem"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "seidra:iolite_block"
+    ]
+  }
+}

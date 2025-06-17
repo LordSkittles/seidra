@@ -13,75 +13,93 @@ import java.util.concurrent.CompletableFuture;
 
 public class SeidraBlockTagProvider extends BlockTagsProvider
 {
-    public SeidraBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper)
-    {
-        super(output, lookupProvider, Seidra.MODID, existingFileHelper);
-    }
+	public SeidraBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper)
+	{
+		super(output, lookupProvider, Seidra.MODID, existingFileHelper);
+	}
 
-    @Override
-    protected void addTags(HolderLookup.Provider provider)
-    {
-        tag(BlockTags.MINEABLE_WITH_AXE)
-                .add(Blocks.JUNIPER_LOG.get())
-                .add(Blocks.PINE_LOG.get())
-                .add(Blocks.YEW_LOG.get())
-                .add(Blocks.JUNIPER_WOOD.get())
-                .add(Blocks.PINE_WOOD.get())
-                .add(Blocks.YEW_WOOD.get())
-                .add(Blocks.STRIPPED_JUNIPER_LOG.get())
-                .add(Blocks.STRIPPED_PINE_LOG.get())
-                .add(Blocks.STRIPPED_YEW_LOG.get())
-                .add(Blocks.STRIPPED_JUNIPER_WOOD.get())
-                .add(Blocks.STRIPPED_PINE_WOOD.get())
-                .add(Blocks.STRIPPED_YEW_WOOD.get())
-                .add(Blocks.JUNIPER_PLANKS.get())
-                .add(Blocks.PINE_PLANKS.get())
-                .add(Blocks.YEW_PLANKS.get());
+	@Override
+	protected void addTags(HolderLookup.Provider provider)
+	{
+		tag(BlockTags.MINEABLE_WITH_AXE)
+				.add(Blocks.JUNIPER_LOG.get(),
+						Blocks.PINE_LOG.get(),
+						Blocks.YEW_LOG.get(),
+						Blocks.JUNIPER_WOOD.get(),
+						Blocks.PINE_WOOD.get(),
+						Blocks.YEW_WOOD.get(),
+						Blocks.STRIPPED_JUNIPER_LOG.get(),
+						Blocks.STRIPPED_PINE_LOG.get(),
+						Blocks.STRIPPED_YEW_LOG.get(),
+						Blocks.STRIPPED_JUNIPER_WOOD.get(),
+						Blocks.STRIPPED_PINE_WOOD.get(),
+						Blocks.STRIPPED_YEW_WOOD.get(),
+						Blocks.JUNIPER_PLANKS.get(),
+						Blocks.PINE_PLANKS.get(),
+						Blocks.YEW_PLANKS.get()
+				);
 
-        tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(Blocks.BISMUTH_ORE.get())
-                .add(Blocks.COBALT_ORE.get())
-                .add(Blocks.TUNGSTEN_ORE.get())
-                .add(Blocks.IOLITE_ORE.get())
-                .add(Blocks.THULITE_ORE.get())
-                .add(Blocks.ZOISITE_ORE.get())
-                .add(Blocks.DEEPSLATE_BISMUTH_ORE.get())
-                .add(Blocks.DEEPSLATE_COBALT_ORE.get())
-                .add(Blocks.DEEPSLATE_TUNGSTEN_ORE.get())
-                .add(Blocks.DEEPSLATE_IOLITE_ORE.get())
-                .add(Blocks.DEEPSLATE_THULITE_ORE.get())
-                .add(Blocks.DEEPSLATE_ZOISITE_ORE.get());
+		tag(BlockTags.MINEABLE_WITH_PICKAXE)
+				.add(Blocks.BISMUTH_ORE.get(),
+						Blocks.COBALT_ORE.get(),
+						Blocks.TUNGSTEN_ORE.get(),
+						Blocks.IOLITE_ORE.get(),
+						Blocks.THULITE_ORE.get(),
+						Blocks.ZOISITE_ORE.get(),
+						Blocks.DEEPSLATE_BISMUTH_ORE.get(),
+						Blocks.DEEPSLATE_COBALT_ORE.get(),
+						Blocks.DEEPSLATE_TUNGSTEN_ORE.get(),
+						Blocks.DEEPSLATE_IOLITE_ORE.get(),
+						Blocks.DEEPSLATE_THULITE_ORE.get(),
+						Blocks.DEEPSLATE_ZOISITE_ORE.get(),
+						Blocks.BISMUTH_BLOCK.get(),
+						Blocks.COBALT_BLOCK.get(),
+						Blocks.TUNGSTEN_BLOCK.get(),
+						Blocks.IOLITE_BLOCK.get(),
+						Blocks.THULITE_BLOCK.get(),
+						Blocks.ZOISITE_BLOCK.get()
+				);
 
-        tag(BlockTags.MINEABLE_WITH_HOE)
-                .add(Blocks.JUNIPER_LEAVES.get())
-                .add(Blocks.PINE_LEAVES.get())
-                .add(Blocks.YEW_LEAVES.get())
-                .add(Blocks.JUNIPER_SAPLING.get())
-                .add(Blocks.PINE_SAPLING.get())
-                .add(Blocks.YEW_SAPLING.get());
+		tag(BlockTags.MINEABLE_WITH_HOE)
+				.add(Blocks.JUNIPER_LEAVES.get(),
+						Blocks.PINE_LEAVES.get(),
+						Blocks.YEW_LEAVES.get(),
+						Blocks.JUNIPER_SAPLING.get(),
+						Blocks.PINE_SAPLING.get(),
+						Blocks.YEW_SAPLING.get()
+				);
 
-        tag(BlockTags.LEAVES)
-                .add(Blocks.JUNIPER_LEAVES.get())
-                .add(Blocks.PINE_LEAVES.get())
-                .add(Blocks.YEW_LEAVES.get());
+		tag(BlockTags.LEAVES)
+				.add(Blocks.JUNIPER_LEAVES.get(),
+						Blocks.PINE_LEAVES.get(),
+						Blocks.YEW_LEAVES.get()
+				);
 
-        tag(BlockTags.SAPLINGS)
-                .add(Blocks.JUNIPER_SAPLING.get())
-                .add(Blocks.PINE_SAPLING.get())
-                .add(Blocks.YEW_SAPLING.get());
+		tag(BlockTags.SAPLINGS)
+				.add(Blocks.JUNIPER_SAPLING.get(),
+						Blocks.PINE_SAPLING.get(),
+						Blocks.YEW_SAPLING.get()
+				);
 
-        tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(Blocks.BISMUTH_ORE.get())
-                .add(Blocks.COBALT_ORE.get())
-                .add(Blocks.TUNGSTEN_ORE.get())
-                .add(Blocks.IOLITE_ORE.get())
-                .add(Blocks.THULITE_ORE.get())
-                .add(Blocks.ZOISITE_ORE.get())
-                .add(Blocks.DEEPSLATE_BISMUTH_ORE.get())
-                .add(Blocks.DEEPSLATE_COBALT_ORE.get())
-                .add(Blocks.DEEPSLATE_TUNGSTEN_ORE.get())
-                .add(Blocks.DEEPSLATE_IOLITE_ORE.get())
-                .add(Blocks.DEEPSLATE_THULITE_ORE.get())
-                .add(Blocks.DEEPSLATE_ZOISITE_ORE.get());
-    }
+		tag(BlockTags.NEEDS_IRON_TOOL)
+				.add(Blocks.BISMUTH_ORE.get(),
+						Blocks.COBALT_ORE.get(),
+						Blocks.TUNGSTEN_ORE.get(),
+						Blocks.IOLITE_ORE.get(),
+						Blocks.THULITE_ORE.get(),
+						Blocks.ZOISITE_ORE.get(),
+						Blocks.DEEPSLATE_BISMUTH_ORE.get(),
+						Blocks.DEEPSLATE_COBALT_ORE.get(),
+						Blocks.DEEPSLATE_TUNGSTEN_ORE.get(),
+						Blocks.DEEPSLATE_IOLITE_ORE.get(),
+						Blocks.DEEPSLATE_THULITE_ORE.get(),
+						Blocks.DEEPSLATE_ZOISITE_ORE.get(),
+						Blocks.BISMUTH_BLOCK.get(),
+						Blocks.COBALT_BLOCK.get(),
+						Blocks.TUNGSTEN_BLOCK.get(),
+						Blocks.IOLITE_BLOCK.get(),
+						Blocks.THULITE_BLOCK.get(),
+						Blocks.ZOISITE_BLOCK.get()
+				);
+	}
 }

@@ -25,13 +25,16 @@ public class SeidraBlockStateProvider extends BlockStateProvider
         for (DeferredBlock<SeidraOreBlock> ore : Blocks.ORES)
         {
             blockWithItemSubFolder(ore, "ores");
-
-            // add(ore.get(), block -> createOreDrop(ore.get(), ore.get().drop()));
         }
 
         for (DeferredBlock<SeidraOreBlock> ore : Blocks.DEEPSLATE_ORES)
         {
             blockWithItemSubFolder(ore, "ores");
+        }
+
+        for (DeferredBlock<SeidraStorageBlock> storageBlock : Blocks.STORAGE_BLOCKS)
+        {
+            blockWithItemSubFolder(storageBlock, "ores");
         }
 
         for (DeferredBlock<SeidraLogBlock> log : Blocks.LOGS)

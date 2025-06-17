@@ -31,6 +31,29 @@ public class SeidraRecipeProvider extends RecipeProvider implements IConditionBu
 		addIngotSmeltingFor(Items.BISMUTH_INGOT, Items.RAW_BISMUTH, Blocks.BISMUTH_ORE, Blocks.DEEPSLATE_BISMUTH_ORE, .7f, 200, recipeOutput);
 		addIngotSmeltingFor(Items.COBALT_INGOT, Items.RAW_COBALT, Blocks.COBALT_ORE, Blocks.DEEPSLATE_COBALT_ORE, .7f, 200, recipeOutput);
 		addIngotSmeltingFor(Items.TUNGSTEN_INGOT, Items.RAW_TUNGSTEN, Blocks.TUNGSTEN_ORE, Blocks.DEEPSLATE_TUNGSTEN_ORE, 1f, 200, recipeOutput);
+
+		storageBlockRecipe(Blocks.BISMUTH_BLOCK, Items.BISMUTH_INGOT, recipeOutput);
+		storageBlockRecipe(Blocks.COBALT_BLOCK, Items.COBALT_INGOT, recipeOutput);
+		storageBlockRecipe(Blocks.TUNGSTEN_BLOCK, Items.TUNGSTEN_INGOT, recipeOutput);
+		storageBlockRecipe(Blocks.IOLITE_BLOCK, Items.IOLITE_GEM, recipeOutput);
+		storageBlockRecipe(Blocks.THULITE_BLOCK, Items.THULITE_GEM, recipeOutput);
+		storageBlockRecipe(Blocks.ZOISITE_BLOCK, Items.ZOISITE_GEM, recipeOutput);
+	}
+
+	private void storageBlockRecipe(DeferredBlock<?> block, DeferredItem<?> stored, RecipeOutput recipeOutput)
+	{
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, block.get())
+						  .define('I', stored.get())
+						  .pattern("III")
+						  .pattern("III")
+						  .pattern("III")
+						  .unlockedBy("has_" + stored.getId().getPath(), has(stored.get()))
+						  .save(recipeOutput);
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, stored.get(), 9)
+							  .requires(block.get())
+							  .unlockedBy("has_" + block.getId().getPath(), has(block.get()))
+							  .save(recipeOutput, Seidra.MODID + ":" + stored.getId().getPath() + "_from_block");
 	}
 
 	private void addPlankCraftingFor(DeferredBlock<?> plank, DeferredBlock<?> log, DeferredBlock<?> wood, RecipeOutput recipeOutput)

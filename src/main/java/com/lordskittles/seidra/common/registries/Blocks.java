@@ -53,6 +53,13 @@ public class Blocks
     public static final DeferredBlock<SeidraOreBlock> THULITE_ORE = registerBlock("thulite_ore", "Thulite Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.THULITE_GEM);
     public static final DeferredBlock<SeidraOreBlock> ZOISITE_ORE = registerBlock("zoisite_ore", "Zoisite Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.ZOISITE_GEM);
 
+    public static final DeferredBlock<SeidraStorageBlock> BISMUTH_BLOCK = registerBlock("bismuth_block", "Bismuth Block", SeidraStorageBlock.class, 5.0F);
+    public static final DeferredBlock<SeidraStorageBlock> COBALT_BLOCK = registerBlock("cobalt_block", "Cobalt Block", SeidraStorageBlock.class, 5.0F);
+    public static final DeferredBlock<SeidraStorageBlock> TUNGSTEN_BLOCK = registerBlock("tungsten_block", "Tungsten Block", SeidraStorageBlock.class, 5.0F);
+    public static final DeferredBlock<SeidraStorageBlock> IOLITE_BLOCK = registerBlock("iolite_block", "Iolite Block", SeidraStorageBlock.class, 5.0F);
+    public static final DeferredBlock<SeidraStorageBlock> THULITE_BLOCK = registerBlock("thulite_block", "Thulite Block", SeidraStorageBlock.class, 5.0F);
+    public static final DeferredBlock<SeidraStorageBlock> ZOISITE_BLOCK = registerBlock("zoisite_block", "Zoisite Block", SeidraStorageBlock.class, 5.0F);
+
     public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_BISMUTH_ORE = registerBlock("deepslate_bismuth_ore", "Deepslate Bismuth Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.RAW_BISMUTH);
     public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_COBALT_ORE = registerBlock("deepslate_cobalt_ore", "Deepslate Cobalt Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.RAW_COBALT);
     public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_TUNGSTEN_ORE = registerBlock("deepslate_tungsten_ore", "Deepslate Tungsten Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.RAW_TUNGSTEN);
@@ -78,6 +85,7 @@ public class Blocks
 
     public static final List<DeferredBlock<SeidraOreBlock>> ORES = List.of(BISMUTH_ORE, COBALT_ORE, TUNGSTEN_ORE, IOLITE_ORE, THULITE_ORE, ZOISITE_ORE);
     public static final List<DeferredBlock<SeidraOreBlock>> DEEPSLATE_ORES = List.of(DEEPSLATE_BISMUTH_ORE, DEEPSLATE_COBALT_ORE, DEEPSLATE_TUNGSTEN_ORE, DEEPSLATE_IOLITE_ORE, DEEPSLATE_THULITE_ORE, DEEPSLATE_ZOISITE_ORE);
+    public static final List<DeferredBlock<SeidraStorageBlock>> STORAGE_BLOCKS = List.of(BISMUTH_BLOCK, COBALT_BLOCK, TUNGSTEN_BLOCK, IOLITE_BLOCK, THULITE_BLOCK, ZOISITE_BLOCK);
 
     private static <BLOCK extends Block> DeferredBlock<BLOCK> registerBlock(String id, String prettyName, Class<BLOCK> clazz, Object... params)
     {

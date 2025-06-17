@@ -39,6 +39,11 @@ public class SeidraBlockLootTableProvider extends BlockLootSubProvider
             dropSelf(ore.get());
         }
 
+        for (DeferredBlock<SeidraStorageBlock> storageBlock : Blocks.STORAGE_BLOCKS)
+        {
+            dropSelf(storageBlock.get());
+        }
+
         for (DeferredBlock<SeidraLogBlock> log : Blocks.LOGS)
         {
             dropSelf(log.get());

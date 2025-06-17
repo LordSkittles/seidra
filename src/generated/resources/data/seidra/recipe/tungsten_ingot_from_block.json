@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "seidra:tungsten_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "seidra:tungsten_ingot"
+  }
+}
