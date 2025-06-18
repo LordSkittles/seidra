@@ -1,6 +1,6 @@
 package com.lordskittles.seidra.common;
 
-import api.lordskittles.seidra.common.events.SpellSchoolAssignmentEvent;
+import api.lordskittles.seidra.common.sai.schools.SpellSchoolAssignmentEvent;
 import api.lordskittles.seidra.common.registry.SeidraRegistries;
 import api.lordskittles.seidra.common.sai.schools.School;
 import api.lordskittles.seidra.interfaces.ICreativeTabProvider;
@@ -48,9 +48,9 @@ public class CommonProxy
 	@SubscribeEvent
 	public static void spellSchoolAssignmentEvent(SpellSchoolAssignmentEvent event)
 	{
-		if (event.school == Schools.TEST_SCHOOL.get())
+		if (event.getSchool() == Schools.EXAMPLE_SCHOOL.get())
 		{
-			event.school.accept(Spells.TEST_SPELL::get);
+			event.accept(Spells.EXAMPLE_SPELL);
 		}
 	}
 

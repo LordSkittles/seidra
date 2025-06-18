@@ -2,10 +2,10 @@ package com.lordskittles.seidra.common.sai.schools;
 
 import api.lordskittles.seidra.common.sai.schools.School;
 
-public class TestSchool extends School
+public class ExampleSchool extends School
 {
-	public TestSchool()
+	public ExampleSchool()
 	{
-		super("test");
+		super("example");
 	}
 }

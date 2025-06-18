@@ -1,16 +1,16 @@
 package api.lordskittles.seidra.common.sai.schools;
 
+import api.lordskittles.seidra.common.registry.DeferredSpell;
 import api.lordskittles.seidra.common.sai.spells.Spell;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Supplier;
 
 public class School
 {
 	public final String name;
 
-	private final ArrayList<Spell> spells;
+	private final ArrayList<DeferredSpell<?>> spells;
 
 	public School(String name)
 	{
@@ -18,17 +18,21 @@ public class School
 		this.spells = new ArrayList<>();
 	}
 
-	public void accept(Supplier<Spell> supplier)
+	final <T extends Spell> void accept(DeferredSpell<T> spell)
 	{
-		if(supplier == null)
-		{
-			throw new IllegalArgumentException("Spell supplier cannot be null");
-		}
-
-		this.spells.add(supplier.get());
+		this.spells.add(spell);
 	}
 
-	public List<Spell> getSpells()
+	@SafeVarargs
+	final <T extends Spell> void accept(DeferredSpell<T>... spells)
+	{
+		for (DeferredSpell<T> spell : spells)
+		{
+			this.accept(spell);
+		}
+	}
+
+	public List<DeferredSpell<?>> getSpells()
 	{
 		return this.spells;
 	}

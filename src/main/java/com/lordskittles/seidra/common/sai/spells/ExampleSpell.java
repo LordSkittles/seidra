@@ -2,10 +2,10 @@ package com.lordskittles.seidra.common.sai.spells;
 
 import api.lordskittles.seidra.common.sai.spells.Spell;
 
-public class TestSpell extends Spell
+public class ExampleSpell extends Spell
 {
-	public TestSpell()
+	public ExampleSpell()
 	{
-		super(5, "Test Spell");
+		super(5, "Example Spell");
 	}
 }
