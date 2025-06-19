@@ -33,6 +33,6 @@ public class CrumbledPillarStructure extends Structure
 	@Override
 	public @NotNull StructureType<?> type()
 	{
-		return SeidraStructureTypes.CRUMBLED_PILLAR;
+		return SeidraStructureTypes.CRUMBLED_PILLAR.get();
 	}
 }

@@ -1,21 +1,23 @@
 package com.lordskittles.seidra.common.worldgen;
 
+import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.worldgen.structure.CrumbledPillarStructure;
 import com.mojang.serialization.MapCodec;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureType;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
-public interface SeidraStructureTypes<S extends StructureType>
+import java.util.function.Supplier;
+
+public class SeidraStructureTypes
 {
-	StructureType<CrumbledPillarStructure> CRUMBLED_PILLAR = register("crumbled_pillar", CrumbledPillarStructure.CODEC);
+	public static final DeferredRegister<StructureType<?>> STRUCTURE_TYPES = DeferredRegister.create(Registries.STRUCTURE_TYPE, Seidra.MODID);
 
-	MapCodec<S> codec();
+	public static final Supplier<StructureType<CrumbledPillarStructure>> CRUMBLED_PILLAR = register("crumbled_pillar", CrumbledPillarStructure.CODEC);
 
-	@SuppressWarnings({"unchecked", "rawtypes"})
-	private static <S extends Structure> StructureType<S> register(String name, MapCodec<S> codec)
+	private static <S extends Structure> Supplier<StructureType<S>> register(String name, MapCodec<S> codec)
 	{
-		return (StructureType) Registry.register(BuiltInRegistries.STRUCTURE_TYPE, name, (StructureType)() -> codec);
+		return STRUCTURE_TYPES.register(name, () -> () -> codec);
 	}
 }
