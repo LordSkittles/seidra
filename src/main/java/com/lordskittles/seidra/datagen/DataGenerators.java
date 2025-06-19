@@ -34,7 +34,8 @@ public class DataGenerators
         generator.addProvider(
                 event.includeServer(),
                 new LootTableProvider(packOutput, Collections.emptySet(),
-                                      List.of(new LootTableProvider.SubProviderEntry(SeidraBlockLootTableProvider::new, LootContextParamSets.BLOCK)),
+                                      List.of(new LootTableProvider.SubProviderEntry(SeidraBlockLootTableProvider::new, LootContextParamSets.BLOCK),
+                                              new LootTableProvider.SubProviderEntry(SeidraChestLootTableProvider::new, LootContextParamSets.CHEST)),
                                       lookupProvider
                 )
         );
@@ -53,7 +54,6 @@ public class DataGenerators
         var enUsCache = new LanguageProviderCache("en_us");
 
         generator.addProvider(event.includeServer(), NeoBookProvider.of(event, new SeidraBook(enUsCache)));
-
         generator.addProvider(event.includeClient(), new EnUsProvider(generator.getPackOutput(), enUsCache));
     }
 }

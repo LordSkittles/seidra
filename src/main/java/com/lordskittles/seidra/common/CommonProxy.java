@@ -1,7 +1,7 @@
 package com.lordskittles.seidra.common;
 
-import api.lordskittles.seidra.common.sai.schools.BuildSchoolSpellContentsEvent;
 import api.lordskittles.seidra.common.registry.SeidraRegistries;
+import api.lordskittles.seidra.common.sai.schools.BuildSchoolSpellContentsEvent;
 import api.lordskittles.seidra.common.sai.schools.School;
 import api.lordskittles.seidra.interfaces.ICreativeTabProvider;
 import com.lordskittles.seidra.Seidra;
@@ -24,6 +24,8 @@ public class CommonProxy
 		CreativeTabs.TABS.register(eventBus);
 		Spells.SPELLS.register(eventBus);
 		Schools.SCHOOLS.register(eventBus);
+		StructureTypes.STRUCTURE_TYPES.register(eventBus);
+		StructurePieceTypes.STRUCTURE_PIECE_TYPES.register(eventBus);
 	}
 
 	@SubscribeEvent

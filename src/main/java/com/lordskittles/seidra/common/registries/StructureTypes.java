@@ -1,4 +1,4 @@
-package com.lordskittles.seidra.common.worldgen;
+package com.lordskittles.seidra.common.registries;
 
 import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.worldgen.structure.CrumbledPillarStructure;
@@ -10,7 +10,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-public class SeidraStructureTypes
+public class StructureTypes
 {
 	public static final DeferredRegister<StructureType<?>> STRUCTURE_TYPES = DeferredRegister.create(Registries.STRUCTURE_TYPE, Seidra.MODID);
 
