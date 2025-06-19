@@ -26,7 +26,7 @@ public class SeidraChestLootTableProvider implements LootTableSubProvider
 	@Override
 	public void generate(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> output)
 	{
-		add(output, "chest/crumbled_pillar", LootTable.lootTable()
+		add(output, "crumbled_pillar", LootTable.lootTable()
 													  .withPool(LootPool.lootPool()
 																		.setRolls(ConstantValue.exactly(3))
 																		.add(LootItem.lootTableItem(Items.BONE)
@@ -42,7 +42,7 @@ public class SeidraChestLootTableProvider implements LootTableSubProvider
 
 	private void add(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> output, String name, LootTable.Builder builder)
 	{
-		ResourceKey<LootTable> key = ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(Seidra.MODID, name));
+		ResourceKey<LootTable> key = ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(Seidra.MODID, "chest/" + name));
 		output.accept(key, builder);
 	}
 }
