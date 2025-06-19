@@ -4,6 +4,7 @@ import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.worldgen.SeidraBiomeModifiers;
 import com.lordskittles.seidra.common.worldgen.SeidraConfiguredFeatures;
 import com.lordskittles.seidra.common.worldgen.SeidraPlacedFeatures;
+import com.lordskittles.seidra.common.worldgen.SeidraStructures;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -19,7 +20,8 @@ public class SeidraDatapackProvider extends DatapackBuiltinEntriesProvider
 	public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
 			.add(Registries.CONFIGURED_FEATURE, SeidraConfiguredFeatures::bootstrap)
 			.add(Registries.PLACED_FEATURE, SeidraPlacedFeatures::bootstrap)
-			.add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, SeidraBiomeModifiers::bootstrap);
+			.add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, SeidraBiomeModifiers::bootstrap)
+			.add(Registries.STRUCTURE, SeidraStructures::bootstrap);
 
 	public SeidraDatapackProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries)
 	{

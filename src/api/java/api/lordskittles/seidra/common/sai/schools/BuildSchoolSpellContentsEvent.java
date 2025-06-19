@@ -5,11 +5,11 @@ import api.lordskittles.seidra.common.sai.spells.Spell;
 import net.neoforged.bus.api.Event;
 import net.neoforged.fml.event.IModBusEvent;
 
-public class SpellSchoolAssignmentEvent extends Event implements IModBusEvent
+public class BuildSchoolSpellContentsEvent extends Event implements IModBusEvent
 {
 	private final School school;
 
-	public SpellSchoolAssignmentEvent(School school)
+	public BuildSchoolSpellContentsEvent(School school)
 	{
 		this.school = school;
 	}
