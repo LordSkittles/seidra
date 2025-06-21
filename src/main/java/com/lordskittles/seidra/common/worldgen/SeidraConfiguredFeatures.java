@@ -58,13 +58,13 @@ public class SeidraConfiguredFeatures
 
 	private static void bootstrapOres(BootstrapContext<ConfiguredFeature<?, ?>> context)
 	{
-		registerOre(context, BISMUTH_ORE_KEY, new Tuple(Blocks.BISMUTH_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_BISMUTH_ORE.get().defaultBlockState()), 8);
-		registerOre(context, COBALT_ORE_KEY, new Tuple(Blocks.COBALT_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_COBALT_ORE.get().defaultBlockState()), 6);
-		registerOre(context, TUNGSTEN_ORE_KEY, new Tuple(Blocks.TUNGSTEN_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_TUNGSTEN_ORE.get().defaultBlockState()), 5);
+		registerOre(context, BISMUTH_ORE_KEY, new Tuple<>(Blocks.BISMUTH_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_BISMUTH_ORE.get().defaultBlockState()), 8);
+		registerOre(context, COBALT_ORE_KEY, new Tuple<>(Blocks.COBALT_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_COBALT_ORE.get().defaultBlockState()), 6);
+		registerOre(context, TUNGSTEN_ORE_KEY, new Tuple<>(Blocks.TUNGSTEN_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_TUNGSTEN_ORE.get().defaultBlockState()), 5);
 
-		registerOre(context, IOLITE_ORE_KEY, new Tuple(Blocks.IOLITE_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_IOLITE_ORE.get().defaultBlockState()), 4);
-		registerOre(context, THULITE_ORE_KEY, new Tuple(Blocks.THULITE_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_THULITE_ORE.get().defaultBlockState()), 6);
-		registerOre(context, ZOISITE_ORE_KEY, new Tuple(Blocks.ZOISITE_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_ZOISITE_ORE.get().defaultBlockState()), 5);
+		registerOre(context, IOLITE_ORE_KEY, new Tuple<>(Blocks.IOLITE_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_IOLITE_ORE.get().defaultBlockState()), 4);
+		registerOre(context, THULITE_ORE_KEY, new Tuple<>(Blocks.THULITE_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_THULITE_ORE.get().defaultBlockState()), 6);
+		registerOre(context, ZOISITE_ORE_KEY, new Tuple<>(Blocks.ZOISITE_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_ZOISITE_ORE.get().defaultBlockState()), 5);
 	}
 
 	private static void registerOre(BootstrapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, Tuple<BlockState, BlockState> ores,

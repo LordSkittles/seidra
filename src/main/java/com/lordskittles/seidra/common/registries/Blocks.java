@@ -13,7 +13,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 import java.util.stream.IntStream;
@@ -21,22 +21,23 @@ import java.util.stream.IntStream;
 public class Blocks
 {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Seidra.MODID);
+    public static final Map<String, DeferredBlock<?>> ALL = new HashMap<>();
 
-    public static final DeferredBlock<SeidraLogBlock> JUNIPER_LOG = registerBlock("juniper_log", "Juniper Log", SeidraLogBlock.class);
-    public static final DeferredBlock<SeidraLogBlock> PINE_LOG = registerBlock("pine_log", "Pine Log", SeidraLogBlock.class);
-    public static final DeferredBlock<SeidraLogBlock> YEW_LOG = registerBlock("yew_log", "Yew Log", SeidraLogBlock.class);
+    public static final DeferredBlock<SeidraLogBlock> JUNIPER_LOG = registerBlock("juniper_log", "Juniper Log", SeidraLogBlock.class, false);
+    public static final DeferredBlock<SeidraLogBlock> PINE_LOG = registerBlock("pine_log", "Pine Log", SeidraLogBlock.class, false);
+    public static final DeferredBlock<SeidraLogBlock> YEW_LOG = registerBlock("yew_log", "Yew Log", SeidraLogBlock.class, false);
 
-    public static final DeferredBlock<SeidraLogBlock> JUNIPER_WOOD = registerBlock("juniper_wood", "Juniper wood", SeidraLogBlock.class);
-    public static final DeferredBlock<SeidraLogBlock> PINE_WOOD = registerBlock("pine_wood", "Pine wood", SeidraLogBlock.class);
-    public static final DeferredBlock<SeidraLogBlock> YEW_WOOD = registerBlock("yew_wood", "Yew wood", SeidraLogBlock.class);
+    public static final DeferredBlock<SeidraLogBlock> JUNIPER_WOOD = registerBlock("juniper_wood", "Juniper wood", SeidraLogBlock.class, true);
+    public static final DeferredBlock<SeidraLogBlock> PINE_WOOD = registerBlock("pine_wood", "Pine wood", SeidraLogBlock.class, true);
+    public static final DeferredBlock<SeidraLogBlock> YEW_WOOD = registerBlock("yew_wood", "Yew wood", SeidraLogBlock.class, true);
 
-    public static final DeferredBlock<SeidraLogBlock> STRIPPED_JUNIPER_LOG = registerBlock("stripped_juniper_log", "Stripped Juniper Log", SeidraLogBlock.class);
-    public static final DeferredBlock<SeidraLogBlock> STRIPPED_PINE_LOG = registerBlock("stripped_pine_log", "Stripped Pine Log", SeidraLogBlock.class);
-    public static final DeferredBlock<SeidraLogBlock> STRIPPED_YEW_LOG = registerBlock("stripped_yew_log", "Stripped Yew Log", SeidraLogBlock.class);
+    public static final DeferredBlock<SeidraLogBlock> STRIPPED_JUNIPER_LOG = registerBlock("stripped_juniper_log", "Stripped Juniper Log", SeidraLogBlock.class, false);
+    public static final DeferredBlock<SeidraLogBlock> STRIPPED_PINE_LOG = registerBlock("stripped_pine_log", "Stripped Pine Log", SeidraLogBlock.class, false);
+    public static final DeferredBlock<SeidraLogBlock> STRIPPED_YEW_LOG = registerBlock("stripped_yew_log", "Stripped Yew Log", SeidraLogBlock.class, false);
 
-    public static final DeferredBlock<SeidraLogBlock> STRIPPED_JUNIPER_WOOD = registerBlock("stripped_juniper_wood", "Stripped Juniper Wood", SeidraLogBlock.class);
-    public static final DeferredBlock<SeidraLogBlock> STRIPPED_PINE_WOOD = registerBlock("stripped_pine_wood", "Stripped Pine Wood", SeidraLogBlock.class);
-    public static final DeferredBlock<SeidraLogBlock> STRIPPED_YEW_WOOD = registerBlock("stripped_yew_wood", "Stripped Yew Wood", SeidraLogBlock.class);
+    public static final DeferredBlock<SeidraLogBlock> STRIPPED_JUNIPER_WOOD = registerBlock("stripped_juniper_wood", "Stripped Juniper Wood", SeidraLogBlock.class, true);
+    public static final DeferredBlock<SeidraLogBlock> STRIPPED_PINE_WOOD = registerBlock("stripped_pine_wood", "Stripped Pine Wood", SeidraLogBlock.class, true);
+    public static final DeferredBlock<SeidraLogBlock> STRIPPED_YEW_WOOD = registerBlock("stripped_yew_wood", "Stripped Yew Wood", SeidraLogBlock.class, true);
 
     public static final DeferredBlock<SeidraPlankBlock> JUNIPER_PLANKS = registerBlock("juniper_planks", "Juniper Planks", SeidraPlankBlock.class);
     public static final DeferredBlock<SeidraPlankBlock> PINE_PLANKS = registerBlock("pine_planks", "Pine Planks", SeidraPlankBlock.class);
@@ -75,26 +76,6 @@ public class Blocks
     public static final DeferredBlock<SlabBlock> CRACKED_DEEPSLATE_BRICK_SLAB = registerBlock("cracked_deepslate_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.CRACKED_DEEPSLATE_BRICKS)));
     public static final DeferredBlock<StairBlock> CRACKED_DEEPSLATE_BRICK_STAIRS = registerBlock("cracked_deepslate_brick_stairs", () -> new StairBlock(net.minecraft.world.level.block.Blocks.CRACKED_DEEPSLATE_BRICKS.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.CRACKED_DEEPSLATE_BRICKS)));
 
-    public static final Map<DeferredBlock<SeidraLogBlock>, DeferredBlock<SeidraLogBlock>> STRIPPING_MAP = Map.of(
-            JUNIPER_LOG, STRIPPED_JUNIPER_LOG,
-            PINE_LOG, STRIPPED_PINE_LOG,
-            YEW_LOG, STRIPPED_YEW_LOG,
-            JUNIPER_WOOD, STRIPPED_JUNIPER_WOOD,
-            PINE_WOOD, STRIPPED_PINE_WOOD,
-            YEW_WOOD, STRIPPED_YEW_WOOD
-    );
-
-    // TODO: Don't do this... it's stupid
-    public static final List<DeferredBlock<SeidraLogBlock>> LOGS = List.of(JUNIPER_LOG, PINE_LOG, YEW_LOG, STRIPPED_JUNIPER_LOG, STRIPPED_PINE_LOG, STRIPPED_YEW_LOG);
-    public static final List<DeferredBlock<SeidraLogBlock>> WOOD = List.of(JUNIPER_WOOD, PINE_WOOD, YEW_WOOD, STRIPPED_JUNIPER_WOOD, STRIPPED_PINE_WOOD, STRIPPED_YEW_WOOD);
-    public static final List<DeferredBlock<SeidraPlankBlock>> PLANKS = List.of(JUNIPER_PLANKS, PINE_PLANKS, YEW_PLANKS);
-    public static final List<DeferredBlock<SeidraLeafBlock>> LEAVES = List.of(JUNIPER_LEAVES, PINE_LEAVES, YEW_LEAVES);
-    public static final List<DeferredBlock<SeidraSaplingBlock>> SAPLINGS = List.of(JUNIPER_SAPLING, PINE_SAPLING, YEW_SAPLING);
-
-    public static final List<DeferredBlock<SeidraOreBlock>> ORES = List.of(BISMUTH_ORE, COBALT_ORE, TUNGSTEN_ORE, IOLITE_ORE, THULITE_ORE, ZOISITE_ORE);
-    public static final List<DeferredBlock<SeidraOreBlock>> DEEPSLATE_ORES = List.of(DEEPSLATE_BISMUTH_ORE, DEEPSLATE_COBALT_ORE, DEEPSLATE_TUNGSTEN_ORE, DEEPSLATE_IOLITE_ORE, DEEPSLATE_THULITE_ORE, DEEPSLATE_ZOISITE_ORE);
-    public static final List<DeferredBlock<SeidraStorageBlock>> STORAGE_BLOCKS = List.of(BISMUTH_BLOCK, COBALT_BLOCK, TUNGSTEN_BLOCK, IOLITE_BLOCK, THULITE_BLOCK, ZOISITE_BLOCK);
-
     private static <BLOCK extends Block> DeferredBlock<BLOCK> registerBlock(String id, Supplier<BLOCK> supplier)
     {
         DeferredBlock<BLOCK> deferredBlock = BLOCKS.register(id, supplier);
@@ -107,6 +88,8 @@ public class Blocks
     {
         DeferredBlock<BLOCK> deferredBlock = BLOCKS.register(id, () -> instantiateBlock(clazz, prettyName, params));
         Items.ITEMS.register(id, () -> new BlockItem(deferredBlock.get(), new Item.Properties()));
+
+        ALL.put(prettyName, deferredBlock);
 
         return deferredBlock;
     }

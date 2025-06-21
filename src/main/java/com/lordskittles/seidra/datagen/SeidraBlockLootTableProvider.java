@@ -1,6 +1,9 @@
 package com.lordskittles.seidra.datagen;
 
+import api.lordskittles.seidra.interfaces.IBlockStateDatagenProvider;
+import api.lordskittles.seidra.interfaces.ILootTableDatagenProvider;
 import com.lordskittles.seidra.common.block.*;
+import com.lordskittles.seidra.common.item.SeidraItem;
 import com.lordskittles.seidra.common.registries.Blocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
@@ -8,6 +11,8 @@ import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredItem;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 
@@ -21,55 +26,15 @@ public class SeidraBlockLootTableProvider extends BlockLootSubProvider
     @Override
     protected void generate()
     {
-        for (DeferredBlock<SeidraOreBlock> ore : Blocks.ORES)
+        Blocks.BLOCKS.getEntries().forEach(block ->
         {
-            add(ore.get(), block ->
+            //noinspection rawtypes
+            if (block.get() instanceof ILootTableDatagenProvider provider)
             {
-                if (block instanceof SeidraOreBlock oreBlock)
-                {
-                    return createOreDrop(ore.get(), oreBlock.getDrop().get());
-                }
+                provider.drop(this).run();
+            }
+        });
 
-                return null;
-            });
-        }
-
-        for (DeferredBlock<SeidraOreBlock> ore : Blocks.DEEPSLATE_ORES)
-        {
-            dropSelf(ore.get());
-        }
-
-        for (DeferredBlock<SeidraStorageBlock> storageBlock : Blocks.STORAGE_BLOCKS)
-        {
-            dropSelf(storageBlock.get());
-        }
-
-        for (DeferredBlock<SeidraLogBlock> log : Blocks.LOGS)
-        {
-            dropSelf(log.get());
-        }
-
-        for (DeferredBlock<SeidraLogBlock> log : Blocks.WOOD)
-        {
-            dropSelf(log.get());
-        }
-
-        for (DeferredBlock<SeidraPlankBlock> plank : Blocks.PLANKS)
-        {
-            dropSelf(plank.get());
-        }
-
-        for (DeferredBlock<SeidraLeafBlock> leaf : Blocks.LEAVES)
-        {
-            add(leaf.get(), block -> createLeavesDrops(block, leaf.get().getSapling().get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        }
-
-        for (DeferredBlock<SeidraSaplingBlock> sapling : Blocks.SAPLINGS)
-        {
-            dropSelf(sapling.get());
-        }
-
-        dropSelf(Blocks.WAKESTONE.get());
         dropSelf(Blocks.CRACKED_DEEPSLATE_BRICK_SLAB.get());
         dropSelf(Blocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get());
     }
@@ -89,5 +54,20 @@ public class SeidraBlockLootTableProvider extends BlockLootSubProvider
     protected Iterable<Block> getKnownBlocks()
     {
         return Blocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
+    }
+
+    public void dropSelf(@NotNull Block block)
+    {
+        super.dropSelf(block);
+    }
+
+    public void dropOre(@NotNull Block block, @NotNull DeferredItem<SeidraItem> drop)
+    {
+        add(block, this.createOreDrop(block, drop.get()));
+    }
+
+    public void leafDrop(@NotNull Block block, @NotNull DeferredBlock<SeidraSaplingBlock> drop)
+    {
+        add(block, this.createLeavesDrops(block, drop.get(), NORMAL_LEAVES_SAPLING_CHANCES));
     }
 }

@@ -2,7 +2,7 @@ package com.lordskittles.seidra.datagen;
 
 import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.block.SeidraSaplingBlock;
-import api.lordskittles.seidra.interfaces.IItemModelProvider;
+import api.lordskittles.seidra.interfaces.IItemModelDatagenProvider;
 import com.lordskittles.seidra.common.registries.Blocks;
 import com.lordskittles.seidra.common.registries.Items;
 import net.minecraft.data.PackOutput;
@@ -24,7 +24,7 @@ public class SeidraItemModelProvider extends ItemModelProvider
 	{
 		Items.ITEMS.getEntries().stream().forEach(item ->
 		{
-			if (item.get() instanceof IItemModelProvider modelProvider)
+			if (item.get() instanceof IItemModelDatagenProvider modelProvider)
 			{
 				modelProvider.modelBuilder(this, item.getId());
 			}
