@@ -3,8 +3,12 @@ package com.lordskittles.seidra.datagen;
 import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.registries.Blocks;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -104,5 +108,15 @@ public class SeidraBlockTagProvider extends BlockTagsProvider
 						Blocks.THULITE_BLOCK.get(),
 						Blocks.LABRADORITE_BLOCK.get()
 				);
+
+		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "ores/bismuth"))).add(Blocks.BISMUTH_ORE.get());
+		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/bismuth"))).add(Blocks.BISMUTH_BLOCK.get());
+/*		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/raw_bismuth"))).add(Blocks.BISMUTH_BLOCK.get());*/
+		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "ores/silver"))).add(Blocks.SILVER_ORE.get());
+		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/raw_silver"))).add(Blocks.SILVER_BLOCK.get());
+/*		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/raw_silver"))).add(Blocks.SILVER_BLOCK.get());*/
+		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "ores/tungsten"))).add(Blocks.TUNGSTEN_ORE.get());
+		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/tungsten"))).add(Blocks.TUNGSTEN_BLOCK.get());
+/*		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/raw_tungsten"))).add(Blocks.RAW_TUNGSTEN_BLOCK.get());*/
 	}
 }
