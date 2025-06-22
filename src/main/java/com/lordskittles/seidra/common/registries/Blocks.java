@@ -23,54 +23,54 @@ public class Blocks
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Seidra.MODID);
     public static final Map<String, DeferredBlock<?>> ALL = new HashMap<>();
 
-    public static final DeferredBlock<SeidraLogBlock> JUNIPER_LOG = registerBlock("juniper_log", "Juniper Log", SeidraLogBlock.class, false);
+    public static final DeferredBlock<SeidraLogBlock> ASH_LOG = registerBlock("ash_log", "Ash Log", SeidraLogBlock.class, false);
     public static final DeferredBlock<SeidraLogBlock> PINE_LOG = registerBlock("pine_log", "Pine Log", SeidraLogBlock.class, false);
     public static final DeferredBlock<SeidraLogBlock> YEW_LOG = registerBlock("yew_log", "Yew Log", SeidraLogBlock.class, false);
 
-    public static final DeferredBlock<SeidraLogBlock> JUNIPER_WOOD = registerBlock("juniper_wood", "Juniper wood", SeidraLogBlock.class, true);
+    public static final DeferredBlock<SeidraLogBlock> ASH_WOOD = registerBlock("ash_wood", "Ash wood", SeidraLogBlock.class, true);
     public static final DeferredBlock<SeidraLogBlock> PINE_WOOD = registerBlock("pine_wood", "Pine wood", SeidraLogBlock.class, true);
     public static final DeferredBlock<SeidraLogBlock> YEW_WOOD = registerBlock("yew_wood", "Yew wood", SeidraLogBlock.class, true);
 
-    public static final DeferredBlock<SeidraLogBlock> STRIPPED_JUNIPER_LOG = registerBlock("stripped_juniper_log", "Stripped Juniper Log", SeidraLogBlock.class, false);
+    public static final DeferredBlock<SeidraLogBlock> STRIPPED_ASH_LOG = registerBlock("stripped_ash_log", "Stripped Ash Log", SeidraLogBlock.class, false);
     public static final DeferredBlock<SeidraLogBlock> STRIPPED_PINE_LOG = registerBlock("stripped_pine_log", "Stripped Pine Log", SeidraLogBlock.class, false);
     public static final DeferredBlock<SeidraLogBlock> STRIPPED_YEW_LOG = registerBlock("stripped_yew_log", "Stripped Yew Log", SeidraLogBlock.class, false);
 
-    public static final DeferredBlock<SeidraLogBlock> STRIPPED_JUNIPER_WOOD = registerBlock("stripped_juniper_wood", "Stripped Juniper Wood", SeidraLogBlock.class, true);
+    public static final DeferredBlock<SeidraLogBlock> STRIPPED_ASH_WOOD = registerBlock("stripped_ash_wood", "Stripped Ash Wood", SeidraLogBlock.class, true);
     public static final DeferredBlock<SeidraLogBlock> STRIPPED_PINE_WOOD = registerBlock("stripped_pine_wood", "Stripped Pine Wood", SeidraLogBlock.class, true);
     public static final DeferredBlock<SeidraLogBlock> STRIPPED_YEW_WOOD = registerBlock("stripped_yew_wood", "Stripped Yew Wood", SeidraLogBlock.class, true);
 
-    public static final DeferredBlock<SeidraPlankBlock> JUNIPER_PLANKS = registerBlock("juniper_planks", "Juniper Planks", SeidraPlankBlock.class);
+    public static final DeferredBlock<SeidraPlankBlock> ASH_PLANKS = registerBlock("ash_planks", "Ash Planks", SeidraPlankBlock.class);
     public static final DeferredBlock<SeidraPlankBlock> PINE_PLANKS = registerBlock("pine_planks", "Pine Planks", SeidraPlankBlock.class);
     public static final DeferredBlock<SeidraPlankBlock> YEW_PLANKS = registerBlock("yew_planks", "Yew Planks", SeidraPlankBlock.class);
 
-    public static final DeferredBlock<SeidraSaplingBlock> JUNIPER_SAPLING = registerBlock("juniper_sapling", "Juniper Sapling", SeidraSaplingBlock.class, SeidraTreeGrowers.JUNIPER);
+    public static final DeferredBlock<SeidraSaplingBlock> ASH_SAPLING = registerBlock("ash_sapling", "Ash Sapling", SeidraSaplingBlock.class, SeidraTreeGrowers.ASH);
     public static final DeferredBlock<SeidraSaplingBlock> PINE_SAPLING = registerBlock("pine_sapling", "Pine Sapling", SeidraSaplingBlock.class, SeidraTreeGrowers.PINE);
     public static final DeferredBlock<SeidraSaplingBlock> YEW_SAPLING = registerBlock("yew_sapling", "Yew Sapling", SeidraSaplingBlock.class, SeidraTreeGrowers.YEW);
 
-    public static final DeferredBlock<SeidraLeafBlock> JUNIPER_LEAVES = registerBlock("juniper_leaves", "Juniper Leaves", SeidraLeafBlock.class, JUNIPER_SAPLING);
+    public static final DeferredBlock<SeidraLeafBlock> ASH_LEAVES = registerBlock("ash_leaves", "Ash Leaves", SeidraLeafBlock.class, ASH_SAPLING);
     public static final DeferredBlock<SeidraLeafBlock> PINE_LEAVES = registerBlock("pine_leaves", "Pine Leaves", SeidraLeafBlock.class, PINE_SAPLING);
     public static final DeferredBlock<SeidraLeafBlock> YEW_LEAVES = registerBlock("yew_leaves", "Yew Leaves", SeidraLeafBlock.class, YEW_SAPLING);
 
     public static final DeferredBlock<SeidraOreBlock> BISMUTH_ORE = registerBlock("bismuth_ore", "Bismuth Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.RAW_BISMUTH);
-    public static final DeferredBlock<SeidraOreBlock> COBALT_ORE = registerBlock("cobalt_ore", "Cobalt Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.RAW_COBALT);
     public static final DeferredBlock<SeidraOreBlock> TUNGSTEN_ORE = registerBlock("tungsten_ore", "Tungsten Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.RAW_TUNGSTEN);
-    public static final DeferredBlock<SeidraOreBlock> IOLITE_ORE = registerBlock("iolite_ore", "Iolite Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.IOLITE_GEM);
+    public static final DeferredBlock<SeidraOreBlock> SILVER_ORE = registerBlock("silver_ore", "Silver Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.RAW_SILVER);
+    public static final DeferredBlock<SeidraOreBlock> AMBER_ORE = registerBlock("amber_ore", "Amber Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.AMBER_GEM);
+    public static final DeferredBlock<SeidraOreBlock> LABRADORITE_ORE = registerBlock("labradorite_ore", "Labradorite Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.LABRADORITE_GEM);
     public static final DeferredBlock<SeidraOreBlock> THULITE_ORE = registerBlock("thulite_ore", "Thulite Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.THULITE_GEM);
-    public static final DeferredBlock<SeidraOreBlock> ZOISITE_ORE = registerBlock("zoisite_ore", "Zoisite Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.ZOISITE_GEM);
 
     public static final DeferredBlock<SeidraStorageBlock> BISMUTH_BLOCK = registerBlock("bismuth_block", "Bismuth Block", SeidraStorageBlock.class, 5.0F);
-    public static final DeferredBlock<SeidraStorageBlock> COBALT_BLOCK = registerBlock("cobalt_block", "Cobalt Block", SeidraStorageBlock.class, 5.0F);
+    public static final DeferredBlock<SeidraStorageBlock> SILVER_BLOCK = registerBlock("silver_block", "Silver Block", SeidraStorageBlock.class, 5.0F);
     public static final DeferredBlock<SeidraStorageBlock> TUNGSTEN_BLOCK = registerBlock("tungsten_block", "Tungsten Block", SeidraStorageBlock.class, 5.0F);
-    public static final DeferredBlock<SeidraStorageBlock> IOLITE_BLOCK = registerBlock("iolite_block", "Iolite Block", SeidraStorageBlock.class, 5.0F);
+    public static final DeferredBlock<SeidraStorageBlock> AMBER_BLOCK = registerBlock("amber_block", "Amber Block", SeidraStorageBlock.class, 5.0F);
+    public static final DeferredBlock<SeidraStorageBlock> LABRADORITE_BLOCK = registerBlock("labradorite_block", "Labradorite Block", SeidraStorageBlock.class, 5.0F);
     public static final DeferredBlock<SeidraStorageBlock> THULITE_BLOCK = registerBlock("thulite_block", "Thulite Block", SeidraStorageBlock.class, 5.0F);
-    public static final DeferredBlock<SeidraStorageBlock> ZOISITE_BLOCK = registerBlock("zoisite_block", "Zoisite Block", SeidraStorageBlock.class, 5.0F);
 
     public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_BISMUTH_ORE = registerBlock("deepslate_bismuth_ore", "Deepslate Bismuth Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.RAW_BISMUTH);
-    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_COBALT_ORE = registerBlock("deepslate_cobalt_ore", "Deepslate Cobalt Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.RAW_COBALT);
+    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_SILVER_ORE = registerBlock("deepslate_silver_ore", "Deepslate Silver Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.RAW_SILVER);
     public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_TUNGSTEN_ORE = registerBlock("deepslate_tungsten_ore", "Deepslate Tungsten Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.RAW_TUNGSTEN);
-    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_IOLITE_ORE = registerBlock("deepslate_iolite_ore", "Deepslate Iolite Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.IOLITE_GEM);
+    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_AMBER_ORE = registerBlock("deepslate_amber_ore", "Deepslate Amber Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.AMBER_GEM);
+    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_LABRADORITE_ORE = registerBlock("deepslate_labradorite_ore", "Deepslate Labradorite Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.LABRADORITE_GEM);
     public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_THULITE_ORE = registerBlock("deepslate_thulite_ore", "Deepslate Thulite Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.THULITE_GEM);
-    public static final DeferredBlock<SeidraOreBlock> DEEPSLATE_ZOISITE_ORE = registerBlock("deepslate_zoisite_ore", "Deepslate Zoisite Ore", SeidraOreBlock.class, 3.0F, 3.0F, Items.ZOISITE_GEM);
 
     public static final DeferredBlock<SeidraWakestoneBlock> WAKESTONE = registerBlock("wakestone", SeidraWakestoneBlock::new);
     public static final DeferredBlock<SlabBlock> CRACKED_DEEPSLATE_BRICK_SLAB = registerBlock("cracked_deepslate_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.CRACKED_DEEPSLATE_BRICKS)));

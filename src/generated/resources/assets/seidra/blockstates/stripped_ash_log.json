@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "seidra:block/stripped_ash_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "seidra:block/stripped_ash_log"
+    },
+    "axis=z": {
+      "model": "seidra:block/stripped_ash_log",
+      "x": 90
+    }
+  }
+}

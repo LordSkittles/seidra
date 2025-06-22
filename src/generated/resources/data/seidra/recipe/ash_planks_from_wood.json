@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "seidra:ash_wood"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "seidra:ash_planks"
+  }
+}

@@ -24,20 +24,20 @@ public class SeidraRecipeProvider extends RecipeProvider implements IConditionBu
 	@Override
 	protected void buildRecipes(@NotNull RecipeOutput recipeOutput)
 	{
-		addPlankCraftingFor(Blocks.JUNIPER_PLANKS, Blocks.JUNIPER_LOG, Blocks.JUNIPER_WOOD, recipeOutput);
+		addPlankCraftingFor(Blocks.ASH_PLANKS, Blocks.ASH_LOG, Blocks.ASH_WOOD, recipeOutput);
 		addPlankCraftingFor(Blocks.PINE_PLANKS, Blocks.PINE_LOG, Blocks.PINE_WOOD, recipeOutput);
 		addPlankCraftingFor(Blocks.YEW_PLANKS, Blocks.YEW_LOG, Blocks.YEW_WOOD, recipeOutput);
 
 		addIngotSmeltingFor(Items.BISMUTH_INGOT, Items.RAW_BISMUTH, Blocks.BISMUTH_ORE, Blocks.DEEPSLATE_BISMUTH_ORE, .7f, 200, recipeOutput);
-		addIngotSmeltingFor(Items.COBALT_INGOT, Items.RAW_COBALT, Blocks.COBALT_ORE, Blocks.DEEPSLATE_COBALT_ORE, .7f, 200, recipeOutput);
+		addIngotSmeltingFor(Items.SILVER_INGOT, Items.RAW_SILVER, Blocks.SILVER_ORE, Blocks.DEEPSLATE_SILVER_ORE, .7f, 200, recipeOutput);
 		addIngotSmeltingFor(Items.TUNGSTEN_INGOT, Items.RAW_TUNGSTEN, Blocks.TUNGSTEN_ORE, Blocks.DEEPSLATE_TUNGSTEN_ORE, 1f, 200, recipeOutput);
 
 		storageBlockRecipe(Blocks.BISMUTH_BLOCK, Items.BISMUTH_INGOT, recipeOutput);
-		storageBlockRecipe(Blocks.COBALT_BLOCK, Items.COBALT_INGOT, recipeOutput);
+		storageBlockRecipe(Blocks.SILVER_BLOCK, Items.SILVER_INGOT, recipeOutput);
 		storageBlockRecipe(Blocks.TUNGSTEN_BLOCK, Items.TUNGSTEN_INGOT, recipeOutput);
-		storageBlockRecipe(Blocks.IOLITE_BLOCK, Items.IOLITE_GEM, recipeOutput);
+		storageBlockRecipe(Blocks.AMBER_BLOCK, Items.AMBER_GEM, recipeOutput);
 		storageBlockRecipe(Blocks.THULITE_BLOCK, Items.THULITE_GEM, recipeOutput);
-		storageBlockRecipe(Blocks.ZOISITE_BLOCK, Items.ZOISITE_GEM, recipeOutput);
+		storageBlockRecipe(Blocks.LABRADORITE_BLOCK, Items.LABRADORITE_GEM, recipeOutput);
 	}
 
 	private void storageBlockRecipe(DeferredBlock<?> block, DeferredItem<?> stored, RecipeOutput recipeOutput)

@@ -17,17 +17,17 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 public class SeidraBiomeModifiers
 {
-	public static final ResourceKey<BiomeModifier> ADD_JUNIPER_TREE_KEY = registerKey("add_juniper_tree");
+	public static final ResourceKey<BiomeModifier> ADD_ASH_TREE_KEY = registerKey("add_ash_tree");
 	public static final ResourceKey<BiomeModifier> ADD_YEW_TREE_KEY = registerKey("add_yew_tree");
 	public static final ResourceKey<BiomeModifier> ADD_PINE_TREE_KEY = registerKey("add_pine_tree");
 
 	public static final ResourceKey<BiomeModifier> ADD_BISMUTH_ORE_KEY = registerKey("add_bismuth_ore");
-	public static final ResourceKey<BiomeModifier> ADD_COBALT_ORE_KEY = registerKey("add_cobalt_ore");
+	public static final ResourceKey<BiomeModifier> ADD_SILVER_ORE_KEY = registerKey("add_silver_ore");
 	public static final ResourceKey<BiomeModifier> ADD_TUNGSTEN_ORE_KEY = registerKey("add_tungsten_ore");
 
-	public static final ResourceKey<BiomeModifier> ADD_IOLITE_ORE_KEY = registerKey("add_iolite_ore");
+	public static final ResourceKey<BiomeModifier> ADD_AMBER_ORE_KEY = registerKey("add_amber_ore");
+	public static final ResourceKey<BiomeModifier> ADD_LABRADORITE_ORE_KEY = registerKey("add_labradorite_ore");
 	public static final ResourceKey<BiomeModifier> ADD_THULITE_ORE_KEY = registerKey("add_thulite_ore");
-	public static final ResourceKey<BiomeModifier> ADD_ZOISITE_ORE_KEY = registerKey("add_zoisite_ore");
 
 	public static void bootstrap(BootstrapContext<BiomeModifier> context)
 	{
@@ -45,9 +45,9 @@ public class SeidraBiomeModifiers
 
 	private static void registerTrees(BootstrapContext<BiomeModifier> context, HolderGetter<PlacedFeature> placedFeatures, HolderGetter<Biome> biomes)
 	{
-		context.register(ADD_JUNIPER_TREE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(
+		context.register(ADD_ASH_TREE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(
 						biomes.getOrThrow(net.minecraft.tags.BiomeTags.IS_SAVANNA),
-						HolderSet.direct(placedFeatures.getOrThrow(SeidraPlacedFeatures.JUNIPER_TREE_KEY)),
+						HolderSet.direct(placedFeatures.getOrThrow(SeidraPlacedFeatures.ASH_TREE_KEY)),
 						GenerationStep.Decoration.VEGETAL_DECORATION
 				)
 		);
@@ -76,9 +76,9 @@ public class SeidraBiomeModifiers
 				)
 		);
 
-		context.register(ADD_COBALT_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(
+		context.register(ADD_SILVER_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(
 						biomes.getOrThrow(BiomeTags.IS_COLD),
-						HolderSet.direct(placedFeatures.getOrThrow(SeidraPlacedFeatures.COBALT_ORE_KEY)),
+						HolderSet.direct(placedFeatures.getOrThrow(SeidraPlacedFeatures.SILVER_ORE_KEY)),
 						GenerationStep.Decoration.UNDERGROUND_ORES
 				)
 		);
@@ -90,9 +90,9 @@ public class SeidraBiomeModifiers
 				)
 		);
 
-		context.register(ADD_IOLITE_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(
+		context.register(ADD_AMBER_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(
 						biomes.getOrThrow(BiomeTags.IS_EXPOSED_CLIFFSIDE),
-						HolderSet.direct(placedFeatures.getOrThrow(SeidraPlacedFeatures.IOLITE_ORE_KEY)),
+						HolderSet.direct(placedFeatures.getOrThrow(SeidraPlacedFeatures.AMBER_ORE_KEY)),
 						GenerationStep.Decoration.UNDERGROUND_ORES
 				)
 		);
@@ -104,9 +104,9 @@ public class SeidraBiomeModifiers
 				)
 		);
 
-		context.register(ADD_ZOISITE_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(
+		context.register(ADD_LABRADORITE_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(
 						biomes.getOrThrow(BiomeTags.IS_MYSTIC_CAVE),
-						HolderSet.direct(placedFeatures.getOrThrow(SeidraPlacedFeatures.ZOISITE_ORE_KEY)),
+						HolderSet.direct(placedFeatures.getOrThrow(SeidraPlacedFeatures.LABRADORITE_ORE_KEY)),
 						GenerationStep.Decoration.UNDERGROUND_ORES
 				)
 		);

@@ -16,16 +16,16 @@ public class Items
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Seidra.MODID);
 
     public static final DeferredItem<SeidraRawOre> RAW_BISMUTH = registerItem("raw_bismuth", "Raw Bismuth", SeidraRawOre.class);
-    public static final DeferredItem<SeidraRawOre> RAW_COBALT = registerItem("raw_cobalt", "Raw Cobalt", SeidraRawOre.class);
+    public static final DeferredItem<SeidraRawOre> RAW_SILVER = registerItem("raw_silver", "Raw Silver", SeidraRawOre.class);
     public static final DeferredItem<SeidraRawOre> RAW_TUNGSTEN = registerItem("raw_tungsten", "Raw Tungsten", SeidraRawOre.class);
 
-    public static final DeferredItem<SeidraGem> IOLITE_GEM = registerItem("iolite_gem", "Iolite", SeidraGem.class);
+    public static final DeferredItem<SeidraGem> AMBER_GEM = registerItem("amber_gem", "Amber", SeidraGem.class);
+    public static final DeferredItem<SeidraGem> LABRADORITE_GEM = registerItem("labradorite_gem", "Labradorite", SeidraGem.class);
     public static final DeferredItem<SeidraGem> THULITE_GEM = registerItem("thulite_gem", "Thulite", SeidraGem.class);
-    public static final DeferredItem<SeidraGem> ZOISITE_GEM = registerItem("zoisite_gem", "Zoisite", SeidraGem.class);
 
     public static final DeferredItem<SeidraIngot> BISMUTH_INGOT = registerItem("bismuth_ingot", "Bismuth Ingot", SeidraIngot.class);
-    public static final DeferredItem<SeidraIngot> COBALT_INGOT = registerItem("cobalt_ingot", "Cobalt Ingot", SeidraIngot.class);
-    public static final DeferredItem<SeidraIngot> TUNGSTEN_INGOT = registerItem("tungsten_ingot", "Tungsten Ingot", SeidraIngot.class);
+    public static final DeferredItem<SeidraIngot> SILVER_INGOT = registerItem("silver_ingot", "Cobalt Ingot", SeidraIngot.class);
+    public static final DeferredItem<SeidraIngot> TUNGSTEN_INGOT = registerItem("tungsten_ingot", "Silver Ingot", SeidraIngot.class);
 
     private static <ITEM extends Item> DeferredItem<ITEM> registerItem(String id, String prettyName, Class<ITEM> clazz, Object... params)
     {

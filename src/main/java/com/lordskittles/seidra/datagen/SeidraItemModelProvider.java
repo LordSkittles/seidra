@@ -30,7 +30,7 @@ public class SeidraItemModelProvider extends ItemModelProvider
 			}
 		});
 
-		saplingItem(Blocks.JUNIPER_SAPLING);
+		saplingItem(Blocks.ASH_SAPLING);
 		saplingItem(Blocks.PINE_SAPLING);
 		saplingItem(Blocks.YEW_SAPLING);
 	}

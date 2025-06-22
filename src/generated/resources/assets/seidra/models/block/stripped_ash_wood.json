@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "seidra:block/wood/stripped_ash_log",
+    "side": "seidra:block/wood/stripped_ash_log"
+  }
+}

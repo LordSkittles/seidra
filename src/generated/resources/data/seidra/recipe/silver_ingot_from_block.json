@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "seidra:silver_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "seidra:silver_ingot"
+  }
+}

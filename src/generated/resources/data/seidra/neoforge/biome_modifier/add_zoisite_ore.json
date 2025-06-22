@@ -1,6 +1,0 @@
-{
-  "type": "neoforge:add_features",
-  "biomes": "#seidra:is_mystic_cave",
-  "features": "seidra:zoisite_ore",
-  "step": "underground_ores"
-}

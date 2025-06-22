@@ -1,18 +1,18 @@
 {
   "values": [
-    "seidra:juniper_log",
+    "seidra:ash_log",
     "seidra:pine_log",
     "seidra:yew_log",
-    "seidra:juniper_wood",
+    "seidra:ash_wood",
     "seidra:pine_wood",
     "seidra:yew_wood",
-    "seidra:stripped_juniper_log",
+    "seidra:stripped_ash_log",
     "seidra:stripped_pine_log",
     "seidra:stripped_yew_log",
-    "seidra:stripped_juniper_wood",
+    "seidra:stripped_ash_wood",
     "seidra:stripped_pine_wood",
     "seidra:stripped_yew_wood",
-    "seidra:juniper_planks",
+    "seidra:ash_planks",
     "seidra:pine_planks",
     "seidra:yew_planks"
   ]

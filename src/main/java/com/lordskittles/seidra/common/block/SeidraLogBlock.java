@@ -9,14 +9,12 @@ import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.common.ItemAbility;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -26,10 +24,10 @@ import java.util.function.Supplier;
 public class SeidraLogBlock extends SeidraColumnBlock
 {
     public static final Map<DeferredBlock<SeidraLogBlock>, DeferredBlock<SeidraLogBlock>> STRIPPING_MAP = Map.of(
-            Blocks.JUNIPER_LOG, Blocks.STRIPPED_JUNIPER_LOG,
+            Blocks.ASH_LOG, Blocks.STRIPPED_ASH_LOG,
             Blocks.PINE_LOG, Blocks.STRIPPED_PINE_LOG,
             Blocks.YEW_LOG, Blocks.STRIPPED_YEW_LOG,
-            Blocks.JUNIPER_WOOD, Blocks.STRIPPED_JUNIPER_WOOD,
+            Blocks.ASH_WOOD, Blocks.STRIPPED_ASH_WOOD,
             Blocks.PINE_WOOD, Blocks.STRIPPED_PINE_WOOD,
             Blocks.YEW_WOOD, Blocks.STRIPPED_YEW_WOOD
     );
