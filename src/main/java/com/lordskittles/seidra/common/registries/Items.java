@@ -24,7 +24,7 @@ public class Items
     public static final DeferredItem<SeidraGem> THULITE_GEM = registerItem("thulite_gem", "Thulite", SeidraGem.class);
 
     public static final DeferredItem<SeidraIngot> BISMUTH_INGOT = registerItem("bismuth_ingot", "Bismuth Ingot", SeidraIngot.class);
-    public static final DeferredItem<SeidraIngot> SILVER_INGOT = registerItem("silver_ingot", "Cobalt Ingot", SeidraIngot.class);
+    public static final DeferredItem<SeidraIngot> SILVER_INGOT = registerItem("silver_ingot", "Silver Ingot", SeidraIngot.class);
     public static final DeferredItem<SeidraIngot> TUNGSTEN_INGOT = registerItem("tungsten_ingot", "Silver Ingot", SeidraIngot.class);
 
     private static <ITEM extends Item> DeferredItem<ITEM> registerItem(String id, String prettyName, Class<ITEM> clazz, Object... params)
