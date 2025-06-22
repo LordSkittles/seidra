@@ -111,12 +111,12 @@ public class SeidraBlockTagProvider extends BlockTagsProvider
 
 		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "ores/bismuth"))).add(Blocks.BISMUTH_ORE.get());
 		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/bismuth"))).add(Blocks.BISMUTH_BLOCK.get());
-/*		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/raw_bismuth"))).add(Blocks.BISMUTH_BLOCK.get());*/
+		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/raw_bismuth"))).add(Blocks.RAW_BISMUTH_BLOCK.get());
 		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "ores/silver"))).add(Blocks.SILVER_ORE.get());
-		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/raw_silver"))).add(Blocks.SILVER_BLOCK.get());
-/*		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/raw_silver"))).add(Blocks.SILVER_BLOCK.get());*/
+		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/silver"))).add(Blocks.SILVER_BLOCK.get());
+		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/raw_silver"))).add(Blocks.RAW_SILVER_BLOCK.get());
 		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "ores/tungsten"))).add(Blocks.TUNGSTEN_ORE.get());
 		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/tungsten"))).add(Blocks.TUNGSTEN_BLOCK.get());
-/*		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/raw_tungsten"))).add(Blocks.RAW_TUNGSTEN_BLOCK.get());*/
+		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/raw_tungsten"))).add(Blocks.RAW_TUNGSTEN_BLOCK.get());
 	}
 }

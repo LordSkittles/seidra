@@ -35,6 +35,9 @@ public class SeidraRecipeProvider extends RecipeProvider implements IConditionBu
 		storageBlockRecipe(Blocks.BISMUTH_BLOCK, Items.BISMUTH_INGOT, recipeOutput);
 		storageBlockRecipe(Blocks.SILVER_BLOCK, Items.SILVER_INGOT, recipeOutput);
 		storageBlockRecipe(Blocks.TUNGSTEN_BLOCK, Items.TUNGSTEN_INGOT, recipeOutput);
+		storageBlockRecipe(Blocks.RAW_BISMUTH_BLOCK, Items.RAW_BISMUTH, recipeOutput);
+		storageBlockRecipe(Blocks.RAW_SILVER_BLOCK, Items.RAW_SILVER, recipeOutput);
+		storageBlockRecipe(Blocks.RAW_TUNGSTEN_BLOCK, Items.RAW_TUNGSTEN, recipeOutput);
 		storageBlockRecipe(Blocks.AMBER_BLOCK, Items.AMBER_GEM, recipeOutput);
 		storageBlockRecipe(Blocks.THULITE_BLOCK, Items.THULITE_GEM, recipeOutput);
 		storageBlockRecipe(Blocks.LABRADORITE_BLOCK, Items.LABRADORITE_GEM, recipeOutput);

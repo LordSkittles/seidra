@@ -24,8 +24,12 @@ public class SeidraItemTagProvider extends ItemTagsProvider
     @Override
     protected void addTags(HolderLookup.Provider provider)
     {
+        tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/bismuth"))).add(Items.BISMUTH_INGOT.get());
+        tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "raw_materials/bismuth"))).add(Items.RAW_BISMUTH.get());
         tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/silver"))).add(Items.SILVER_INGOT.get());
         tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "raw_materials/silver"))).add(Items.RAW_SILVER.get());
+        tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "ingots/tungsten"))).add(Items.TUNGSTEN_INGOT.get());
+        tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "raw_materials/tungsten"))).add(Items.RAW_TUNGSTEN.get());
 
         tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "gems/amber"))).add(Items.AMBER_GEM.get());
         tag(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "gems/labradorite"))).add(Items.LABRADORITE_GEM.get());

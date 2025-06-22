@@ -61,6 +61,9 @@ public class Blocks
     public static final DeferredBlock<SeidraStorageBlock> BISMUTH_BLOCK = registerBlock("bismuth_block", "Bismuth Block", SeidraStorageBlock.class, 5.0F);
     public static final DeferredBlock<SeidraStorageBlock> SILVER_BLOCK = registerBlock("silver_block", "Silver Block", SeidraStorageBlock.class, 5.0F);
     public static final DeferredBlock<SeidraStorageBlock> TUNGSTEN_BLOCK = registerBlock("tungsten_block", "Tungsten Block", SeidraStorageBlock.class, 5.0F);
+    public static final DeferredBlock<SeidraStorageBlock> RAW_BISMUTH_BLOCK = registerBlock("raw_bismuth_block", "Raw Bismuth Block", SeidraStorageBlock.class, 5.0F);
+    public static final DeferredBlock<SeidraStorageBlock> RAW_SILVER_BLOCK = registerBlock("raw_silver_block", "Raw Silver Block", SeidraStorageBlock.class, 5.0F);
+    public static final DeferredBlock<SeidraStorageBlock> RAW_TUNGSTEN_BLOCK = registerBlock("raw_tungsten_block", "Raw Tungsten Block", SeidraStorageBlock.class, 5.0F);
     public static final DeferredBlock<SeidraStorageBlock> AMBER_BLOCK = registerBlock("amber_block", "Amber Block", SeidraStorageBlock.class, 5.0F);
     public static final DeferredBlock<SeidraStorageBlock> LABRADORITE_BLOCK = registerBlock("labradorite_block", "Labradorite Block", SeidraStorageBlock.class, 5.0F);
     public static final DeferredBlock<SeidraStorageBlock> THULITE_BLOCK = registerBlock("thulite_block", "Thulite Block", SeidraStorageBlock.class, 5.0F);

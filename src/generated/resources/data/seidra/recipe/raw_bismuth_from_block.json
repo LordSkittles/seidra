@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "seidra:raw_bismuth_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "seidra:raw_bismuth"
+  }
+}
