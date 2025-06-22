@@ -11,6 +11,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.data.internal.NeoForgeBlockTagsProvider;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
@@ -28,6 +30,8 @@ public class SeidraBiomeModifiers
 	public static final ResourceKey<BiomeModifier> ADD_AMBER_ORE_KEY = registerKey("add_amber_ore");
 	public static final ResourceKey<BiomeModifier> ADD_LABRADORITE_ORE_KEY = registerKey("add_labradorite_ore");
 	public static final ResourceKey<BiomeModifier> ADD_THULITE_ORE_KEY = registerKey("add_thulite_ore");
+
+	public static final ResourceKey<BiomeModifier> ADD_FELDSPAR_KEY = registerKey("add_feldspar_ore");
 
 	public static void bootstrap(BootstrapContext<BiomeModifier> context)
 	{
@@ -107,6 +111,13 @@ public class SeidraBiomeModifiers
 		context.register(ADD_LABRADORITE_ORE_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(
 						biomes.getOrThrow(BiomeTags.IS_MYSTIC_CAVE),
 						HolderSet.direct(placedFeatures.getOrThrow(SeidraPlacedFeatures.LABRADORITE_ORE_KEY)),
+						GenerationStep.Decoration.UNDERGROUND_ORES
+				)
+		);
+
+		context.register(ADD_FELDSPAR_KEY, new BiomeModifiers.AddFeaturesBiomeModifier(
+						biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
+						HolderSet.direct(placedFeatures.getOrThrow(SeidraPlacedFeatures.FELDSPAR_KEY)),
 						GenerationStep.Decoration.UNDERGROUND_ORES
 				)
 		);

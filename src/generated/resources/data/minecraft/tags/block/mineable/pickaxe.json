@@ -20,6 +20,13 @@
     "seidra:labradorite_block",
     "seidra:wakestone",
     "seidra:cracked_deepslate_brick_slab",
-    "seidra:cracked_deepslate_brick_stairs"
+    "seidra:cracked_deepslate_brick_stairs",
+    "seidra:feldspar",
+    "seidra:feldspar_brick",
+    "seidra:chiseled_feldspar_brick",
+    "seidra:cracked_feldspar",
+    "seidra:cracked_feldspar_brick",
+    "seidra:cracked_feldspar_polished",
+    "seidra:feldspar_pillar"
   ]
 }

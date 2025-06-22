@@ -39,6 +39,8 @@ public class SeidraConfiguredFeatures
 	public static final ResourceKey<ConfiguredFeature<?, ?>> THULITE_ORE_KEY = registerKey("thulite_ore");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> LABRADORITE_ORE_KEY = registerKey("labradorite_ore");
 
+	public static final ResourceKey<ConfiguredFeature<?, ?>> FELDSPAR_KEY = registerKey("feldspar");
+
 	public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context)
 	{
 		bootstrapOres(context);
@@ -65,6 +67,8 @@ public class SeidraConfiguredFeatures
 		registerOre(context, AMBER_ORE_KEY, new Tuple<>(Blocks.AMBER_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_AMBER_ORE.get().defaultBlockState()), 4);
 		registerOre(context, THULITE_ORE_KEY, new Tuple<>(Blocks.THULITE_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_THULITE_ORE.get().defaultBlockState()), 6);
 		registerOre(context, LABRADORITE_ORE_KEY, new Tuple<>(Blocks.LABRADORITE_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_LABRADORITE_ORE.get().defaultBlockState()), 5);
+
+		register(context, FELDSPAR_KEY, Feature.ORE, new OreConfiguration(List.of(OreConfiguration.target(new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), Blocks.FELDSPAR.get().defaultBlockState())), 64));
 	}
 
 	private static void registerOre(BootstrapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, Tuple<BlockState, BlockState> ores,

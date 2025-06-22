@@ -28,6 +28,8 @@ public class SeidraPlacedFeatures
 	public static final ResourceKey<PlacedFeature> LABRADORITE_ORE_KEY = registerKey("labradorite_ore");
 	public static final ResourceKey<PlacedFeature> THULITE_ORE_KEY = registerKey("thulite_ore");
 
+	public static final ResourceKey<PlacedFeature> FELDSPAR_KEY = registerKey("feldspar");
+
 	public static void bootstrap(BootstrapContext<PlacedFeature> context)
 	{
 		var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -49,6 +51,8 @@ public class SeidraPlacedFeatures
 		registerOre(context, AMBER_ORE_KEY, SeidraConfiguredFeatures.AMBER_ORE_KEY, commonOrePlacement(2, 48, 80));
 		registerOre(context, THULITE_ORE_KEY, SeidraConfiguredFeatures.THULITE_ORE_KEY, commonOrePlacement(3, 0, 48));
 		registerOre(context, LABRADORITE_ORE_KEY, SeidraConfiguredFeatures.LABRADORITE_ORE_KEY, commonOrePlacement(2, -24, 24));
+
+		registerOre(context, FELDSPAR_KEY, SeidraConfiguredFeatures.FELDSPAR_KEY, commonOrePlacement(1, 0, 128));
 	}
 
 	public static ResourceKey<PlacedFeature> registerKey(String name)

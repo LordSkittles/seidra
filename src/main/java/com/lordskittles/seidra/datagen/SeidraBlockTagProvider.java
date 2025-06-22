@@ -64,7 +64,14 @@ public class SeidraBlockTagProvider extends BlockTagsProvider
 						Blocks.LABRADORITE_BLOCK.get(),
 						Blocks.WAKESTONE.get(),
 						Blocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(),
-						Blocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get()
+						Blocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(),
+						Blocks.FELDSPAR.get(),
+						Blocks.FELDSPAR_BRICK.get(),
+						Blocks.CHISELED_FELDSPAR_BRICK.get(),
+						Blocks.CRACKED_FELDSPAR.get(),
+						Blocks.CRACKED_FELDSPAR_BRICK.get(),
+						Blocks.CRACKED_POLISHED_FELDSPAR.get(),
+						Blocks.FELDSPAR_PILLAR.get()
 				);
 
 		tag(BlockTags.MINEABLE_WITH_HOE)

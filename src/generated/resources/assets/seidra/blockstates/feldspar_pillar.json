@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "seidra:block/feldspar_pillar",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "seidra:block/feldspar_pillar"
+    },
+    "axis=z": {
+      "model": "seidra:block/feldspar_pillar",
+      "x": 90
+    }
+  }
+}

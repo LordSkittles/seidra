@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_feldspar_brick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "seidra:feldspar_brick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "seidra:chiseled_feldspar_brick"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_feldspar_brick"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "seidra:chiseled_feldspar_brick"
+    ]
+  }
+}
