@@ -50,9 +50,34 @@ public class CommonProxy
 	@SubscribeEvent
 	public static void buildSchoolContents(BuildSchoolSpellContentsEvent event)
 	{
-		if (event.getSchool() == Schools.EXAMPLE_SCHOOL.get())
+		if(event.getSchool() == Schools.DEEPCALLING.getSchool())
 		{
-			event.accept(Spells.EXAMPLE_SPELL);
+
+		}
+
+		if(event.getSchool() == Schools.EMBERCRAFT.getSchool())
+		{
+			event.accept(Spells.FIREBOLT);
+		}
+
+		if(event.getSchool() == Schools.FROSTWEAVING.getSchool())
+		{
+
+		}
+
+		if(event.getSchool() == Schools.SKYREND.getSchool())
+		{
+			event.accept(Spells.HEAL);
+		}
+
+		if(event.getSchool() == Schools.SPIRITGUARD.getSchool())
+		{
+
+		}
+
+		if(event.getSchool() == Schools.FELLWAKE.getSchool())
+		{
+
 		}
 	}
 
