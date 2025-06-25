@@ -4,7 +4,7 @@
   "cookingtime": 200,
   "experience": 1.0,
   "ingredient": {
-    "item": "seidra:raw_tungsten"
+    "tag": "c:raw_materials/tungsten"
   },
   "result": {
     "count": 1,

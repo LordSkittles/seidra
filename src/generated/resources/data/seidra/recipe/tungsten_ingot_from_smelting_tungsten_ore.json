@@ -4,7 +4,7 @@
   "cookingtime": 200,
   "experience": 1.0,
   "ingredient": {
-    "item": "seidra:tungsten_ore"
+    "tag": "c:ores/tungsten"
   },
   "result": {
     "count": 1,

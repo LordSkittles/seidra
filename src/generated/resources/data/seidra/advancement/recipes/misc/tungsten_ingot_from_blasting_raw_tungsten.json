@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "seidra:raw_tungsten"
+            "items": "#c:raw_materials/tungsten"
           }
         ]
       },

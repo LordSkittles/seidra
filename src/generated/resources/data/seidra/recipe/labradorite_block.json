@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "I": {
-      "item": "seidra:labradorite_gem"
+      "tag": "c:gems/labradorite"
     }
   },
   "pattern": [

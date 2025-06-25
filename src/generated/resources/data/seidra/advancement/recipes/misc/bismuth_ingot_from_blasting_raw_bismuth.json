@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "seidra:raw_bismuth"
+            "items": "#c:raw_materials/bismuth"
           }
         ]
       },

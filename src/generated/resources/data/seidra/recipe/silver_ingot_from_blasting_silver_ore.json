@@ -4,7 +4,7 @@
   "cookingtime": 100,
   "experience": 0.7,
   "ingredient": {
-    "item": "seidra:silver_ore"
+    "tag": "c:ores/silver"
   },
   "result": {
     "count": 1,

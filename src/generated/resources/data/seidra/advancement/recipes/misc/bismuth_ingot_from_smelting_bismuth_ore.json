@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "seidra:bismuth_ore"
+            "items": "#c:ores/bismuth"
           }
         ]
       },

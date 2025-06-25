@@ -3,16 +3,19 @@ package com.lordskittles.seidra.datagen;
 import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.registries.Blocks;
 import com.lordskittles.seidra.common.registries.Items;
+import com.lordskittles.seidra.common.tag.ItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.SmeltingRecipe;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import org.jetbrains.annotations.NotNull;
+import oshi.util.tuples.Pair;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -31,19 +34,22 @@ public class SeidraRecipeProvider extends RecipeProvider implements IConditionBu
         addPlankCraftingFor(Blocks.PINE_PLANKS, Blocks.PINE_LOG, Blocks.PINE_WOOD, recipeOutput);
         addPlankCraftingFor(Blocks.YEW_PLANKS, Blocks.YEW_LOG, Blocks.YEW_WOOD, recipeOutput);
 
-        addIngotSmeltingFor(Items.BISMUTH_INGOT, Items.RAW_BISMUTH, Blocks.BISMUTH_ORE, Blocks.DEEPSLATE_BISMUTH_ORE, .7f, 200, recipeOutput);
-        addIngotSmeltingFor(Items.SILVER_INGOT, Items.RAW_SILVER, Blocks.SILVER_ORE, Blocks.DEEPSLATE_SILVER_ORE, .7f, 200, recipeOutput);
-        addIngotSmeltingFor(Items.TUNGSTEN_INGOT, Items.RAW_TUNGSTEN, Blocks.TUNGSTEN_ORE, Blocks.DEEPSLATE_TUNGSTEN_ORE, 1f, 200, recipeOutput);
+        addIngotSmeltingFor(Items.BISMUTH_INGOT, new Pair<>(Items.RAW_BISMUTH.getId(), ItemTags.RAW_BISMUTH),
+                new Pair<>(Blocks.BISMUTH_ORE.getId(), ItemTags.BISMUTH_ORE), .7f, 200, recipeOutput);
+        addIngotSmeltingFor(Items.SILVER_INGOT, new Pair<>(Items.RAW_SILVER.getId(), ItemTags.RAW_SILVER),
+                new Pair<>(Blocks.SILVER_ORE.getId(), ItemTags.SILVER_ORE), .7f, 200, recipeOutput);
+        addIngotSmeltingFor(Items.TUNGSTEN_INGOT, new Pair<>(Items.RAW_TUNGSTEN.getId(), ItemTags.RAW_TUNGSTEN),
+                new Pair<>(Blocks.TUNGSTEN_ORE.getId(), ItemTags.TUNGSTEN_ORE), 1f, 200, recipeOutput);
 
-        storageBlockRecipe(Blocks.BISMUTH_BLOCK, Items.BISMUTH_INGOT, recipeOutput);
-        storageBlockRecipe(Blocks.SILVER_BLOCK, Items.SILVER_INGOT, recipeOutput);
-        storageBlockRecipe(Blocks.TUNGSTEN_BLOCK, Items.TUNGSTEN_INGOT, recipeOutput);
-        storageBlockRecipe(Blocks.RAW_BISMUTH_BLOCK, Items.RAW_BISMUTH, recipeOutput);
-        storageBlockRecipe(Blocks.RAW_SILVER_BLOCK, Items.RAW_SILVER, recipeOutput);
-        storageBlockRecipe(Blocks.RAW_TUNGSTEN_BLOCK, Items.RAW_TUNGSTEN, recipeOutput);
-        storageBlockRecipe(Blocks.AMBER_BLOCK, Items.AMBER_GEM, recipeOutput);
-        storageBlockRecipe(Blocks.THULITE_BLOCK, Items.THULITE_GEM, recipeOutput);
-        storageBlockRecipe(Blocks.LABRADORITE_BLOCK, Items.LABRADORITE_GEM, recipeOutput);
+        storageBlockRecipe(Blocks.BISMUTH_BLOCK, Items.BISMUTH_INGOT, recipeOutput, ItemTags.BISMUTH_INGOT);
+        storageBlockRecipe(Blocks.SILVER_BLOCK, Items.SILVER_INGOT, recipeOutput, ItemTags.SILVER_INGOT);
+        storageBlockRecipe(Blocks.TUNGSTEN_BLOCK, Items.TUNGSTEN_INGOT, recipeOutput, ItemTags.TUNGSTEN_INGOT);
+        storageBlockRecipe(Blocks.RAW_BISMUTH_BLOCK, Items.RAW_BISMUTH, recipeOutput, ItemTags.RAW_BISMUTH);
+        storageBlockRecipe(Blocks.RAW_SILVER_BLOCK, Items.RAW_SILVER, recipeOutput, ItemTags.RAW_SILVER);
+        storageBlockRecipe(Blocks.RAW_TUNGSTEN_BLOCK, Items.RAW_TUNGSTEN, recipeOutput, ItemTags.RAW_TUNGSTEN);
+        storageBlockRecipe(Blocks.AMBER_BLOCK, Items.AMBER_GEM, recipeOutput, ItemTags.AMBER);
+        storageBlockRecipe(Blocks.LABRADORITE_BLOCK, Items.LABRADORITE_GEM, recipeOutput, ItemTags.LABRADORITE);
+        storageBlockRecipe(Blocks.THULITE_BLOCK, Items.THULITE_GEM, recipeOutput, ItemTags.THULITE);
 
         simpleRecipe2x2(RecipeCategory.DECORATIONS, Blocks.POLISHED_FELDSPAR, Blocks.FELDSPAR, recipeOutput);
         simpleRecipe2x2(RecipeCategory.DECORATIONS, Blocks.FELDSPAR_BRICK, Blocks.POLISHED_FELDSPAR, recipeOutput);
@@ -77,6 +83,16 @@ public class SeidraRecipeProvider extends RecipeProvider implements IConditionBu
                 .save(recipeOutput);
     }
 
+    private void tagRecipe2x2(RecipeCategory category, DeferredBlock<?> output, TagKey<Item> input, ResourceLocation id, RecipeOutput recipeOutput)
+    {
+        ShapedRecipeBuilder.shaped(category, output.get(), 4)
+                .define('I', input)
+                .pattern("II")
+                .pattern("II")
+                .unlockedBy("has_" + id.getPath(), has(input))
+                .save(recipeOutput);
+    }
+
     private void feldsparGroupRecipe(RecipeCategory category, DeferredBlock<?> input, List<DeferredBlock<?>> outputs, RecipeOutput recipeOutput)
     {
         for (DeferredBlock<?> deferredBlock : outputs)
@@ -97,13 +113,31 @@ public class SeidraRecipeProvider extends RecipeProvider implements IConditionBu
 
     private void storageBlockRecipe(DeferredBlock<?> block, DeferredItem<?> stored, RecipeOutput recipeOutput)
     {
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, block.get())
-                .define('I', stored.get())
-                .pattern("III")
-                .pattern("III")
-                .pattern("III")
-                .unlockedBy("has_" + stored.getId().getPath(), has(stored.get()))
-                .save(recipeOutput);
+        storageBlockRecipe(block, stored, recipeOutput, null);
+    }
+
+    private void storageBlockRecipe(DeferredBlock<?> block, DeferredItem<?> stored, RecipeOutput recipeOutput, TagKey<Item> storedKey)
+    {
+        if(storedKey == null)
+        {
+            ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, block.get())
+                    .define('I', stored)
+                    .pattern("III")
+                    .pattern("III")
+                    .pattern("III")
+                    .unlockedBy("has_" + stored.getId().getPath(), has(stored.get()))
+                    .save(recipeOutput);
+        }
+        else
+        {
+            ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, block.get())
+                    .define('I', storedKey)
+                    .pattern("III")
+                    .pattern("III")
+                    .pattern("III")
+                    .unlockedBy("has_" + stored.getId().getPath(), has(stored.get()))
+                    .save(recipeOutput);
+        }
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, stored.get(), 9)
                 .requires(block.get())
@@ -128,30 +162,24 @@ public class SeidraRecipeProvider extends RecipeProvider implements IConditionBu
                 .save(recipeOutput, fromWoodName);
     }
 
-    private void addIngotSmeltingFor(DeferredItem<?> ingot, DeferredItem<?> raw, DeferredBlock<?> oreBlock, DeferredBlock<?> deepslateOreBlock, float experience, int baseCookTime, RecipeOutput output)
+    private void addIngotSmeltingFor(DeferredItem<?> ingot, Pair<ResourceLocation, TagKey<Item>> raw, Pair<ResourceLocation, TagKey<Item>> oreBlock, float experience, int baseCookTime, RecipeOutput output)
     {
         String conditionPrefix = "has_";
         String fromSmeltingPrefix = Seidra.MODID + ":" + ingot.getId().getPath() + "_from_smelting_";
         String fromBlastingPrefix = Seidra.MODID + ":" + ingot.getId().getPath() + "_from_blasting_";
 
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(raw.get()), RecipeCategory.MISC, ingot.get(), experience, baseCookTime)
-                .unlockedBy(conditionPrefix + raw.getId().getPath(), has(raw.get()))
-                .save(output, fromSmeltingPrefix + raw.getId().getPath());
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(oreBlock.get()), RecipeCategory.MISC, ingot.get(), experience, baseCookTime)
-                .unlockedBy(conditionPrefix + oreBlock.getId().getPath(), has(oreBlock.get()))
-                .save(output, fromSmeltingPrefix + oreBlock.getId().getPath());
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(deepslateOreBlock.get()), RecipeCategory.MISC, ingot.get(), experience, baseCookTime)
-                .unlockedBy(conditionPrefix + deepslateOreBlock.getId().getPath(), has(deepslateOreBlock.get()))
-                .save(output, fromSmeltingPrefix + deepslateOreBlock.getId().getPath());
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(raw.getB()), RecipeCategory.MISC, ingot.get(), experience, baseCookTime)
+                .unlockedBy(conditionPrefix + raw.getA().getPath(), has(raw.getB()))
+                .save(output, fromSmeltingPrefix + raw.getA().getPath());
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(oreBlock.getB()), RecipeCategory.MISC, ingot.get(), experience, baseCookTime)
+                .unlockedBy(conditionPrefix + oreBlock.getA().getPath(), has(oreBlock.getB()))
+                .save(output, fromSmeltingPrefix + oreBlock.getA().getPath());
 
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(raw.get()), RecipeCategory.MISC, ingot.get(), experience, baseCookTime / 2)
-                .unlockedBy(conditionPrefix + raw.getId().getPath(), has(raw.get()))
-                .save(output, fromBlastingPrefix + raw.getId().getPath());
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(oreBlock.get()), RecipeCategory.MISC, ingot.get(), experience, baseCookTime / 2)
-                .unlockedBy(conditionPrefix + oreBlock.getId().getPath(), has(oreBlock.get()))
-                .save(output, fromBlastingPrefix + oreBlock.getId().getPath());
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(deepslateOreBlock.get()), RecipeCategory.MISC, ingot.get(), experience, baseCookTime / 2)
-                .unlockedBy(conditionPrefix + deepslateOreBlock.getId().getPath(), has(deepslateOreBlock.get()))
-                .save(output, fromBlastingPrefix + deepslateOreBlock.getId().getPath());
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(raw.getB()), RecipeCategory.MISC, ingot.get(), experience, baseCookTime / 2)
+                .unlockedBy(conditionPrefix + raw.getA().getPath(), has(raw.getB()))
+                .save(output, fromBlastingPrefix + raw.getA().getPath());
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(oreBlock.getB()), RecipeCategory.MISC, ingot.get(), experience, baseCookTime / 2)
+                .unlockedBy(conditionPrefix + oreBlock.getA().getPath(), has(oreBlock.getB()))
+                .save(output, fromBlastingPrefix + oreBlock.getA().getPath());
     }
 }

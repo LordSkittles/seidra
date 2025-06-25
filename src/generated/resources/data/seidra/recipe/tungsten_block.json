@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "I": {
-      "item": "seidra:tungsten_ingot"
+      "tag": "c:ingots/tungsten"
     }
   },
   "pattern": [

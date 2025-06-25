@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "seidra:silver_ore"
+            "items": "#c:ores/silver"
           }
         ]
       },
