@@ -84,9 +84,11 @@ public class Blocks
     public static final DeferredBlock<SeidraSimpleBlock> CHISELED_FELDSPAR_BRICK = registerBlock("chiseled_feldspar_brick", "Chiseled Feldspar Brick", SeidraSimpleBlock.class, CreativeTabs.WORLD, "stone", BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.CHISELED_STONE_BRICKS));
     public static final DeferredBlock<SeidraSimpleColumnBlock> FELDSPAR_PILLAR = registerBlock("feldspar_pillar", "Feldspar Pillar", SeidraSimpleColumnBlock.class, CreativeTabs.WORLD, "stone", BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.POLISHED_ANDESITE));
 
-    public static final DeferredBlock<SeidraWakestoneBlock> WAKESTONE = registerBlock("wakestone", SeidraWakestoneBlock::new);
+    public static final DeferredBlock<WakestoneBlock> WAKESTONE = registerBlock("wakestone", WakestoneBlock::new);
     public static final DeferredBlock<SlabBlock> CRACKED_DEEPSLATE_BRICK_SLAB = registerBlock("cracked_deepslate_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.CRACKED_DEEPSLATE_BRICKS)));
     public static final DeferredBlock<StairBlock> CRACKED_DEEPSLATE_BRICK_STAIRS = registerBlock("cracked_deepslate_brick_stairs", () -> new StairBlock(net.minecraft.world.level.block.Blocks.CRACKED_DEEPSLATE_BRICKS.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.CRACKED_DEEPSLATE_BRICKS)));
+
+    public static final DeferredBlock<CraftingClothBlock> CRAFTING_CLOTH = registerBlock("crafting_cloth", CraftingClothBlock::new);
 
     private static <BLOCK extends Block> DeferredBlock<BLOCK> registerBlock(String id, Supplier<BLOCK> supplier)
     {

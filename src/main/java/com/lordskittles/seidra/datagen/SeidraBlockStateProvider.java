@@ -78,7 +78,7 @@ public class SeidraBlockStateProvider extends BlockStateProvider
     public VariantBlockStateBuilder.PartialBlockstate wakestoneState(boolean active, Direction.Axis axis)
     {
         return this.getVariantBuilder(Blocks.WAKESTONE.get()).partialState()
-            .with(RotatedPillarBlock.AXIS, axis).with(SeidraWakestoneBlock.ACTIVE, active);
+            .with(RotatedPillarBlock.AXIS, axis).with(WakestoneBlock.ACTIVE, active);
     }
 
     public void blockWithItem(DeferredBlock<?> deferredBlock)

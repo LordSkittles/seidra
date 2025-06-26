@@ -1,6 +1,7 @@
 package com.lordskittles.seidra.common.registries;
 
 import com.lordskittles.seidra.Seidra;
+import com.lordskittles.seidra.common.item.CraftingClothItem;
 import com.lordskittles.seidra.common.item.SeidraGem;
 import com.lordskittles.seidra.common.item.SeidraIngot;
 import com.lordskittles.seidra.common.item.SeidraRawOre;

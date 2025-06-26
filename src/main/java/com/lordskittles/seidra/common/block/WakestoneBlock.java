@@ -9,15 +9,14 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.function.Supplier;
 
-public class SeidraWakestoneBlock extends SeidraColumnBlock
+public class WakestoneBlock extends SeidraColumnBlock
 {
 	public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
 
-	public SeidraWakestoneBlock()
+	public WakestoneBlock()
 	{
 		super("Wakestone Pillar", Properties.ofFullCopy(Blocks.DEEPSLATE));
 

@@ -26,6 +26,7 @@ public class CommonProxy
 		Schools.SCHOOLS.register(eventBus);
 		StructureTypes.STRUCTURE_TYPES.register(eventBus);
 		StructurePieceTypes.STRUCTURE_PIECE_TYPES.register(eventBus);
+		BlockEntityTypes.BLOCK_ENTITY_TYPES.register(eventBus);
 	}
 
 	@SubscribeEvent

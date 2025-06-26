@@ -39,5 +39,6 @@ public class SeidraLanguageProvider extends LanguageProvider
 		add(Blocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(), "Cracked Deepslate Brick Stairs");
 
 		add(CreativeTabs.WORLD.get().getDisplayName().getString(), "Seidra: World");
+		add(CreativeTabs.MAIN.get().getDisplayName().getString(), "Seidra");
 	}
 }
