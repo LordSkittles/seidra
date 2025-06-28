@@ -63,5 +63,6 @@
   "item.seidra.raw_tungsten": "Raw Tungsten",
   "item.seidra.silver_ingot": "Silver Ingot",
   "item.seidra.thulite_gem": "Thulite",
-  "item.seidra.tungsten_ingot": "Silver Ingot"
+  "item.seidra.tungsten_ingot": "Silver Ingot",
+  "seidra.blockentity.arcane_crafting_block": "Arcane Crafting Block"
 }

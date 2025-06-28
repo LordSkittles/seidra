@@ -1,4 +1,4 @@
-package com.lordskittles.seidra.common.block;
+package com.lordskittles.seidra.common.block.simple;
 
 import api.lordskittles.seidra.interfaces.IBlockStateDatagenProvider;
 import api.lordskittles.seidra.interfaces.ICreativeTabProvider;
@@ -7,7 +7,6 @@ import api.lordskittles.seidra.interfaces.IPrettyNameProvider;
 import com.lordskittles.seidra.datagen.SeidraBlockLootTableProvider;
 import com.lordskittles.seidra.datagen.SeidraBlockStateProvider;
 import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
 
 public abstract class SeidraColumnBlock extends RotatedPillarBlock implements IPrettyNameProvider, ICreativeTabProvider, ILootTableDatagenProvider<SeidraBlockLootTableProvider>, IBlockStateDatagenProvider<SeidraBlockStateProvider>
 {

@@ -1,18 +1,17 @@
-package com.lordskittles.seidra.common.block;
+package com.lordskittles.seidra.common.block.simple;
 
-import com.lordskittles.seidra.common.registries.Blocks;
 import com.lordskittles.seidra.datagen.SeidraBlockStateProvider;
 import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.function.Supplier;
 
-public class SeidraSimpleBlock extends SeidraBlock
+public class SeidraSimpleColumnBlock extends SeidraColumnBlock
 {
     private final DeferredHolder<CreativeModeTab, CreativeModeTab> creativeTab;
     private final String subFolder;
 
-    public SeidraSimpleBlock(String prettyName, DeferredHolder<CreativeModeTab, CreativeModeTab> creativeTab, String subFolder, Properties properties)
+    public SeidraSimpleColumnBlock(String prettyName, DeferredHolder<CreativeModeTab, CreativeModeTab> creativeTab, String subFolder, Properties properties)
     {
         super(prettyName, properties);
 
@@ -23,7 +22,7 @@ public class SeidraSimpleBlock extends SeidraBlock
     @Override
     public Runnable generate(SeidraBlockStateProvider provider)
     {
-        return () -> provider.blockWithItemSubFolder(Blocks.ALL.get(getPrettyName()), subFolder);
+        return () -> provider.axisBlockSubFolder(this, subFolder, "top");
     }
 
     @Override

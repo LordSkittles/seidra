@@ -2,12 +2,15 @@ package com.lordskittles.seidra.datagen;
 
 import com.lordskittles.seidra.Seidra;
 import api.lordskittles.seidra.interfaces.IPrettyNameProvider;
+import com.lordskittles.seidra.common.block.functional.SeidraEntityBlock;
+import com.lordskittles.seidra.common.registries.BlockEntityTypes;
 import com.lordskittles.seidra.common.registries.Blocks;
 import com.lordskittles.seidra.common.registries.CreativeTabs;
 import com.lordskittles.seidra.common.registries.Items;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.registries.DeferredBlock;
 
 public class SeidraLanguageProvider extends LanguageProvider
 {
@@ -24,6 +27,11 @@ public class SeidraLanguageProvider extends LanguageProvider
 			if (block.get() instanceof IPrettyNameProvider provider)
 			{
 				add(block.get(), provider.getPrettyName());
+
+				if(block.get() instanceof SeidraEntityBlock<?> be)
+				{
+					add(Seidra.MODID + ".blockentity." + block.getId().getPath(), provider.getPrettyName());
+				}
 			}
 		});
 

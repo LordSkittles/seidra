@@ -27,6 +27,7 @@ public class CommonProxy
 		StructureTypes.STRUCTURE_TYPES.register(eventBus);
 		StructurePieceTypes.STRUCTURE_PIECE_TYPES.register(eventBus);
 		BlockEntityTypes.BLOCK_ENTITY_TYPES.register(eventBus);
+		MenuTypes.MENU_TYPES.register(eventBus);
 	}
 
 	@SubscribeEvent

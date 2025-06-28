@@ -1,8 +1,7 @@
 package com.lordskittles.seidra.datagen;
 
-import api.lordskittles.seidra.interfaces.IBlockStateDatagenProvider;
 import api.lordskittles.seidra.interfaces.ILootTableDatagenProvider;
-import com.lordskittles.seidra.common.block.*;
+import com.lordskittles.seidra.common.block.simple.SeidraSaplingBlock;
 import com.lordskittles.seidra.common.item.SeidraItem;
 import com.lordskittles.seidra.common.registries.Blocks;
 import net.minecraft.core.Holder;

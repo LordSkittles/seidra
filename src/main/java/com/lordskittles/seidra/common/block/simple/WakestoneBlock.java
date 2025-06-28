@@ -1,4 +1,4 @@
-package com.lordskittles.seidra.common.block;
+package com.lordskittles.seidra.common.block.simple;
 
 import com.lordskittles.seidra.common.registries.CreativeTabs;
 import com.lordskittles.seidra.datagen.SeidraBlockStateProvider;

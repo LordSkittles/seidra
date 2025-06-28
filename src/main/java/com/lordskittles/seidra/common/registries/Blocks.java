@@ -1,7 +1,8 @@
 package com.lordskittles.seidra.common.registries;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.block.*;
+import com.lordskittles.seidra.common.block.functional.ArcaneCraftingBlock;
+import com.lordskittles.seidra.common.block.simple.*;
 import com.lordskittles.seidra.common.worldgen.tree.SeidraTreeGrowers;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -88,7 +89,16 @@ public class Blocks
     public static final DeferredBlock<SlabBlock> CRACKED_DEEPSLATE_BRICK_SLAB = registerBlock("cracked_deepslate_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.CRACKED_DEEPSLATE_BRICKS)));
     public static final DeferredBlock<StairBlock> CRACKED_DEEPSLATE_BRICK_STAIRS = registerBlock("cracked_deepslate_brick_stairs", () -> new StairBlock(net.minecraft.world.level.block.Blocks.CRACKED_DEEPSLATE_BRICKS.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.CRACKED_DEEPSLATE_BRICKS)));
 
-    public static final DeferredBlock<ArcaneCraftingBlock> ARCANE_CRAFTING_BLOCK = registerBlock("arcane_crafting_block", ArcaneCraftingBlock::new);
+    public static final DeferredBlock<ArcaneCraftingBlock> ARCANE_CRAFTING_BLOCK = registerBlockEntity("arcane_crafting_block", ArcaneCraftingBlock.class);
+
+    private static <BLOCK extends Block> DeferredBlock<BLOCK> registerBlockEntity(String id, Class<BLOCK> clazz)
+    {
+        DeferredBlock<BLOCK> deferredBlock = BLOCKS.register(id, () -> instantiateBlockEntity(clazz));
+
+        Items.ITEMS.register(id, () -> new BlockItem(deferredBlock.get(), new Item.Properties()));
+
+        return deferredBlock;
+    }
 
     private static <BLOCK extends Block> DeferredBlock<BLOCK> registerBlock(String id, Supplier<BLOCK> supplier)
     {
@@ -106,6 +116,33 @@ public class Blocks
         ALL.put(prettyName, deferredBlock);
 
         return deferredBlock;
+    }
+
+    private static <BLOCK> BLOCK instantiateBlockEntity(Class<BLOCK> clazz, Object... params)
+    {
+        try
+        {
+            BlockBehaviour.Properties props = BlockBehaviour.Properties.of();
+
+            if (params.length > 0)
+            {
+                Class<?>[] paramTypes = new Class<?>[params.length + 1];
+                paramTypes[0] = BlockBehaviour.Properties.class;
+                IntStream.range(0, params.length).forEach(i -> paramTypes[i + 1] = params[i].getClass());
+
+                Object[] paramValues = new Object[params.length + 1];
+                paramValues[0] = props;
+                System.arraycopy(params, 0, paramValues, 1, params.length);
+
+                return clazz.getConstructor(paramTypes).newInstance(paramValues);
+            }
+
+            return clazz.getConstructor(BlockBehaviour.Properties.class).newInstance(props);
+        }
+        catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e)
+        {
+            throw new RuntimeException(e);
+        }
     }
 
     private static <BLOCK> BLOCK instantiateBlock(Class<BLOCK> clazz, String prettyName, Object... params)

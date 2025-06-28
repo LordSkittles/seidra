@@ -1,7 +1,7 @@
 package com.lordskittles.seidra.datagen;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.block.SeidraSaplingBlock;
+import com.lordskittles.seidra.common.block.simple.SeidraSaplingBlock;
 import api.lordskittles.seidra.interfaces.IItemModelDatagenProvider;
 import com.lordskittles.seidra.common.registries.Blocks;
 import com.lordskittles.seidra.common.registries.Items;

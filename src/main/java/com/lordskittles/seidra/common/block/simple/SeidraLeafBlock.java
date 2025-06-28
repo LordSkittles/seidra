@@ -1,4 +1,4 @@
-package com.lordskittles.seidra.common.block;
+package com.lordskittles.seidra.common.block.simple;
 
 import api.lordskittles.seidra.interfaces.IBlockStateDatagenProvider;
 import api.lordskittles.seidra.interfaces.ICreativeTabProvider;
@@ -12,12 +12,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.function.Supplier;
 
