@@ -1,6 +1,6 @@
 package com.lordskittles.seidra.common.block;
 
-import com.lordskittles.seidra.common.entities.block.CraftingClothBlockEntity;
+import com.lordskittles.seidra.common.entities.block.ArcaneCraftingBlockEntity;
 import com.lordskittles.seidra.common.registries.Blocks;
 import com.lordskittles.seidra.common.registries.CreativeTabs;
 import com.lordskittles.seidra.datagen.SeidraBlockStateProvider;
@@ -14,17 +14,17 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Supplier;
 
-public class CraftingClothBlock extends SeidraBlock implements EntityBlock
+public class ArcaneCraftingBlock extends SeidraBlock implements EntityBlock
 {
-    public CraftingClothBlock()
+    public ArcaneCraftingBlock()
     {
-        super("Crafting Cloth", Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.WHITE_WOOL));
+        super("Arcane Crafting Block", Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.CRAFTING_TABLE));
     }
 
     @Override
     public Runnable generate(SeidraBlockStateProvider provider)
     {
-        return () -> provider.blockWithItem(Blocks.CRAFTING_CLOTH);
+        return () -> provider.blockWithItem(Blocks.ARCANE_CRAFTING_BLOCK);
     }
 
     @Override
@@ -36,6 +36,6 @@ public class CraftingClothBlock extends SeidraBlock implements EntityBlock
     @Override
     public @Nullable BlockEntity newBlockEntity(@NotNull BlockPos blockPos, @NotNull BlockState blockState)
     {
-        return new CraftingClothBlockEntity(blockPos, blockState);
+        return new ArcaneCraftingBlockEntity(blockPos, blockState);
     }
 }

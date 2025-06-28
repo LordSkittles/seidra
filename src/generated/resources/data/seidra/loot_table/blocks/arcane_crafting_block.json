@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "seidra:crafting_cloth"
+          "name": "seidra:arcane_crafting_block"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "seidra:blocks/crafting_cloth"
+  "random_sequence": "seidra:blocks/arcane_crafting_block"
 }

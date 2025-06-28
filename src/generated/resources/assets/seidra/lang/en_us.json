@@ -1,6 +1,7 @@
 {
   "block.seidra.amber_block": "Amber Block",
   "block.seidra.amber_ore": "Amber Ore",
+  "block.seidra.arcane_crafting_block": "Arcane Crafting Block",
   "block.seidra.ash_leaves": "Ash Leaves",
   "block.seidra.ash_log": "Ash Log",
   "block.seidra.ash_planks": "Ash Planks",
@@ -14,7 +15,6 @@
   "block.seidra.cracked_feldspar": "Cracked Feldspar",
   "block.seidra.cracked_feldspar_brick": "Cracked Polished Brick",
   "block.seidra.cracked_feldspar_polished": "Cracked Polished Feldspar",
-  "block.seidra.crafting_cloth": "Crafting Cloth",
   "block.seidra.deepslate_amber_ore": "Deepslate Amber Ore",
   "block.seidra.deepslate_bismuth_ore": "Deepslate Bismuth Ore",
   "block.seidra.deepslate_labradorite_ore": "Deepslate Labradorite Ore",

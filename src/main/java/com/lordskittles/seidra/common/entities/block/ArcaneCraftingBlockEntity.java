@@ -5,10 +5,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class CraftingClothBlockEntity extends BlockEntity
+public class ArcaneCraftingBlockEntity extends BlockEntity
 {
-    public CraftingClothBlockEntity(BlockPos pos, BlockState blockState)
+    public ArcaneCraftingBlockEntity(BlockPos pos, BlockState blockState)
     {
-        super(BlockEntityTypes.CRAFTING_CLOTH_BLOCK_ENTITY.get(), pos, blockState);
+        super(BlockEntityTypes.ARCANE_CRAFTING_BLOCK_ENTITY.get(), pos, blockState);
     }
 }

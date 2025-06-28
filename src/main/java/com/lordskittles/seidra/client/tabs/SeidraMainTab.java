@@ -6,7 +6,7 @@ public class SeidraMainTab extends SeidraCreativeTab
 {
     public SeidraMainTab()
     {
-        super("seidra", Blocks.CRAFTING_CLOTH);
+        super("seidra", Blocks.ARCANE_CRAFTING_BLOCK);
     }
 
     @Override
