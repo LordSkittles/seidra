@@ -1,6 +1,6 @@
 package com.lordskittles.seidra.common.block.simple;
 
-import com.lordskittles.seidra.common.registries.Blocks;
+import com.lordskittles.seidra.common.registries.SeidraBlocks;
 import com.lordskittles.seidra.datagen.SeidraBlockStateProvider;
 import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -23,7 +23,7 @@ public class SeidraSimpleBlock extends SeidraBlock
     @Override
     public Runnable generate(SeidraBlockStateProvider provider)
     {
-        return () -> provider.blockWithItemSubFolder(Blocks.ALL.get(getPrettyName()), subFolder);
+        return () -> provider.blockWithItemSubFolder(SeidraBlocks.ALL.get(getPrettyName()), subFolder);
     }
 
     @Override

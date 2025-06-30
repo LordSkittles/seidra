@@ -1,6 +1,6 @@
 package com.lordskittles.seidra.common.block.simple;
 
-import com.lordskittles.seidra.common.registries.Blocks;
+import com.lordskittles.seidra.common.registries.SeidraBlocks;
 import com.lordskittles.seidra.common.registries.CreativeTabs;
 import com.lordskittles.seidra.datagen.SeidraBlockStateProvider;
 import net.minecraft.world.item.CreativeModeTab;
@@ -23,6 +23,6 @@ public class SeidraStorageBlock extends SeidraBlock
 	@Override
 	public Runnable generate(SeidraBlockStateProvider provider)
 	{
-		return () -> provider.blockWithItemSubFolder(Blocks.ALL.get(getPrettyName()), "ores");
+		return () -> provider.blockWithItemSubFolder(SeidraBlocks.ALL.get(getPrettyName()), "ores");
 	}
 }

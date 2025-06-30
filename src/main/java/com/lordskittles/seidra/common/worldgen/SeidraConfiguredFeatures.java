@@ -1,7 +1,7 @@
 package com.lordskittles.seidra.common.worldgen;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.registries.Blocks;
+import com.lordskittles.seidra.common.registries.SeidraBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
@@ -60,15 +60,15 @@ public class SeidraConfiguredFeatures
 
 	private static void bootstrapOres(BootstrapContext<ConfiguredFeature<?, ?>> context)
 	{
-		registerOre(context, BISMUTH_ORE_KEY, new Tuple<>(Blocks.BISMUTH_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_BISMUTH_ORE.get().defaultBlockState()), 8);
-		registerOre(context, SILVER_ORE_KEY, new Tuple<>(Blocks.SILVER_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_SILVER_ORE.get().defaultBlockState()), 6);
-		registerOre(context, TUNGSTEN_ORE_KEY, new Tuple<>(Blocks.TUNGSTEN_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_TUNGSTEN_ORE.get().defaultBlockState()), 5);
+		registerOre(context, BISMUTH_ORE_KEY, new Tuple<>(SeidraBlocks.BISMUTH_ORE.get().defaultBlockState(), SeidraBlocks.DEEPSLATE_BISMUTH_ORE.get().defaultBlockState()), 8);
+		registerOre(context, SILVER_ORE_KEY, new Tuple<>(SeidraBlocks.SILVER_ORE.get().defaultBlockState(), SeidraBlocks.DEEPSLATE_SILVER_ORE.get().defaultBlockState()), 6);
+		registerOre(context, TUNGSTEN_ORE_KEY, new Tuple<>(SeidraBlocks.TUNGSTEN_ORE.get().defaultBlockState(), SeidraBlocks.DEEPSLATE_TUNGSTEN_ORE.get().defaultBlockState()), 5);
 
-		registerOre(context, AMBER_ORE_KEY, new Tuple<>(Blocks.AMBER_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_AMBER_ORE.get().defaultBlockState()), 4);
-		registerOre(context, THULITE_ORE_KEY, new Tuple<>(Blocks.THULITE_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_THULITE_ORE.get().defaultBlockState()), 6);
-		registerOre(context, LABRADORITE_ORE_KEY, new Tuple<>(Blocks.LABRADORITE_ORE.get().defaultBlockState(), Blocks.DEEPSLATE_LABRADORITE_ORE.get().defaultBlockState()), 5);
+		registerOre(context, AMBER_ORE_KEY, new Tuple<>(SeidraBlocks.AMBER_ORE.get().defaultBlockState(), SeidraBlocks.DEEPSLATE_AMBER_ORE.get().defaultBlockState()), 4);
+		registerOre(context, THULITE_ORE_KEY, new Tuple<>(SeidraBlocks.THULITE_ORE.get().defaultBlockState(), SeidraBlocks.DEEPSLATE_THULITE_ORE.get().defaultBlockState()), 6);
+		registerOre(context, LABRADORITE_ORE_KEY, new Tuple<>(SeidraBlocks.LABRADORITE_ORE.get().defaultBlockState(), SeidraBlocks.DEEPSLATE_LABRADORITE_ORE.get().defaultBlockState()), 5);
 
-		register(context, FELDSPAR_KEY, Feature.ORE, new OreConfiguration(List.of(OreConfiguration.target(new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), Blocks.FELDSPAR.get().defaultBlockState())), 64));
+		register(context, FELDSPAR_KEY, Feature.ORE, new OreConfiguration(List.of(OreConfiguration.target(new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), SeidraBlocks.FELDSPAR.get().defaultBlockState())), 64));
 	}
 
 	private static void registerOre(BootstrapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, Tuple<BlockState, BlockState> ores,
@@ -90,27 +90,27 @@ public class SeidraConfiguredFeatures
 	private static void bootstrapTrees(BootstrapContext<ConfiguredFeature<?, ?>> context)
 	{
 		register(context, ASH_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-						BlockStateProvider.simple(Blocks.ASH_LOG.get()),
+						BlockStateProvider.simple(SeidraBlocks.ASH_LOG.get()),
 						new ForkingTrunkPlacer(4, 4, 3),
-						BlockStateProvider.simple(Blocks.ASH_LEAVES.get()),
+						BlockStateProvider.simple(SeidraBlocks.ASH_LEAVES.get()),
 						new BlobFoliagePlacer(UniformInt.of(2, 3), UniformInt.of(0, 1), 3),
 						new TwoLayersFeatureSize(1, 0, 2)
 				).build()
 		);
 
 		register(context, PINE_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-						BlockStateProvider.simple(Blocks.PINE_LOG.get()),
+						BlockStateProvider.simple(SeidraBlocks.PINE_LOG.get()),
 						new ForkingTrunkPlacer(4, 4, 3),
-						BlockStateProvider.simple(Blocks.PINE_LEAVES.get()),
+						BlockStateProvider.simple(SeidraBlocks.PINE_LEAVES.get()),
 						new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3), 3),
 						new TwoLayersFeatureSize(1, 0, 2)
 				).build()
 		);
 
 		register(context, YEW_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-						BlockStateProvider.simple(Blocks.YEW_LOG.get()),
+						BlockStateProvider.simple(SeidraBlocks.YEW_LOG.get()),
 						new ForkingTrunkPlacer(4, 4, 3),
-						BlockStateProvider.simple(Blocks.YEW_LEAVES.get()),
+						BlockStateProvider.simple(SeidraBlocks.YEW_LEAVES.get()),
 						new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3), 3),
 						new TwoLayersFeatureSize(1, 0, 2)
 				).build()

@@ -1,6 +1,6 @@
 package com.lordskittles.seidra.common.block.simple;
 
-import com.lordskittles.seidra.common.registries.Blocks;
+import com.lordskittles.seidra.common.registries.SeidraBlocks;
 import com.lordskittles.seidra.common.registries.CreativeTabs;
 import com.lordskittles.seidra.datagen.SeidraBlockStateProvider;
 import net.minecraft.core.BlockPos;
@@ -24,12 +24,12 @@ import java.util.function.Supplier;
 public class SeidraLogBlock extends SeidraColumnBlock
 {
     public static final Map<DeferredBlock<SeidraLogBlock>, DeferredBlock<SeidraLogBlock>> STRIPPING_MAP = Map.of(
-            Blocks.ASH_LOG, Blocks.STRIPPED_ASH_LOG,
-            Blocks.PINE_LOG, Blocks.STRIPPED_PINE_LOG,
-            Blocks.YEW_LOG, Blocks.STRIPPED_YEW_LOG,
-            Blocks.ASH_WOOD, Blocks.STRIPPED_ASH_WOOD,
-            Blocks.PINE_WOOD, Blocks.STRIPPED_PINE_WOOD,
-            Blocks.YEW_WOOD, Blocks.STRIPPED_YEW_WOOD
+            SeidraBlocks.ASH_LOG, SeidraBlocks.STRIPPED_ASH_LOG,
+            SeidraBlocks.PINE_LOG, SeidraBlocks.STRIPPED_PINE_LOG,
+            SeidraBlocks.YEW_LOG, SeidraBlocks.STRIPPED_YEW_LOG,
+            SeidraBlocks.ASH_WOOD, SeidraBlocks.STRIPPED_ASH_WOOD,
+            SeidraBlocks.PINE_WOOD, SeidraBlocks.STRIPPED_PINE_WOOD,
+            SeidraBlocks.YEW_WOOD, SeidraBlocks.STRIPPED_YEW_WOOD
     );
 
     private final boolean isFullWood;

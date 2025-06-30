@@ -19,7 +19,7 @@ public class CommonProxy
 {
 	public static void initialiseRegistries(IEventBus eventBus)
 	{
-		Blocks.BLOCKS.register(eventBus);
+		SeidraBlocks.BLOCKS.register(eventBus);
 		Items.ITEMS.register(eventBus);
 		CreativeTabs.TABS.register(eventBus);
 		Spells.SPELLS.register(eventBus);
@@ -88,11 +88,11 @@ public class CommonProxy
 	{
 		if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
 		{
-			event.accept(Blocks.CRACKED_DEEPSLATE_BRICK_SLAB.get());
-			event.accept(Blocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get());
+			event.accept(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get());
+			event.accept(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get());
 		}
 
-		Blocks.BLOCKS.getEntries().forEach(block ->
+		SeidraBlocks.BLOCKS.getEntries().forEach(block ->
 		{
 			if (block.get() instanceof ICreativeTabProvider provider)
 			{

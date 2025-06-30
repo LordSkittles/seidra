@@ -1,12 +1,12 @@
 package com.lordskittles.seidra.client.tabs;
 
-import com.lordskittles.seidra.common.registries.Blocks;
+import com.lordskittles.seidra.common.registries.SeidraBlocks;
 
 public class SeidraMainTab extends SeidraCreativeTab
 {
     public SeidraMainTab()
     {
-        super("seidra", Blocks.ARCANE_CRAFTING_BLOCK);
+        super("seidra", SeidraBlocks.ARCANE_CRAFTING_BLOCK);
     }
 
     @Override

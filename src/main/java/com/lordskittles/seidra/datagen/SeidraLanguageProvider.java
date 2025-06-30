@@ -3,14 +3,11 @@ package com.lordskittles.seidra.datagen;
 import com.lordskittles.seidra.Seidra;
 import api.lordskittles.seidra.interfaces.IPrettyNameProvider;
 import com.lordskittles.seidra.common.block.functional.SeidraEntityBlock;
-import com.lordskittles.seidra.common.registries.BlockEntityTypes;
-import com.lordskittles.seidra.common.registries.Blocks;
+import com.lordskittles.seidra.common.registries.SeidraBlocks;
 import com.lordskittles.seidra.common.registries.CreativeTabs;
 import com.lordskittles.seidra.common.registries.Items;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.LanguageProvider;
-import net.neoforged.neoforge.registries.DeferredBlock;
 
 public class SeidraLanguageProvider extends LanguageProvider
 {
@@ -22,7 +19,7 @@ public class SeidraLanguageProvider extends LanguageProvider
 	@Override
 	protected void addTranslations()
 	{
-		Blocks.BLOCKS.getEntries().stream().forEach(block ->
+		SeidraBlocks.BLOCKS.getEntries().stream().forEach(block ->
 		{
 			if (block.get() instanceof IPrettyNameProvider provider)
 			{
@@ -43,8 +40,8 @@ public class SeidraLanguageProvider extends LanguageProvider
 			}
 		});
 
-		add(Blocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), "Cracked Deepslate Brick Slab");
-		add(Blocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(), "Cracked Deepslate Brick Stairs");
+		add(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), "Cracked Deepslate Brick Slab");
+		add(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(), "Cracked Deepslate Brick Stairs");
 
 		add(CreativeTabs.WORLD.get().getDisplayName().getString(), "Seidra: World");
 		add(CreativeTabs.MAIN.get().getDisplayName().getString(), "Seidra");

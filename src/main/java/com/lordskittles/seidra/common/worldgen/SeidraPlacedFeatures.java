@@ -1,7 +1,7 @@
 package com.lordskittles.seidra.common.worldgen;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.registries.Blocks;
+import com.lordskittles.seidra.common.registries.SeidraBlocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -35,13 +35,13 @@ public class SeidraPlacedFeatures
 		var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
 		register(context, ASH_TREE_KEY, configuredFeatures.getOrThrow(SeidraConfiguredFeatures.ASH_TREE_KEY),
-				VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(100), Blocks.ASH_SAPLING.get())
+				VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(100), SeidraBlocks.ASH_SAPLING.get())
 		);
 		register(context, PINE_TREE_KEY, configuredFeatures.getOrThrow(SeidraConfiguredFeatures.PINE_TREE_KEY),
-				VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(100), Blocks.PINE_SAPLING.get())
+				VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(100), SeidraBlocks.PINE_SAPLING.get())
 		);
 		register(context, YEW_TREE_KEY, configuredFeatures.getOrThrow(SeidraConfiguredFeatures.YEW_TREE_KEY),
-				VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(100), Blocks.YEW_SAPLING.get())
+				VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(100), SeidraBlocks.YEW_SAPLING.get())
 		);
 
 		registerOre(context, BISMUTH_ORE_KEY, SeidraConfiguredFeatures.BISMUTH_ORE_KEY, commonOrePlacement(4, 32, 64));

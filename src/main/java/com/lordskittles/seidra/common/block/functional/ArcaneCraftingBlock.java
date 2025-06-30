@@ -1,7 +1,7 @@
 package com.lordskittles.seidra.common.block.functional;
 
 import com.lordskittles.seidra.common.entities.block.ArcaneCraftingBlockEntity;
-import com.lordskittles.seidra.common.registries.Blocks;
+import com.lordskittles.seidra.common.registries.SeidraBlocks;
 import com.lordskittles.seidra.common.registries.CreativeTabs;
 import com.lordskittles.seidra.datagen.SeidraBlockStateProvider;
 import com.mojang.serialization.MapCodec;
@@ -38,7 +38,7 @@ public class ArcaneCraftingBlock extends SeidraEntityBlock<ArcaneCraftingBlockEn
     @Override
     public Runnable generate(SeidraBlockStateProvider provider)
     {
-        return () -> provider.blockWithItem(Blocks.ARCANE_CRAFTING_BLOCK);
+        return () -> provider.blockWithItem(SeidraBlocks.ARCANE_CRAFTING_BLOCK);
     }
 
     @Override

@@ -16,7 +16,7 @@ public class BlockEntityTypes
             "arcane_crafting_block_entity",
             () -> BlockEntityType.Builder.of(
                     ArcaneCraftingBlockEntity::new,
-                    Blocks.ARCANE_CRAFTING_BLOCK.get()
+                    SeidraBlocks.ARCANE_CRAFTING_BLOCK.get()
             ).build(null)
     );
 }

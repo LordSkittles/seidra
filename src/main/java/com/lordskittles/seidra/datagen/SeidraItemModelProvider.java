@@ -1,12 +1,12 @@
 package com.lordskittles.seidra.datagen;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.block.simple.SeidraSaplingBlock;
 import api.lordskittles.seidra.interfaces.IItemModelDatagenProvider;
-import com.lordskittles.seidra.common.registries.Blocks;
+import com.lordskittles.seidra.common.registries.SeidraBlocks;
 import com.lordskittles.seidra.common.registries.Items;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -30,12 +30,12 @@ public class SeidraItemModelProvider extends ItemModelProvider
 			}
 		});
 
-		saplingItem(Blocks.ASH_SAPLING);
-		saplingItem(Blocks.PINE_SAPLING);
-		saplingItem(Blocks.YEW_SAPLING);
+		saplingItem(SeidraBlocks.ASH_SAPLING);
+		saplingItem(SeidraBlocks.PINE_SAPLING);
+		saplingItem(SeidraBlocks.YEW_SAPLING);
 	}
 
-	private ItemModelBuilder saplingItem(DeferredBlock<SeidraSaplingBlock> item)
+	private ItemModelBuilder saplingItem(DeferredBlock<Block> item)
 	{
 		return withExistingParent(item.getId().getPath(),
 				ResourceLocation.parse("item/generated")

@@ -1,7 +1,7 @@
 package com.lordskittles.seidra.datagen;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.registries.Blocks;
+import com.lordskittles.seidra.common.registries.SeidraBlocks;
 import com.lordskittles.seidra.common.registries.Items;
 import com.lordskittles.seidra.common.tag.ItemTags;
 import net.minecraft.core.HolderLookup;
@@ -30,46 +30,46 @@ public class SeidraRecipeProvider extends RecipeProvider implements IConditionBu
     @Override
     protected void buildRecipes(@NotNull RecipeOutput recipeOutput)
     {
-        addPlankCraftingFor(Blocks.ASH_PLANKS, Blocks.ASH_LOG, Blocks.ASH_WOOD, recipeOutput);
-        addPlankCraftingFor(Blocks.PINE_PLANKS, Blocks.PINE_LOG, Blocks.PINE_WOOD, recipeOutput);
-        addPlankCraftingFor(Blocks.YEW_PLANKS, Blocks.YEW_LOG, Blocks.YEW_WOOD, recipeOutput);
+        addPlankCraftingFor(SeidraBlocks.ASH_PLANKS, SeidraBlocks.ASH_LOG, SeidraBlocks.ASH_WOOD, recipeOutput);
+        addPlankCraftingFor(SeidraBlocks.PINE_PLANKS, SeidraBlocks.PINE_LOG, SeidraBlocks.PINE_WOOD, recipeOutput);
+        addPlankCraftingFor(SeidraBlocks.YEW_PLANKS, SeidraBlocks.YEW_LOG, SeidraBlocks.YEW_WOOD, recipeOutput);
 
         addIngotSmeltingFor(Items.BISMUTH_INGOT, new Pair<>(Items.RAW_BISMUTH.getId(), ItemTags.RAW_BISMUTH),
-                new Pair<>(Blocks.BISMUTH_ORE.getId(), ItemTags.BISMUTH_ORE), .7f, recipeOutput);
+                new Pair<>(SeidraBlocks.BISMUTH_ORE.getId(), ItemTags.BISMUTH_ORE), .7f, recipeOutput);
         addIngotSmeltingFor(Items.SILVER_INGOT, new Pair<>(Items.RAW_SILVER.getId(), ItemTags.RAW_SILVER),
-                new Pair<>(Blocks.SILVER_ORE.getId(), ItemTags.SILVER_ORE), .7f, recipeOutput);
+                new Pair<>(SeidraBlocks.SILVER_ORE.getId(), ItemTags.SILVER_ORE), .7f, recipeOutput);
         addIngotSmeltingFor(Items.TUNGSTEN_INGOT, new Pair<>(Items.RAW_TUNGSTEN.getId(), ItemTags.RAW_TUNGSTEN),
-                new Pair<>(Blocks.TUNGSTEN_ORE.getId(), ItemTags.TUNGSTEN_ORE), 1f, recipeOutput);
+                new Pair<>(SeidraBlocks.TUNGSTEN_ORE.getId(), ItemTags.TUNGSTEN_ORE), 1f, recipeOutput);
 
-        storageBlockRecipe(Blocks.BISMUTH_BLOCK, Items.BISMUTH_INGOT, recipeOutput, ItemTags.BISMUTH_INGOT);
-        storageBlockRecipe(Blocks.SILVER_BLOCK, Items.SILVER_INGOT, recipeOutput, ItemTags.SILVER_INGOT);
-        storageBlockRecipe(Blocks.TUNGSTEN_BLOCK, Items.TUNGSTEN_INGOT, recipeOutput, ItemTags.TUNGSTEN_INGOT);
-        storageBlockRecipe(Blocks.RAW_BISMUTH_BLOCK, Items.RAW_BISMUTH, recipeOutput, ItemTags.RAW_BISMUTH);
-        storageBlockRecipe(Blocks.RAW_SILVER_BLOCK, Items.RAW_SILVER, recipeOutput, ItemTags.RAW_SILVER);
-        storageBlockRecipe(Blocks.RAW_TUNGSTEN_BLOCK, Items.RAW_TUNGSTEN, recipeOutput, ItemTags.RAW_TUNGSTEN);
-        storageBlockRecipe(Blocks.AMBER_BLOCK, Items.AMBER_GEM, recipeOutput, ItemTags.AMBER);
-        storageBlockRecipe(Blocks.LABRADORITE_BLOCK, Items.LABRADORITE_GEM, recipeOutput, ItemTags.LABRADORITE);
-        storageBlockRecipe(Blocks.THULITE_BLOCK, Items.THULITE_GEM, recipeOutput, ItemTags.THULITE);
+        storageBlockRecipe(SeidraBlocks.BISMUTH_BLOCK, Items.BISMUTH_INGOT, recipeOutput, ItemTags.BISMUTH_INGOT);
+        storageBlockRecipe(SeidraBlocks.SILVER_BLOCK, Items.SILVER_INGOT, recipeOutput, ItemTags.SILVER_INGOT);
+        storageBlockRecipe(SeidraBlocks.TUNGSTEN_BLOCK, Items.TUNGSTEN_INGOT, recipeOutput, ItemTags.TUNGSTEN_INGOT);
+        storageBlockRecipe(SeidraBlocks.RAW_BISMUTH_BLOCK, Items.RAW_BISMUTH, recipeOutput, ItemTags.RAW_BISMUTH);
+        storageBlockRecipe(SeidraBlocks.RAW_SILVER_BLOCK, Items.RAW_SILVER, recipeOutput, ItemTags.RAW_SILVER);
+        storageBlockRecipe(SeidraBlocks.RAW_TUNGSTEN_BLOCK, Items.RAW_TUNGSTEN, recipeOutput, ItemTags.RAW_TUNGSTEN);
+        storageBlockRecipe(SeidraBlocks.AMBER_BLOCK, Items.AMBER_GEM, recipeOutput, ItemTags.AMBER);
+        storageBlockRecipe(SeidraBlocks.LABRADORITE_BLOCK, Items.LABRADORITE_GEM, recipeOutput, ItemTags.LABRADORITE);
+        storageBlockRecipe(SeidraBlocks.THULITE_BLOCK, Items.THULITE_GEM, recipeOutput, ItemTags.THULITE);
 
-        simpleRecipe2x2(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_FELDSPAR, Blocks.FELDSPAR, recipeOutput);
-        simpleRecipe2x2(RecipeCategory.BUILDING_BLOCKS, Blocks.FELDSPAR_BRICK, Blocks.POLISHED_FELDSPAR, recipeOutput);
-        simpleRecipe2x2(RecipeCategory.BUILDING_BLOCKS, Blocks.CHISELED_FELDSPAR_BRICK, Blocks.FELDSPAR_BRICK, recipeOutput);
-        simpleRecipe2x2(RecipeCategory.BUILDING_BLOCKS, Blocks.FELDSPAR_PILLAR, Blocks.CHISELED_FELDSPAR_BRICK, recipeOutput);
+        simpleRecipe2x2(RecipeCategory.BUILDING_BLOCKS, SeidraBlocks.POLISHED_FELDSPAR, SeidraBlocks.FELDSPAR, recipeOutput);
+        simpleRecipe2x2(RecipeCategory.BUILDING_BLOCKS, SeidraBlocks.FELDSPAR_BRICK, SeidraBlocks.POLISHED_FELDSPAR, recipeOutput);
+        simpleRecipe2x2(RecipeCategory.BUILDING_BLOCKS, SeidraBlocks.CHISELED_FELDSPAR_BRICK, SeidraBlocks.FELDSPAR_BRICK, recipeOutput);
+        simpleRecipe2x2(RecipeCategory.BUILDING_BLOCKS, SeidraBlocks.FELDSPAR_PILLAR, SeidraBlocks.CHISELED_FELDSPAR_BRICK, recipeOutput);
 
-        feldsparGroupRecipe(RecipeCategory.DECORATIONS, Blocks.FELDSPAR, List.of(
-                Blocks.FELDSPAR_BRICK,
-                Blocks.POLISHED_FELDSPAR,
-                Blocks.CHISELED_FELDSPAR_BRICK,
-                Blocks.FELDSPAR_PILLAR
+        feldsparGroupRecipe(RecipeCategory.DECORATIONS, SeidraBlocks.FELDSPAR, List.of(
+                SeidraBlocks.FELDSPAR_BRICK,
+                SeidraBlocks.POLISHED_FELDSPAR,
+                SeidraBlocks.CHISELED_FELDSPAR_BRICK,
+                SeidraBlocks.FELDSPAR_PILLAR
         ), recipeOutput);
 
-        feldsparGroupRecipe(RecipeCategory.DECORATIONS, Blocks.CRACKED_FELDSPAR, List.of(
-                Blocks.CRACKED_FELDSPAR_BRICK,
-                Blocks.CRACKED_POLISHED_FELDSPAR
+        feldsparGroupRecipe(RecipeCategory.DECORATIONS, SeidraBlocks.CRACKED_FELDSPAR, List.of(
+                SeidraBlocks.CRACKED_FELDSPAR_BRICK,
+                SeidraBlocks.CRACKED_POLISHED_FELDSPAR
         ), recipeOutput);
 
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(Blocks.FELDSPAR.get()), RecipeCategory.DECORATIONS, Blocks.CRACKED_FELDSPAR.get(), 0.1f, 200)
-                .unlockedBy("has_feldspar", has(Blocks.FELDSPAR.get()))
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(SeidraBlocks.FELDSPAR.get()), RecipeCategory.DECORATIONS, SeidraBlocks.CRACKED_FELDSPAR.get(), 0.1f, 200)
+                .unlockedBy("has_feldspar", has(SeidraBlocks.FELDSPAR.get()))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(Seidra.MODID, "cracked_feldspar_from_feldspar"));
     }
 

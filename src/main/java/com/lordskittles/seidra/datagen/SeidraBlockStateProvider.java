@@ -3,15 +3,20 @@ package com.lordskittles.seidra.datagen;
 import api.lordskittles.seidra.interfaces.IBlockStateDatagenProvider;
 import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.block.simple.SeidraColumnBlock;
-import com.lordskittles.seidra.common.block.simple.SeidraSaplingBlock;
 import com.lordskittles.seidra.common.block.simple.WakestoneBlock;
-import com.lordskittles.seidra.common.registries.Blocks;
+import com.lordskittles.seidra.common.registries.SeidraBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.neoforged.neoforge.client.model.generators.*;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
+import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
+import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.client.model.generators.VariantBlockStateBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
@@ -25,7 +30,7 @@ public class SeidraBlockStateProvider extends BlockStateProvider
     @Override
     protected void registerStatesAndModels()
     {
-        Blocks.BLOCKS.getEntries().forEach(block -> {
+        SeidraBlocks.BLOCKS.getEntries().forEach(block -> {
             //noinspection rawtypes
             if(block.get() instanceof IBlockStateDatagenProvider provider)
             {
@@ -33,12 +38,16 @@ public class SeidraBlockStateProvider extends BlockStateProvider
             }
         });
 
+        saplingBlockWithItem(SeidraBlocks.ASH_SAPLING);
+        saplingBlockWithItem(SeidraBlocks.PINE_SAPLING);
+        saplingBlockWithItem(SeidraBlocks.YEW_SAPLING);
+
         ResourceLocation crackedDeepslateBricks = ResourceLocation.fromNamespaceAndPath("minecraft", "block/cracked_deepslate_bricks");
 
-        stairsBlock(Blocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(), crackedDeepslateBricks);
-        slabBlock(Blocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), crackedDeepslateBricks, crackedDeepslateBricks);
-        simpleBlockItem(Blocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), this.models().slab(Blocks.CRACKED_DEEPSLATE_BRICK_SLAB.getId().getPath(), crackedDeepslateBricks, crackedDeepslateBricks, crackedDeepslateBricks));
-        simpleBlockItem(Blocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(), this.models().stairs(Blocks.CRACKED_DEEPSLATE_BRICK_STAIRS.getId().getPath(), crackedDeepslateBricks, crackedDeepslateBricks, crackedDeepslateBricks));
+        stairsBlock((StairBlock) SeidraBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(), crackedDeepslateBricks);
+        slabBlock((SlabBlock) SeidraBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), crackedDeepslateBricks, crackedDeepslateBricks);
+        simpleBlockItem(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), this.models().slab(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.getId().getPath(), crackedDeepslateBricks, crackedDeepslateBricks, crackedDeepslateBricks));
+        simpleBlockItem(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(), this.models().stairs(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.getId().getPath(), crackedDeepslateBricks, crackedDeepslateBricks, crackedDeepslateBricks));
     }
 
     public void registerWakestone()
@@ -74,12 +83,12 @@ public class SeidraBlockStateProvider extends BlockStateProvider
         wakestoneState(false, Direction.Axis.Z).modelForState().modelFile(dormantHorizontal).rotationX(90).addModel();
         wakestoneState(true, Direction.Axis.Z).modelForState().modelFile(activeHorizontal).rotationX(90).addModel();
 
-        simpleBlockItem(Blocks.WAKESTONE.get(), dormantVertical);
+        simpleBlockItem(SeidraBlocks.WAKESTONE.get(), dormantVertical);
     }
 
     public VariantBlockStateBuilder.PartialBlockstate wakestoneState(boolean active, Direction.Axis axis)
     {
-        return this.getVariantBuilder(Blocks.WAKESTONE.get()).partialState()
+        return this.getVariantBuilder(SeidraBlocks.WAKESTONE.get()).partialState()
             .with(RotatedPillarBlock.AXIS, axis).with(WakestoneBlock.ACTIVE, active);
     }
 
@@ -88,7 +97,7 @@ public class SeidraBlockStateProvider extends BlockStateProvider
         simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));
     }
 
-    public void saplingBlockWithItem(DeferredBlock<SeidraSaplingBlock> deferredBlock)
+    public void saplingBlockWithItem(DeferredBlock<Block> deferredBlock)
     {
         ResourceLocation location = ResourceLocation.fromNamespaceAndPath(
                 deferredBlock.getId().getNamespace(), "block/plants/" + deferredBlock.getId().getPath()
