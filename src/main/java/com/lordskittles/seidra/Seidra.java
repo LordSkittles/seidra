@@ -14,7 +14,7 @@ import org.slf4j.Logger;
 @Mod(Seidra.MODID)
 public class Seidra
 {
-    public static final String MODID = Names.MOD_ID;
+    public static final String MODID = Constants.MOD_ID;
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public Seidra(IEventBus modEventBus, ModContainer modContainer)

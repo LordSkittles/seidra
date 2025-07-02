@@ -23,7 +23,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 
 import java.util.List;
 
-import static com.lordskittles.seidra.Names.*;
+import static com.lordskittles.seidra.Constants.*;
 
 public class SeidraConfiguredFeatures
 {

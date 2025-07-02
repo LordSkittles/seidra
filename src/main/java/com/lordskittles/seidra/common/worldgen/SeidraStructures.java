@@ -9,7 +9,7 @@ import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.structure.Structure;
 
-import static com.lordskittles.seidra.Names.*;
+import static com.lordskittles.seidra.Constants.*;
 
 public class SeidraStructures
 {

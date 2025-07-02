@@ -12,7 +12,7 @@ import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
-import static com.lordskittles.seidra.Names.*;
+import static com.lordskittles.seidra.Constants.*;
 
 public class SeidraPlacedFeatures
 {

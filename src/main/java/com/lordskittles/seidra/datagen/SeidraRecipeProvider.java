@@ -20,7 +20,7 @@ import oshi.util.tuples.Pair;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-import static com.lordskittles.seidra.Names.modRes;
+import static com.lordskittles.seidra.Constants.modRes;
 
 public class SeidraRecipeProvider extends RecipeProvider implements IConditionBuilder
 {

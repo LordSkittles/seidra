@@ -1,12 +1,11 @@
 package com.lordskittles.seidra.common.worldgen.tree;
 
-import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.worldgen.SeidraConfiguredFeatures;
 import net.minecraft.world.level.block.grower.TreeGrower;
 
 import java.util.Optional;
 
-import static com.lordskittles.seidra.Names.*;
+import static com.lordskittles.seidra.Constants.*;
 
 public class SeidraTreeGrowers
 {

@@ -1,8 +1,7 @@
 package com.lordskittles.seidra.common.tag;
 
-import com.lordskittles.seidra.Names;
+import com.lordskittles.seidra.Constants;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 
@@ -29,6 +28,6 @@ public class ItemTags
 	
 	private static TagKey<Item> createCommon(String name)
 	{
-		return TagKey.create(Registries.ITEM, Names.commonRes(name));
+		return TagKey.create(Registries.ITEM, Constants.commonRes(name));
 	}
 }

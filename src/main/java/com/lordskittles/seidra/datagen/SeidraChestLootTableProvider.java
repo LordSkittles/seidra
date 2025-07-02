@@ -14,7 +14,7 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.function.BiConsumer;
 
-import static com.lordskittles.seidra.Names.modRes;
+import static com.lordskittles.seidra.Constants.modRes;
 
 public class SeidraChestLootTableProvider implements LootTableSubProvider
 {

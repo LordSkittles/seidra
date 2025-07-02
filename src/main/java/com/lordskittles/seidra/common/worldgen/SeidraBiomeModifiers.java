@@ -14,7 +14,7 @@ import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
-import static com.lordskittles.seidra.Names.*;
+import static com.lordskittles.seidra.Constants.*;
 
 public class SeidraBiomeModifiers
 {

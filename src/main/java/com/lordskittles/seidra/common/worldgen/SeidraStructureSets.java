@@ -1,6 +1,6 @@
 package com.lordskittles.seidra.common.worldgen;
 
-import com.lordskittles.seidra.Names;
+import com.lordskittles.seidra.Constants;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
@@ -12,7 +12,7 @@ import java.util.List;
 
 public class SeidraStructureSets
 {
-	public static final ResourceKey<StructureSet> CRUMBLED_PILLAR = createKey(Names.buildName(Names.Prefixes.CRUMBLED, Names.Suffixes.PILLAR));
+	public static final ResourceKey<StructureSet> CRUMBLED_PILLAR = createKey(Constants.buildName(Constants.Prefixes.CRUMBLED, Constants.Suffixes.PILLAR));
 
 	public static void bootstrap(BootstrapContext<StructureSet> context)
 	{
@@ -26,6 +26,6 @@ public class SeidraStructureSets
 
 	private static ResourceKey<StructureSet> createKey(String name)
 	{
-		return ResourceKey.create(Registries.STRUCTURE_SET, Names.modRes(name));
+		return ResourceKey.create(Registries.STRUCTURE_SET, Constants.modRes(name));
 	}
 }

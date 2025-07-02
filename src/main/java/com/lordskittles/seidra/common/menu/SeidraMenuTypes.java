@@ -9,7 +9,7 @@ import net.neoforged.neoforge.network.IContainerFactory;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import static com.lordskittles.seidra.Names.*;
+import static com.lordskittles.seidra.Constants.*;
 
 public class SeidraMenuTypes
 {

@@ -20,7 +20,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.IntStream;
 
-import static com.lordskittles.seidra.Names.*;
+import static com.lordskittles.seidra.Constants.*;
 
 public class SeidraBlocks
 {

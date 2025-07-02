@@ -9,7 +9,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-import static com.lordskittles.seidra.Names.*;
+import static com.lordskittles.seidra.Constants.*;
 
 public class SeidraStructureTypes
 {

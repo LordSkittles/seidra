@@ -2,8 +2,19 @@ package com.lordskittles.seidra;
 
 import net.minecraft.resources.ResourceLocation;
 
-public class Names
+public class Constants
 {
+	public enum ERenderType
+	{
+		Cutout;
+		
+		@Override
+		public String toString()
+		{
+			return super.toString().toLowerCase();
+		}
+	}
+	
 	public static class Types
 	{
 		public static final String ASH = "ash";

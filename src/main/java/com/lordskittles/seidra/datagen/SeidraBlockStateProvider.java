@@ -17,7 +17,7 @@ import net.neoforged.neoforge.client.model.generators.VariantBlockStateBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
-import static com.lordskittles.seidra.Names.*;
+import static com.lordskittles.seidra.Constants.*;
 
 public class SeidraBlockStateProvider extends BlockStateProvider
 {
@@ -145,11 +145,9 @@ public class SeidraBlockStateProvider extends BlockStateProvider
 
     public void saplingBlockWithItem(DeferredBlock<?> deferredBlock)
     {
-        ResourceLocation location = ResourceLocation.fromNamespaceAndPath(
-                deferredBlock.getId().getNamespace(), buildName('/', Groups.BLOCK, Groups.PLANT, deferredBlock.getId().getPath())
-        );
+        ResourceLocation location = modRes(buildName('/', Groups.BLOCK, Groups.PLANT, deferredBlock.getId().getPath()));
 
-        BlockModelBuilder blockModel = this.models().cross(deferredBlock.getId().getPath(), location).renderType("cutout");
+        BlockModelBuilder blockModel = this.models().cross(deferredBlock.getId().getPath(), location).renderType(ERenderType.Cutout.toString());
         simpleBlock(deferredBlock.get(), blockModel);
     }
 

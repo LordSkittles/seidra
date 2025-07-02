@@ -1,9 +1,7 @@
 package com.lordskittles.seidra.common.tag;
 
-import com.lordskittles.seidra.Names;
-import com.lordskittles.seidra.Seidra;
+import com.lordskittles.seidra.Constants;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 
@@ -18,6 +16,6 @@ public class BiomeTags
 	
 	private static TagKey<Biome> create(String name)
 	{
-		return TagKey.create(Registries.BIOME, Names.modRes(name));
+		return TagKey.create(Registries.BIOME, Constants.modRes(name));
 	}
 }

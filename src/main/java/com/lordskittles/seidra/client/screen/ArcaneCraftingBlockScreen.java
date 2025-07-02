@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-import static com.lordskittles.seidra.Names.*;
+import static com.lordskittles.seidra.Constants.*;
 
 public class ArcaneCraftingBlockScreen extends AbstractContainerScreen<ArcaneCraftingBlockMenu>
 {
