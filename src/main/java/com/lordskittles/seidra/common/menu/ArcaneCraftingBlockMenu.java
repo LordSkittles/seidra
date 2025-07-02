@@ -1,8 +1,7 @@
-package com.lordskittles.seidra.common.containers;
+package com.lordskittles.seidra.common.menu;
 
 import com.lordskittles.seidra.common.entities.block.ArcaneCraftingBlockEntity;
-import com.lordskittles.seidra.common.registries.SeidraBlocks;
-import com.lordskittles.seidra.common.registries.MenuTypes;
+import com.lordskittles.seidra.common.block.SeidraBlocks;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -26,7 +25,7 @@ public class ArcaneCraftingBlockMenu extends SeidraContainerMenu
 
     public ArcaneCraftingBlockMenu(int containerId, Inventory inventory, BlockEntity blockEntity)
     {
-        super(MenuTypes.ARCANE_CRAFTING_BLOCK.get(), containerId);
+        super(SeidraMenuTypes.ARCANE_CRAFTING_BLOCK.get(), containerId);
 
         this.blockEntity = (ArcaneCraftingBlockEntity) blockEntity;
         this.level = blockEntity.getLevel();

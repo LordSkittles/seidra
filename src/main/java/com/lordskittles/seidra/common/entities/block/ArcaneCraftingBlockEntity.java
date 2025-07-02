@@ -1,9 +1,9 @@
 package com.lordskittles.seidra.common.entities.block;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.containers.ArcaneCraftingBlockMenu;
-import com.lordskittles.seidra.common.registries.BlockEntityTypes;
-import com.lordskittles.seidra.common.registries.SeidraBlocks;
+import com.lordskittles.seidra.common.menu.ArcaneCraftingBlockMenu;
+import com.lordskittles.seidra.common.entities.BlockEntityTypes;
+import com.lordskittles.seidra.common.block.SeidraBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;

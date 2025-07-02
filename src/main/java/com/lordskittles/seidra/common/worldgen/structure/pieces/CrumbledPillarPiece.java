@@ -1,7 +1,6 @@
-package com.lordskittles.seidra.common.worldgen.structure;
+package com.lordskittles.seidra.common.worldgen.structure.pieces;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.registries.StructurePieceTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
@@ -30,20 +29,20 @@ public class CrumbledPillarPiece extends TemplateStructurePiece
     public CrumbledPillarPiece(StructureTemplateManager templateManager, ResourceLocation template,
                                BlockPos pos, Rotation rotation, Mirror mirror, BoundingBox boundingBox)
     {
-        super(StructurePieceTypes.CRUMBLED_PILLAR_PIECE.get(), 0, templateManager, template, template.toString(), makeSettings(rotation, mirror), pos);
+        super(SeidraStructurePieceTypes.CRUMBLED_PILLAR_PIECE.get(), 0, templateManager, template, template.toString(), makeSettings(rotation, mirror), pos);
         this.boundingBox = boundingBox;
     }
 
     public CrumbledPillarPiece(StructureTemplateManager templateManager, CompoundTag tag)
     {
-        super(StructurePieceTypes.CRUMBLED_PILLAR_PIECE.get(), tag, templateManager,
+        super(SeidraStructurePieceTypes.CRUMBLED_PILLAR_PIECE.get(), tag, templateManager,
                 (resourceLocation) -> makeSettings(Rotation.NONE, Mirror.NONE)
         );
     }
 
     public CrumbledPillarPiece(StructurePieceSerializationContext context, CompoundTag tag)
     {
-        super(StructurePieceTypes.CRUMBLED_PILLAR_PIECE.get(), tag, context.structureTemplateManager(),
+        super(SeidraStructurePieceTypes.CRUMBLED_PILLAR_PIECE.get(), tag, context.structureTemplateManager(),
                 (resourceLocation) -> makeSettings(Rotation.NONE, Mirror.NONE)
         );
     }

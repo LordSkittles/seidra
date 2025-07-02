@@ -37,7 +37,7 @@
                   ]
                 }
               ],
-              "name": "seidra:ash_leaves"
+              "name": "minecraft:air"
             },
             {
               "type": "minecraft:item",
@@ -56,7 +56,7 @@
                   "enchantment": "minecraft:fortune"
                 }
               ],
-              "name": "seidra:ash_sapling"
+              "name": "minecraft:air"
             }
           ]
         }

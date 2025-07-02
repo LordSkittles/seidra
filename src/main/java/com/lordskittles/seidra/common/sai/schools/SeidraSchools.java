@@ -1,11 +1,10 @@
-package com.lordskittles.seidra.common.registries;
+package com.lordskittles.seidra.common.sai.schools;
 
 import api.lordskittles.seidra.common.registry.DeferredSchool;
 import api.lordskittles.seidra.common.registry.SeidraRegistries;
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.sai.schools.*;
 
-public class Schools
+public class SeidraSchools
 {
 	public static final SeidraRegistries.Schools SCHOOLS = SeidraRegistries.createSchools(Seidra.MODID);
 

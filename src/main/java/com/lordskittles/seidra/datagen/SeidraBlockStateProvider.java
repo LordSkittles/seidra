@@ -1,12 +1,9 @@
 package com.lordskittles.seidra.datagen;
 
-import api.lordskittles.seidra.interfaces.IBlockStateDatagenProvider;
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.block.simple.SeidraColumnBlock;
 import com.lordskittles.seidra.common.block.simple.WakestoneBlock;
-import com.lordskittles.seidra.common.registries.SeidraBlocks;
+import com.lordskittles.seidra.common.block.SeidraBlocks;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -30,24 +27,77 @@ public class SeidraBlockStateProvider extends BlockStateProvider
     @Override
     protected void registerStatesAndModels()
     {
-        SeidraBlocks.BLOCKS.getEntries().forEach(block -> {
-            //noinspection rawtypes
-            if(block.get() instanceof IBlockStateDatagenProvider provider)
-            {
-                provider.generate(this).run();
-            }
-        });
-
+        registerWakestone();
+        
+        axisBlockSubFolder(SeidraBlocks.ASH_LOG, "wood", "top");
+        axisBlockSubFolder(SeidraBlocks.PINE_LOG, "wood", "top");
+        axisBlockSubFolder(SeidraBlocks.YEW_LOG, "wood", "top");
+        
+        blockWithItemSubFolder(SeidraBlocks.ASH_WOOD, "wood", "wood", "log");
+        blockWithItemSubFolder(SeidraBlocks.PINE_WOOD, "wood", "wood", "log");
+        blockWithItemSubFolder(SeidraBlocks.YEW_WOOD, "wood", "wood", "log");
+        
+        axisBlockSubFolder(SeidraBlocks.STRIPPED_ASH_LOG, "wood", "top");
+        axisBlockSubFolder(SeidraBlocks.STRIPPED_PINE_LOG, "wood", "top");
+        axisBlockSubFolder(SeidraBlocks.STRIPPED_YEW_LOG, "wood", "top");
+        
+        blockWithItemSubFolder(SeidraBlocks.STRIPPED_ASH_WOOD, "wood", "wood", "log");
+        blockWithItemSubFolder(SeidraBlocks.STRIPPED_PINE_WOOD, "wood", "wood", "log");
+        blockWithItemSubFolder(SeidraBlocks.STRIPPED_YEW_WOOD, "wood", "wood", "log");
+        
+        blockWithItemSubFolder(SeidraBlocks.ASH_PLANKS, "wood");
+        blockWithItemSubFolder(SeidraBlocks.PINE_PLANKS, "wood");
+        blockWithItemSubFolder(SeidraBlocks.YEW_PLANKS, "wood");
+        
         saplingBlockWithItem(SeidraBlocks.ASH_SAPLING);
         saplingBlockWithItem(SeidraBlocks.PINE_SAPLING);
         saplingBlockWithItem(SeidraBlocks.YEW_SAPLING);
+        
+        blockWithItemSubFolder(SeidraBlocks.ASH_LEAVES, "plants");
+        blockWithItemSubFolder(SeidraBlocks.PINE_LEAVES, "plants");
+        blockWithItemSubFolder(SeidraBlocks.YEW_LEAVES, "plants");
+        
+        blockWithItemSubFolder(SeidraBlocks.BISMUTH_BLOCK, "ores");
+        blockWithItemSubFolder(SeidraBlocks.SILVER_BLOCK, "ores");
+        blockWithItemSubFolder(SeidraBlocks.TUNGSTEN_BLOCK, "ores");
+        blockWithItemSubFolder(SeidraBlocks.AMBER_BLOCK, "ores");
+        blockWithItemSubFolder(SeidraBlocks.LABRADORITE_BLOCK, "ores");
+        blockWithItemSubFolder(SeidraBlocks.THULITE_BLOCK, "ores");
+        blockWithItemSubFolder(SeidraBlocks.RAW_BISMUTH_BLOCK, "ores");
+        blockWithItemSubFolder(SeidraBlocks.RAW_SILVER_BLOCK, "ores");
+        blockWithItemSubFolder(SeidraBlocks.RAW_TUNGSTEN_BLOCK, "ores");
+        
+        blockWithItemSubFolder(SeidraBlocks.BISMUTH_ORE, "ores");
+        blockWithItemSubFolder(SeidraBlocks.SILVER_ORE, "ores");
+        blockWithItemSubFolder(SeidraBlocks.TUNGSTEN_ORE, "ores");
+        blockWithItemSubFolder(SeidraBlocks.AMBER_ORE, "ores");
+        blockWithItemSubFolder(SeidraBlocks.LABRADORITE_ORE, "ores");
+        blockWithItemSubFolder(SeidraBlocks.THULITE_ORE, "ores");
+        
+        blockWithItemSubFolder(SeidraBlocks.DEEPSLATE_BISMUTH_ORE, "ores");
+        blockWithItemSubFolder(SeidraBlocks.DEEPSLATE_SILVER_ORE, "ores");
+        blockWithItemSubFolder(SeidraBlocks.DEEPSLATE_TUNGSTEN_ORE, "ores");
+        blockWithItemSubFolder(SeidraBlocks.DEEPSLATE_AMBER_ORE, "ores");
+        blockWithItemSubFolder(SeidraBlocks.DEEPSLATE_LABRADORITE_ORE, "ores");
+        blockWithItemSubFolder(SeidraBlocks.DEEPSLATE_THULITE_ORE, "ores");
+        
+        blockWithItemSubFolder(SeidraBlocks.FELDSPAR, "stone");
+        blockWithItemSubFolder(SeidraBlocks.FELDSPAR_BRICK, "stone");
+        blockWithItemSubFolder(SeidraBlocks.POLISHED_FELDSPAR, "stone");
+        blockWithItemSubFolder(SeidraBlocks.CRACKED_FELDSPAR, "stone");
+        blockWithItemSubFolder(SeidraBlocks.CRACKED_FELDSPAR_BRICK, "stone");
+        blockWithItemSubFolder(SeidraBlocks.CRACKED_POLISHED_FELDSPAR, "stone");
+        blockWithItemSubFolder(SeidraBlocks.CHISELED_FELDSPAR_BRICK, "stone");
+        axisBlockSubFolder(SeidraBlocks.FELDSPAR_PILLAR, "stone", "top");
+        
+        blockWithItem(SeidraBlocks.ARCANE_CRAFTING_BLOCK);
 
         ResourceLocation crackedDeepslateBricks = ResourceLocation.fromNamespaceAndPath("minecraft", "block/cracked_deepslate_bricks");
 
         stairsBlock((StairBlock) SeidraBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(), crackedDeepslateBricks);
         slabBlock((SlabBlock) SeidraBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), crackedDeepslateBricks, crackedDeepslateBricks);
-        simpleBlockItem(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), this.models().slab(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.getId().getPath(), crackedDeepslateBricks, crackedDeepslateBricks, crackedDeepslateBricks));
-        simpleBlockItem(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.get(), this.models().stairs(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS.getId().getPath(), crackedDeepslateBricks, crackedDeepslateBricks, crackedDeepslateBricks));
+        blockItem(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_SLAB);
+        blockItem(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS);
     }
 
     public void registerWakestone()
@@ -97,7 +147,7 @@ public class SeidraBlockStateProvider extends BlockStateProvider
         simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));
     }
 
-    public void saplingBlockWithItem(DeferredBlock<Block> deferredBlock)
+    public void saplingBlockWithItem(DeferredBlock<?> deferredBlock)
     {
         ResourceLocation location = ResourceLocation.fromNamespaceAndPath(
                 deferredBlock.getId().getNamespace(), "block/plants/" + deferredBlock.getId().getPath()
@@ -112,28 +162,40 @@ public class SeidraBlockStateProvider extends BlockStateProvider
         simpleBlockWithItem(deferredBlock.get(), cubeAllSubFolder(deferredBlock, subFolder));
     }
 
+    public void blockWithItemSubFolder(DeferredBlock<?> deferredBlock, String subFolder, String toReplace, String replacement)
+    {
+        simpleBlockWithItem(deferredBlock.get(), cubeAllSubFolder(deferredBlock, subFolder, toReplace, replacement));
+    }
+
     public ModelFile cubeAllSubFolder(DeferredBlock<?> deferredBlock, String subFolder)
     {
+        return cubeAllSubFolder(deferredBlock, subFolder, "", "");
+    }
+
+    public ModelFile cubeAllSubFolder(DeferredBlock<?> deferredBlock, String subFolder, String toReplace, String replacement)
+    {
+        ResourceLocation blockId = deferredBlock.getId();
+        
         ResourceLocation location = ResourceLocation.fromNamespaceAndPath(
-                deferredBlock.getId().getNamespace(), "block/" + subFolder + "/" + deferredBlock.getId().getPath()
+                blockId.getNamespace(), "block/" + subFolder + "/" + blockId.getPath().replace(toReplace, replacement)
         );
 
         return this.models().cubeAll(deferredBlock.getId().getPath(), location);
     }
 
-    public void axisBlockSubFolder(SeidraColumnBlock deferredBlock, String subFolder)
+    public void axisBlockSubFolder(DeferredBlock<?> deferredBlock, String subFolder)
     {
         axisBlockSubFolder(deferredBlock, subFolder, "");
     }
 
-    public void axisBlockSubFolder(SeidraColumnBlock deferredBlock, String subFolder, String endName)
+    public void axisBlockSubFolder(DeferredBlock<?> deferredBlock, String subFolder, String endName)
     {
         axisBlockSubFolder(deferredBlock, subFolder, endName, "", "");
     }
 
-    public void axisBlockSubFolder(SeidraColumnBlock deferredBlock, String subFolder, String endName, String toReplace, String replacement)
+    public void axisBlockSubFolder(DeferredBlock<?> deferredBlock, String subFolder, String endName, String toReplace, String replacement)
     {
-        ResourceLocation blockId = BuiltInRegistries.BLOCK.getKey(deferredBlock);
+        ResourceLocation blockId = deferredBlock.getId();
 
         ResourceLocation location = ResourceLocation.fromNamespaceAndPath(
                 blockId.getNamespace(), "block/" + subFolder + "/" + blockId.getPath().replace(toReplace, replacement)
@@ -141,12 +203,17 @@ public class SeidraBlockStateProvider extends BlockStateProvider
 
         ResourceLocation end = !endName.isEmpty() ? extend(location, "_" + endName) : location;
 
-        axisBlock(deferredBlock,
+        axisBlock(((RotatedPillarBlock) deferredBlock.get()),
                   this.models().cubeColumn(blockId.getPath(), location, end),
                   this.models().cubeColumnHorizontal(blockId.getPath(), location, end)
         );
 
-        simpleBlockItem(deferredBlock, this.models().cubeColumn(blockId.getPath(), location, end));
+        simpleBlockItem(deferredBlock.get(), this.models().cubeColumn(blockId.getPath(), location, end));
+    }
+    
+    private void blockItem(DeferredBlock<Block> deferredBlock)
+    {
+        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile(Seidra.MODID + ":block/" + deferredBlock.getId().getPath()));
     }
 
     public ResourceLocation extend(ResourceLocation rl, String suffix)

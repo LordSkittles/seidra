@@ -1,7 +1,6 @@
-package com.lordskittles.seidra.common.registries;
+package com.lordskittles.seidra.common.menu;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.containers.ArcaneCraftingBlockMenu;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -10,7 +9,7 @@ import net.neoforged.neoforge.network.IContainerFactory;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-public class MenuTypes
+public class SeidraMenuTypes
 {
     public static final DeferredRegister<MenuType<?>> MENU_TYPES = DeferredRegister.create(Registries.MENU, Seidra.MODID);
 

@@ -1,7 +1,7 @@
 package com.lordskittles.seidra.client.screen;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.containers.ArcaneCraftingBlockMenu;
+import com.lordskittles.seidra.common.menu.ArcaneCraftingBlockMenu;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;

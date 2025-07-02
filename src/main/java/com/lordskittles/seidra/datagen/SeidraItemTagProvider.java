@@ -1,8 +1,8 @@
 package com.lordskittles.seidra.datagen;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.registries.SeidraBlocks;
-import com.lordskittles.seidra.common.registries.Items;
+import com.lordskittles.seidra.common.block.SeidraBlocks;
+import com.lordskittles.seidra.common.item.SeidraItems;
 import com.lordskittles.seidra.common.tag.ItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -23,16 +23,16 @@ public class SeidraItemTagProvider extends ItemTagsProvider
     @Override
     protected void addTags(HolderLookup.Provider provider)
     {
-        tag(ItemTags.BISMUTH_INGOT).add(Items.BISMUTH_INGOT.get());
-        tag(ItemTags.SILVER_INGOT).add(Items.SILVER_INGOT.get());
-        tag(ItemTags.TUNGSTEN_INGOT).add(Items.TUNGSTEN_INGOT.get());
-        tag(ItemTags.RAW_BISMUTH).add(Items.RAW_BISMUTH.get());
-        tag(ItemTags.RAW_SILVER).add(Items.RAW_SILVER.get());
-        tag(ItemTags.RAW_TUNGSTEN).add(Items.RAW_TUNGSTEN.get());
+        tag(ItemTags.BISMUTH_INGOT).add(SeidraItems.BISMUTH_INGOT.get());
+        tag(ItemTags.SILVER_INGOT).add(SeidraItems.SILVER_INGOT.get());
+        tag(ItemTags.TUNGSTEN_INGOT).add(SeidraItems.TUNGSTEN_INGOT.get());
+        tag(ItemTags.RAW_BISMUTH).add(SeidraItems.RAW_BISMUTH.get());
+        tag(ItemTags.RAW_SILVER).add(SeidraItems.RAW_SILVER.get());
+        tag(ItemTags.RAW_TUNGSTEN).add(SeidraItems.RAW_TUNGSTEN.get());
 
-        tag(ItemTags.AMBER).add(Items.AMBER_GEM.get());
-        tag(ItemTags.LABRADORITE).add(Items.LABRADORITE_GEM.get());
-        tag(ItemTags.THULITE).add(Items.THULITE_GEM.get());
+        tag(ItemTags.AMBER).add(SeidraItems.AMBER_GEM.get());
+        tag(ItemTags.LABRADORITE).add(SeidraItems.LABRADORITE_GEM.get());
+        tag(ItemTags.THULITE).add(SeidraItems.THULITE_GEM.get());
 
         tag(ItemTags.BISMUTH_ORE).add(SeidraBlocks.BISMUTH_ORE.asItem(), SeidraBlocks.DEEPSLATE_BISMUTH_ORE.asItem());
         tag(ItemTags.SILVER_ORE).add(SeidraBlocks.SILVER_ORE.asItem(), SeidraBlocks.DEEPSLATE_SILVER_ORE.asItem());

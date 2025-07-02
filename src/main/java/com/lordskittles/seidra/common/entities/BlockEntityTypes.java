@@ -1,6 +1,7 @@
-package com.lordskittles.seidra.common.registries;
+package com.lordskittles.seidra.common.entities;
 
 import com.lordskittles.seidra.Seidra;
+import com.lordskittles.seidra.common.block.SeidraBlocks;
 import com.lordskittles.seidra.common.entities.block.ArcaneCraftingBlockEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;

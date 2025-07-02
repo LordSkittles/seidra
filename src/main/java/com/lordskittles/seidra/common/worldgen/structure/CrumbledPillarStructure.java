@@ -1,6 +1,6 @@
 package com.lordskittles.seidra.common.worldgen.structure;
 
-import com.lordskittles.seidra.common.registries.StructureTypes;
+import com.lordskittles.seidra.common.worldgen.structure.pieces.CrumbledPillarPiece;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.Rotation;
@@ -56,6 +56,6 @@ public class CrumbledPillarStructure extends Structure
 	@Override
 	public @NotNull StructureType<?> type()
 	{
-		return StructureTypes.CRUMBLED_PILLAR.get();
+		return SeidraStructureTypes.CRUMBLED_PILLAR.get();
 	}
 }

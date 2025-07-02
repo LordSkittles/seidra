@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "seidra:yew_sapling"
+          "name": "minecraft:air"
         }
       ],
       "rolls": 1.0

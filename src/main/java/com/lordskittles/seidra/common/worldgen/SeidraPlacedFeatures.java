@@ -1,7 +1,7 @@
 package com.lordskittles.seidra.common.worldgen;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.registries.SeidraBlocks;
+import com.lordskittles.seidra.common.block.SeidraBlocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;

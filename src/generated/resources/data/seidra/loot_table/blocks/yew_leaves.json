@@ -37,7 +37,7 @@
                   ]
                 }
               ],
-              "name": "seidra:yew_leaves"
+              "name": "minecraft:air"
             },
             {
               "type": "minecraft:item",
@@ -56,7 +56,7 @@
                   "enchantment": "minecraft:fortune"
                 }
               ],
-              "name": "seidra:yew_sapling"
+              "name": "minecraft:air"
             }
           ]
         }
