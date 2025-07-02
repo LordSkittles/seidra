@@ -9,11 +9,13 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
+import static com.lordskittles.seidra.Names.*;
+
 public class SeidraStructureTypes
 {
 	public static final DeferredRegister<StructureType<?>> STRUCTURE_TYPES = DeferredRegister.create(Registries.STRUCTURE_TYPE, Seidra.MODID);
 
-	public static final Supplier<StructureType<CrumbledPillarStructure>> CRUMBLED_PILLAR = register("crumbled_pillar", CrumbledPillarStructure.CODEC);
+	public static final Supplier<StructureType<CrumbledPillarStructure>> CRUMBLED_PILLAR = register(buildName(Prefixes.CRUMBLED, Suffixes.PILLAR), CrumbledPillarStructure.CODEC);
 
 	private static <S extends Structure> Supplier<StructureType<S>> register(String name, MapCodec<S> codec)
 	{

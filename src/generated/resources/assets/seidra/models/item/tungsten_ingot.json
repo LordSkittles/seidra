@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "seidra:item/metals/tungsten_ingot"
+    "layer0": "seidra:item/metal/tungsten_ingot"
   }
 }

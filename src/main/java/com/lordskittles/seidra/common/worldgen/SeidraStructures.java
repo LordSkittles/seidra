@@ -1,19 +1,19 @@
 package com.lordskittles.seidra.common.worldgen;
 
-import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.worldgen.structure.CrumbledPillarStructure;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.structure.Structure;
 
+import static com.lordskittles.seidra.Names.*;
+
 public class SeidraStructures
 {
-	public static final ResourceKey<Structure> CRUMBLED_PILLAR_KEY = registerKey("crumbled_pillar");
+	public static final ResourceKey<Structure> CRUMBLED_PILLAR_KEY = registerKey(buildName(Prefixes.CRUMBLED, Suffixes.PILLAR));
 
 	public static void bootstrap(BootstrapContext<Structure> context)
 	{
@@ -29,6 +29,6 @@ public class SeidraStructures
 
 	private static ResourceKey<Structure> registerKey(String name)
 	{
-		return ResourceKey.create(Registries.STRUCTURE, ResourceLocation.fromNamespaceAndPath(Seidra.MODID, name));
+		return ResourceKey.create(Registries.STRUCTURE, modRes(name));
 	}
 }

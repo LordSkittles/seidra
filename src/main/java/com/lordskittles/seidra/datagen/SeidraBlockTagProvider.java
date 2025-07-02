@@ -1,11 +1,11 @@
 package com.lordskittles.seidra.datagen;
 
+import com.lordskittles.seidra.Names;
 import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.block.SeidraBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
@@ -115,14 +115,14 @@ public class SeidraBlockTagProvider extends BlockTagsProvider
 						SeidraBlocks.LABRADORITE_BLOCK.get()
 				);
 
-		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "ores/bismuth"))).add(SeidraBlocks.BISMUTH_ORE.get());
-		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/bismuth"))).add(SeidraBlocks.BISMUTH_BLOCK.get());
-		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/raw_bismuth"))).add(SeidraBlocks.RAW_BISMUTH_BLOCK.get());
-		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "ores/silver"))).add(SeidraBlocks.SILVER_ORE.get());
-		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/silver"))).add(SeidraBlocks.SILVER_BLOCK.get());
-		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/raw_silver"))).add(SeidraBlocks.RAW_SILVER_BLOCK.get());
-		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "ores/tungsten"))).add(SeidraBlocks.TUNGSTEN_ORE.get());
-		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/tungsten"))).add(SeidraBlocks.TUNGSTEN_BLOCK.get());
-		tag(TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/raw_tungsten"))).add(SeidraBlocks.RAW_TUNGSTEN_BLOCK.get());
+		tag(TagKey.create(Registries.BLOCK, Names.commonRes("ores/bismuth"))).add(SeidraBlocks.BISMUTH_ORE.get());
+		tag(TagKey.create(Registries.BLOCK, Names.commonRes("storage_blocks/bismuth"))).add(SeidraBlocks.BISMUTH_BLOCK.get());
+		tag(TagKey.create(Registries.BLOCK, Names.commonRes("storage_blocks/raw_bismuth"))).add(SeidraBlocks.RAW_BISMUTH_BLOCK.get());
+		tag(TagKey.create(Registries.BLOCK, Names.commonRes("ores/silver"))).add(SeidraBlocks.SILVER_ORE.get());
+		tag(TagKey.create(Registries.BLOCK, Names.commonRes("storage_blocks/silver"))).add(SeidraBlocks.SILVER_BLOCK.get());
+		tag(TagKey.create(Registries.BLOCK, Names.commonRes("storage_blocks/raw_silver"))).add(SeidraBlocks.RAW_SILVER_BLOCK.get());
+		tag(TagKey.create(Registries.BLOCK, Names.commonRes("ores/tungsten"))).add(SeidraBlocks.TUNGSTEN_ORE.get());
+		tag(TagKey.create(Registries.BLOCK, Names.commonRes("storage_blocks/tungsten"))).add(SeidraBlocks.TUNGSTEN_BLOCK.get());
+		tag(TagKey.create(Registries.BLOCK, Names.commonRes("storage_blocks/raw_tungsten"))).add(SeidraBlocks.RAW_TUNGSTEN_BLOCK.get());
 	}
 }

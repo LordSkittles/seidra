@@ -7,9 +7,11 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
+import static com.lordskittles.seidra.Names.*;
+
 public class SeidraStructurePieceTypes
 {
 	public static final DeferredRegister<StructurePieceType> STRUCTURE_PIECE_TYPES = DeferredRegister.create(Registries.STRUCTURE_PIECE, Seidra.MODID);
 
-	public static final Supplier<StructurePieceType> CRUMBLED_PILLAR_PIECE = STRUCTURE_PIECE_TYPES.register("crumbled_pillar_piece", () -> CrumbledPillarPiece::new);
+	public static final Supplier<StructurePieceType> CRUMBLED_PILLAR_PIECE = STRUCTURE_PIECE_TYPES.register(buildName(Prefixes.CRUMBLED, Suffixes.PILLAR, Suffixes.PIECE), () -> CrumbledPillarPiece::new);
 }

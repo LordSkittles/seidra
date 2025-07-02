@@ -1,11 +1,9 @@
 package com.lordskittles.seidra.datagen;
 
-import com.lordskittles.seidra.Seidra;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -15,6 +13,8 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.function.BiConsumer;
+
+import static com.lordskittles.seidra.Names.modRes;
 
 public class SeidraChestLootTableProvider implements LootTableSubProvider
 {
@@ -42,7 +42,7 @@ public class SeidraChestLootTableProvider implements LootTableSubProvider
 
 	private void add(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> output, String name, LootTable.Builder builder)
 	{
-		ResourceKey<LootTable> key = ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(Seidra.MODID, "chest/" + name));
+		ResourceKey<LootTable> key = ResourceKey.create(Registries.LOOT_TABLE, modRes("chest/" + name));
 		output.accept(key, builder);
 	}
 }

@@ -20,6 +20,8 @@ import oshi.util.tuples.Pair;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+import static com.lordskittles.seidra.Names.modRes;
+
 public class SeidraRecipeProvider extends RecipeProvider implements IConditionBuilder
 {
     public SeidraRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries)
@@ -70,7 +72,7 @@ public class SeidraRecipeProvider extends RecipeProvider implements IConditionBu
 
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(SeidraBlocks.FELDSPAR.get()), RecipeCategory.DECORATIONS, SeidraBlocks.CRACKED_FELDSPAR.get(), 0.1f, 200)
                 .unlockedBy("has_feldspar", has(SeidraBlocks.FELDSPAR.get()))
-                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(Seidra.MODID, "cracked_feldspar_from_feldspar"));
+                .save(recipeOutput, modRes("cracked_feldspar_from_feldspar"));
     }
 
     private void simpleRecipe2x2(RecipeCategory category, DeferredBlock<?> output, DeferredBlock<?> input, RecipeOutput recipeOutput)

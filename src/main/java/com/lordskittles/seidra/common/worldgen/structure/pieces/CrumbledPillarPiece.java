@@ -1,6 +1,6 @@
 package com.lordskittles.seidra.common.worldgen.structure.pieces;
 
-import com.lordskittles.seidra.Seidra;
+import com.lordskittles.seidra.Names;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
@@ -20,10 +20,12 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemp
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 import net.minecraft.world.level.storage.loot.LootTable;
 
+import static com.lordskittles.seidra.Names.*;
+
 public class CrumbledPillarPiece extends TemplateStructurePiece
 {
     private static final ResourceLocation[] VARIANTS = {
-            ResourceLocation.fromNamespaceAndPath(Seidra.MODID, "crumbled_pillar/1")
+            modRes(Names.buildName(Names.Prefixes.CRUMBLED, Names.Suffixes.PILLAR) + "/1")
     };
 
     public CrumbledPillarPiece(StructureTemplateManager templateManager, ResourceLocation template,
@@ -82,7 +84,7 @@ public class CrumbledPillarPiece extends TemplateStructurePiece
             if (level.getBlockEntity(pos) instanceof net.minecraft.world.level.block.entity.BarrelBlockEntity barrel)
             {
                 // Fill the barrel with random loot
-                ResourceKey<LootTable> lootTable = ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(Seidra.MODID, "chest/crumbled_pillar"));
+                ResourceKey<LootTable> lootTable = ResourceKey.create(Registries.LOOT_TABLE, Names.modRes("chest/" + buildName(Prefixes.CRUMBLED, Suffixes.PILLAR)));
                 barrel.setLootTable(lootTable, random.nextLong());
             }
         }

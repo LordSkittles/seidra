@@ -1,37 +1,36 @@
 package com.lordskittles.seidra.common.worldgen;
 
-import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.tag.BiomeTags;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.neoforged.neoforge.common.Tags;
-import net.neoforged.neoforge.common.data.internal.NeoForgeBlockTagsProvider;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
+import static com.lordskittles.seidra.Names.*;
+
 public class SeidraBiomeModifiers
 {
-	public static final ResourceKey<BiomeModifier> ADD_ASH_TREE_KEY = registerKey("add_ash_tree");
-	public static final ResourceKey<BiomeModifier> ADD_YEW_TREE_KEY = registerKey("add_yew_tree");
-	public static final ResourceKey<BiomeModifier> ADD_PINE_TREE_KEY = registerKey("add_pine_tree");
+	public static final ResourceKey<BiomeModifier> ADD_ASH_TREE_KEY = registerKey(buildName(Misc.ADD, Types.ASH, Suffixes.TREE));
+	public static final ResourceKey<BiomeModifier> ADD_YEW_TREE_KEY = registerKey(buildName(Misc.ADD, Types.YEW, Suffixes.TREE));
+	public static final ResourceKey<BiomeModifier> ADD_PINE_TREE_KEY = registerKey(buildName(Misc.ADD, Types.PINE, Suffixes.TREE));
 
-	public static final ResourceKey<BiomeModifier> ADD_BISMUTH_ORE_KEY = registerKey("add_bismuth_ore");
-	public static final ResourceKey<BiomeModifier> ADD_SILVER_ORE_KEY = registerKey("add_silver_ore");
-	public static final ResourceKey<BiomeModifier> ADD_TUNGSTEN_ORE_KEY = registerKey("add_tungsten_ore");
+	public static final ResourceKey<BiomeModifier> ADD_BISMUTH_ORE_KEY = registerKey(buildName(Misc.ADD, Types.BISMUTH, Suffixes.ORE));
+	public static final ResourceKey<BiomeModifier> ADD_SILVER_ORE_KEY = registerKey(buildName(Misc.ADD, Types.SILVER, Suffixes.ORE));
+	public static final ResourceKey<BiomeModifier> ADD_TUNGSTEN_ORE_KEY = registerKey(buildName(Misc.ADD, Types.TUNGSTEN, Suffixes.ORE));
 
-	public static final ResourceKey<BiomeModifier> ADD_AMBER_ORE_KEY = registerKey("add_amber_ore");
-	public static final ResourceKey<BiomeModifier> ADD_LABRADORITE_ORE_KEY = registerKey("add_labradorite_ore");
-	public static final ResourceKey<BiomeModifier> ADD_THULITE_ORE_KEY = registerKey("add_thulite_ore");
+	public static final ResourceKey<BiomeModifier> ADD_AMBER_ORE_KEY = registerKey(buildName(Misc.ADD, Types.AMBER, Suffixes.ORE));
+	public static final ResourceKey<BiomeModifier> ADD_LABRADORITE_ORE_KEY = registerKey(buildName(Misc.ADD, Types.LABRADORITE, Suffixes.ORE));
+	public static final ResourceKey<BiomeModifier> ADD_THULITE_ORE_KEY = registerKey(buildName(Misc.ADD, Types.THULITE, Suffixes.ORE));
 
-	public static final ResourceKey<BiomeModifier> ADD_FELDSPAR_KEY = registerKey("add_feldspar_ore");
+	public static final ResourceKey<BiomeModifier> ADD_FELDSPAR_KEY = registerKey(buildName(Misc.ADD, Types.FELDSPAR));
 
 	public static void bootstrap(BootstrapContext<BiomeModifier> context)
 	{
@@ -44,7 +43,7 @@ public class SeidraBiomeModifiers
 
 	private static ResourceKey<BiomeModifier> registerKey(String name)
 	{
-		return ResourceKey.create(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ResourceLocation.fromNamespaceAndPath(Seidra.MODID, name));
+		return ResourceKey.create(NeoForgeRegistries.Keys.BIOME_MODIFIERS, modRes(name));
 	}
 
 	private static void registerTrees(BootstrapContext<BiomeModifier> context, HolderGetter<PlacedFeature> placedFeatures, HolderGetter<Biome> biomes)

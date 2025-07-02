@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "seidra:item/metals/silver_ingot"
+    "layer0": "seidra:item/metal/silver_ingot"
   }
 }

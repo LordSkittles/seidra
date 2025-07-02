@@ -1,34 +1,34 @@
 package com.lordskittles.seidra.common.worldgen;
 
-import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.block.SeidraBlocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
+import static com.lordskittles.seidra.Names.*;
+
 public class SeidraPlacedFeatures
 {
-	public static final ResourceKey<PlacedFeature> ASH_TREE_KEY = registerKey("ash_tree");
-	public static final ResourceKey<PlacedFeature> PINE_TREE_KEY = registerKey("pine_tree");
-	public static final ResourceKey<PlacedFeature> YEW_TREE_KEY = registerKey("yew_tree");
+	public static final ResourceKey<PlacedFeature> ASH_TREE_KEY = registerKey(buildName(Types.ASH, Suffixes.TREE));
+	public static final ResourceKey<PlacedFeature> PINE_TREE_KEY = registerKey(buildName(Types.PINE, Suffixes.TREE));
+	public static final ResourceKey<PlacedFeature> YEW_TREE_KEY = registerKey(buildName(Types.YEW, Suffixes.TREE));
 
-	public static final ResourceKey<PlacedFeature> BISMUTH_ORE_KEY = registerKey("bismuth_ore");
-	public static final ResourceKey<PlacedFeature> SILVER_ORE_KEY = registerKey("silver_ore");
-	public static final ResourceKey<PlacedFeature> TUNGSTEN_ORE_KEY = registerKey("tungsten_ore");
+	public static final ResourceKey<PlacedFeature> BISMUTH_ORE_KEY = registerKey(buildName(Types.BISMUTH, Suffixes.ORE));
+	public static final ResourceKey<PlacedFeature> SILVER_ORE_KEY = registerKey(buildName(Types.SILVER, Suffixes.ORE));
+	public static final ResourceKey<PlacedFeature> TUNGSTEN_ORE_KEY = registerKey(buildName(Types.TUNGSTEN, Suffixes.ORE));
 
-	public static final ResourceKey<PlacedFeature> AMBER_ORE_KEY = registerKey("amber_ore");
-	public static final ResourceKey<PlacedFeature> LABRADORITE_ORE_KEY = registerKey("labradorite_ore");
-	public static final ResourceKey<PlacedFeature> THULITE_ORE_KEY = registerKey("thulite_ore");
+	public static final ResourceKey<PlacedFeature> AMBER_ORE_KEY = registerKey(buildName(Types.AMBER, Suffixes.ORE));
+	public static final ResourceKey<PlacedFeature> LABRADORITE_ORE_KEY = registerKey(buildName(Types.LABRADORITE, Suffixes.ORE));
+	public static final ResourceKey<PlacedFeature> THULITE_ORE_KEY = registerKey(buildName(Types.THULITE, Suffixes.ORE));
 
-	public static final ResourceKey<PlacedFeature> FELDSPAR_KEY = registerKey("feldspar");
+	public static final ResourceKey<PlacedFeature> FELDSPAR_KEY = registerKey(buildName(Types.FELDSPAR));
 
 	public static void bootstrap(BootstrapContext<PlacedFeature> context)
 	{
@@ -57,7 +57,7 @@ public class SeidraPlacedFeatures
 
 	public static ResourceKey<PlacedFeature> registerKey(String name)
 	{
-		return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(Seidra.MODID, name));
+		return ResourceKey.create(Registries.PLACED_FEATURE, modRes(name));
 	}
 
 	private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration, List<PlacementModifier> modifiers)

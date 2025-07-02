@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "seidra:block/ores/silver_block"
+    "all": "seidra:block/ore/silver_block"
   }
 }

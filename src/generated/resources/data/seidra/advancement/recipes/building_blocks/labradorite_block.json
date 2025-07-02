@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_labradorite_gem": {
+    "has_labradorite_gems": {
       "conditions": {
         "items": [
           {
-            "items": "seidra:labradorite_gem"
+            "items": "seidra:labradorite_gems"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_labradorite_gem"
+      "has_labradorite_gems"
     ]
   ],
   "rewards": {

@@ -1,5 +1,6 @@
 package com.lordskittles.seidra.common.tag;
 
+import com.lordskittles.seidra.Names;
 import com.lordskittles.seidra.Seidra;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -14,8 +15,9 @@ public class BiomeTags
 	public static final TagKey<Biome> IS_EXPOSED_CLIFFSIDE = create("is_exposed_cliffside");
 	public static final TagKey<Biome> IS_FLORAL = create("is_floral");
 	public static final TagKey<Biome> IS_MYSTIC_CAVE = create("is_mystic_cave");
-
-	private static TagKey<Biome> create(String name) {
-		return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(Seidra.MODID, name));
+	
+	private static TagKey<Biome> create(String name)
+	{
+		return TagKey.create(Registries.BIOME, Names.modRes(name));
 	}
 }

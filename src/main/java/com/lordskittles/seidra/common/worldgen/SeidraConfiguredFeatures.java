@@ -1,11 +1,9 @@
 package com.lordskittles.seidra.common.worldgen;
 
-import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.block.SeidraBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Tuple;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -25,21 +23,23 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 
 import java.util.List;
 
+import static com.lordskittles.seidra.Names.*;
+
 public class SeidraConfiguredFeatures
 {
-	public static final ResourceKey<ConfiguredFeature<?, ?>> ASH_TREE_KEY = registerKey("ash");
-	public static final ResourceKey<ConfiguredFeature<?, ?>> PINE_TREE_KEY = registerKey("pine");
-	public static final ResourceKey<ConfiguredFeature<?, ?>> YEW_TREE_KEY = registerKey("yew");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> ASH_TREE_KEY = registerKey(buildName(Types.ASH));
+	public static final ResourceKey<ConfiguredFeature<?, ?>> PINE_TREE_KEY = registerKey(buildName(Types.PINE));
+	public static final ResourceKey<ConfiguredFeature<?, ?>> YEW_TREE_KEY = registerKey(buildName(Types.YEW));
 
-	public static final ResourceKey<ConfiguredFeature<?, ?>> BISMUTH_ORE_KEY = registerKey("bismuth_ore");
-	public static final ResourceKey<ConfiguredFeature<?, ?>> SILVER_ORE_KEY = registerKey("silver_ore");
-	public static final ResourceKey<ConfiguredFeature<?, ?>> TUNGSTEN_ORE_KEY = registerKey("tungsten_ore");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> BISMUTH_ORE_KEY = registerKey(buildName(Types.BISMUTH, Suffixes.ORE));
+	public static final ResourceKey<ConfiguredFeature<?, ?>> SILVER_ORE_KEY = registerKey(buildName(Types.SILVER, Suffixes.ORE));
+	public static final ResourceKey<ConfiguredFeature<?, ?>> TUNGSTEN_ORE_KEY = registerKey(buildName(Types.TUNGSTEN, Suffixes.ORE));
 
-	public static final ResourceKey<ConfiguredFeature<?, ?>> AMBER_ORE_KEY = registerKey("amber_ore");
-	public static final ResourceKey<ConfiguredFeature<?, ?>> THULITE_ORE_KEY = registerKey("thulite_ore");
-	public static final ResourceKey<ConfiguredFeature<?, ?>> LABRADORITE_ORE_KEY = registerKey("labradorite_ore");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> AMBER_ORE_KEY = registerKey(buildName(Types.AMBER, Suffixes.ORE));
+	public static final ResourceKey<ConfiguredFeature<?, ?>> THULITE_ORE_KEY = registerKey(buildName(Types.THULITE, Suffixes.ORE));
+	public static final ResourceKey<ConfiguredFeature<?, ?>> LABRADORITE_ORE_KEY = registerKey(buildName(Types.LABRADORITE, Suffixes.ORE));
 
-	public static final ResourceKey<ConfiguredFeature<?, ?>> FELDSPAR_KEY = registerKey("feldspar");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> FELDSPAR_KEY = registerKey(buildName(Types.FELDSPAR));
 
 	public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context)
 	{
@@ -49,7 +49,7 @@ public class SeidraConfiguredFeatures
 
 	public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name)
 	{
-		return ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(Seidra.MODID, name));
+		return ResourceKey.create(Registries.CONFIGURED_FEATURE, modRes(name));
 	}
 
 	private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstrapContext<ConfiguredFeature<?, ?>> context,
