@@ -1,7 +1,6 @@
 {
-  "parent": "minecraft:block/cube_column",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "end": "seidra:block/wood/yew_log",
-    "side": "seidra:block/wood/yew_log"
+    "all": "seidra:block/wood/yew_log"
   }
 }

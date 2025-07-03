@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "seidra:block/plants/yew_sapling"
+    "layer0": "seidra:block/plant/yew_sapling"
   }
 }

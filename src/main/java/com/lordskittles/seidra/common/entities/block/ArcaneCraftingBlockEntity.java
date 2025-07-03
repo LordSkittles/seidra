@@ -1,9 +1,9 @@
 package com.lordskittles.seidra.common.entities.block;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.containers.ArcaneCraftingBlockMenu;
-import com.lordskittles.seidra.common.registries.BlockEntityTypes;
-import com.lordskittles.seidra.common.registries.Blocks;
+import com.lordskittles.seidra.common.menu.ArcaneCraftingBlockMenu;
+import com.lordskittles.seidra.common.entities.BlockEntityTypes;
+import com.lordskittles.seidra.common.block.SeidraBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -11,7 +11,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -75,7 +74,7 @@ public class ArcaneCraftingBlockEntity extends SeidraBlockEntity implements Menu
     @Override
     public @NotNull Component getDisplayName()
     {
-        return Component.translatable(Seidra.MODID + ".blockentity." + Blocks.ARCANE_CRAFTING_BLOCK.getId().getPath());
+        return Component.translatable(Seidra.MODID + ".blockentity." + SeidraBlocks.ARCANE_CRAFTING_BLOCK.getId().getPath());
     }
 
     @Override

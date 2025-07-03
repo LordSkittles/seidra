@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cross",
   "render_type": "minecraft:cutout",
   "textures": {
-    "cross": "seidra:block/plants/ash_sapling"
+    "cross": "seidra:block/plant/ash_sapling"
   }
 }

@@ -1,7 +1,6 @@
-package com.lordskittles.seidra.common.worldgen.structure;
+package com.lordskittles.seidra.common.worldgen.structure.pieces;
 
-import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.registries.StructurePieceTypes;
+import com.lordskittles.seidra.Constants;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
@@ -21,29 +20,31 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemp
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 import net.minecraft.world.level.storage.loot.LootTable;
 
+import static com.lordskittles.seidra.Constants.*;
+
 public class CrumbledPillarPiece extends TemplateStructurePiece
 {
     private static final ResourceLocation[] VARIANTS = {
-            ResourceLocation.fromNamespaceAndPath(Seidra.MODID, "crumbled_pillar/1")
+            modRes(Constants.buildName(Constants.Prefixes.CRUMBLED, Constants.Suffixes.PILLAR) + "/1")
     };
 
     public CrumbledPillarPiece(StructureTemplateManager templateManager, ResourceLocation template,
                                BlockPos pos, Rotation rotation, Mirror mirror, BoundingBox boundingBox)
     {
-        super(StructurePieceTypes.CRUMBLED_PILLAR_PIECE.get(), 0, templateManager, template, template.toString(), makeSettings(rotation, mirror), pos);
+        super(SeidraStructurePieceTypes.CRUMBLED_PILLAR_PIECE.get(), 0, templateManager, template, template.toString(), makeSettings(rotation, mirror), pos);
         this.boundingBox = boundingBox;
     }
 
     public CrumbledPillarPiece(StructureTemplateManager templateManager, CompoundTag tag)
     {
-        super(StructurePieceTypes.CRUMBLED_PILLAR_PIECE.get(), tag, templateManager,
+        super(SeidraStructurePieceTypes.CRUMBLED_PILLAR_PIECE.get(), tag, templateManager,
                 (resourceLocation) -> makeSettings(Rotation.NONE, Mirror.NONE)
         );
     }
 
     public CrumbledPillarPiece(StructurePieceSerializationContext context, CompoundTag tag)
     {
-        super(StructurePieceTypes.CRUMBLED_PILLAR_PIECE.get(), tag, context.structureTemplateManager(),
+        super(SeidraStructurePieceTypes.CRUMBLED_PILLAR_PIECE.get(), tag, context.structureTemplateManager(),
                 (resourceLocation) -> makeSettings(Rotation.NONE, Mirror.NONE)
         );
     }
@@ -83,7 +84,7 @@ public class CrumbledPillarPiece extends TemplateStructurePiece
             if (level.getBlockEntity(pos) instanceof net.minecraft.world.level.block.entity.BarrelBlockEntity barrel)
             {
                 // Fill the barrel with random loot
-                ResourceKey<LootTable> lootTable = ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(Seidra.MODID, "chest/crumbled_pillar"));
+                ResourceKey<LootTable> lootTable = ResourceKey.create(Registries.LOOT_TABLE, Constants.modRes("chest/" + buildName(Prefixes.CRUMBLED, Suffixes.PILLAR)));
                 barrel.setLootTable(lootTable, random.nextLong());
             }
         }

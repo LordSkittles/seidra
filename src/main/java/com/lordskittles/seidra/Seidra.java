@@ -1,6 +1,5 @@
 package com.lordskittles.seidra;
 
-import api.lordskittles.seidra.common.sai.capabilities.SaiCapabilities;
 import api.lordskittles.seidra.common.sai.capabilities.SaiCapabilityEvents;
 import com.lordskittles.seidra.common.CommonProxy;
 import com.lordskittles.seidra.common.Config;
@@ -15,7 +14,7 @@ import org.slf4j.Logger;
 @Mod(Seidra.MODID)
 public class Seidra
 {
-    public static final String MODID = "seidra";
+    public static final String MODID = Constants.MOD_ID;
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public Seidra(IEventBus modEventBus, ModContainer modContainer)

@@ -5,7 +5,7 @@ import com.klikli_dev.modonomicon.api.datagen.EntryBackground;
 import com.klikli_dev.modonomicon.api.datagen.EntryProvider;
 import com.klikli_dev.modonomicon.api.datagen.book.BookIconModel;
 import com.klikli_dev.modonomicon.api.datagen.book.page.BookTextPageModel;
-import com.lordskittles.seidra.common.registries.Blocks;
+import com.lordskittles.seidra.common.block.SeidraBlocks;
 import com.mojang.datafixers.util.Pair;
 
 public class FirstStepsEntry extends EntryProvider
@@ -49,7 +49,7 @@ public class FirstStepsEntry extends EntryProvider
 	@Override
 	protected BookIconModel entryIcon()
 	{
-		return BookIconModel.create(Blocks.BISMUTH_ORE.asItem());
+		return BookIconModel.create(SeidraBlocks.BISMUTH_ORE.asItem());
 	}
 
 	@Override

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "seidra:item/metals/raw_silver"
+    "layer0": "seidra:item/metal/raw_silver"
   }
 }

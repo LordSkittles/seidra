@@ -7,11 +7,11 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_thulite_gem": {
+    "has_thulite_gems": {
       "conditions": {
         "items": [
           {
-            "items": "seidra:thulite_gem"
+            "items": "seidra:thulite_gems"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_thulite_gem"
+      "has_thulite_gems"
     ]
   ],
   "rewards": {

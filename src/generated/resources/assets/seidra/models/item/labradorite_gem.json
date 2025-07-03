@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "seidra:item/gems/labradorite_gem"
+    "layer0": "seidra:item/gem/labradorite_gem"
   }
 }

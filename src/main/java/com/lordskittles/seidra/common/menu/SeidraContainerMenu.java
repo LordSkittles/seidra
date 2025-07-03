@@ -1,4 +1,4 @@
-package com.lordskittles.seidra.common.containers;
+package com.lordskittles.seidra.common.menu;
 
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
