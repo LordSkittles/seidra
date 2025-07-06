@@ -124,5 +124,25 @@ public class SeidraBlockTagProvider extends BlockTagsProvider
 		tag(TagKey.create(Registries.BLOCK, Constants.commonRes("ores/tungsten"))).add(SeidraBlocks.TUNGSTEN_ORE.get());
 		tag(TagKey.create(Registries.BLOCK, Constants.commonRes("storage_blocks/tungsten"))).add(SeidraBlocks.TUNGSTEN_BLOCK.get());
 		tag(TagKey.create(Registries.BLOCK, Constants.commonRes("storage_blocks/raw_tungsten"))).add(SeidraBlocks.RAW_TUNGSTEN_BLOCK.get());
+
+		tag(BlockTags.FENCES)
+				.add(SeidraBlocks.ASH_FENCE.get())
+				.add(SeidraBlocks.PINE_FENCE.get())
+				.add(SeidraBlocks.YEW_FENCE.get());
+
+		tag(BlockTags.FENCE_GATES)
+				.add(SeidraBlocks.ASH_FENCE_GATE.get())
+				.add(SeidraBlocks.PINE_FENCE_GATE.get())
+				.add(SeidraBlocks.YEW_FENCE_GATE.get());
+
+		tag(BlockTags.SLABS)
+				.add(SeidraBlocks.ASH_SLAB.get())
+				.add(SeidraBlocks.PINE_SLAB.get())
+				.add(SeidraBlocks.YEW_SLAB.get());
+
+		tag(BlockTags.STAIRS)
+				.add(SeidraBlocks.ASH_STAIRS.get())
+				.add(SeidraBlocks.PINE_STAIRS.get())
+				.add(SeidraBlocks.YEW_STAIRS.get());
 	}
 }

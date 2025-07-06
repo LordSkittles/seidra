@@ -6,10 +6,7 @@ import com.lordskittles.seidra.common.block.simple.WakestoneBlock;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
@@ -30,35 +27,39 @@ public class SeidraBlockStateProvider extends BlockStateProvider
     protected void registerStatesAndModels()
     {
         registerWakestone();
-        
+
         axisBlockSubFolder(SeidraBlocks.ASH_LOG, Suffixes.WOOD, Misc.TOP);
         axisBlockSubFolder(SeidraBlocks.PINE_LOG, Suffixes.WOOD, Misc.TOP);
         axisBlockSubFolder(SeidraBlocks.YEW_LOG, Suffixes.WOOD, Misc.TOP);
-        
+
         blockWithItemSubFolder(SeidraBlocks.ASH_WOOD, Suffixes.WOOD, Suffixes.WOOD, Suffixes.LOG);
         blockWithItemSubFolder(SeidraBlocks.PINE_WOOD, Suffixes.WOOD, Suffixes.WOOD, Suffixes.LOG);
         blockWithItemSubFolder(SeidraBlocks.YEW_WOOD, Suffixes.WOOD, Suffixes.WOOD, Suffixes.LOG);
-        
+
         axisBlockSubFolder(SeidraBlocks.STRIPPED_ASH_LOG, Suffixes.WOOD, Misc.TOP);
         axisBlockSubFolder(SeidraBlocks.STRIPPED_PINE_LOG, Suffixes.WOOD, Misc.TOP);
         axisBlockSubFolder(SeidraBlocks.STRIPPED_YEW_LOG, Suffixes.WOOD, Misc.TOP);
-        
+
         blockWithItemSubFolder(SeidraBlocks.STRIPPED_ASH_WOOD, Suffixes.WOOD, Suffixes.WOOD, Suffixes.LOG);
         blockWithItemSubFolder(SeidraBlocks.STRIPPED_PINE_WOOD, Suffixes.WOOD, Suffixes.WOOD, Suffixes.LOG);
         blockWithItemSubFolder(SeidraBlocks.STRIPPED_YEW_WOOD, Suffixes.WOOD, Suffixes.WOOD, Suffixes.LOG);
-        
+
         blockWithItemSubFolder(SeidraBlocks.ASH_PLANKS, Suffixes.WOOD);
         blockWithItemSubFolder(SeidraBlocks.PINE_PLANKS, Suffixes.WOOD);
         blockWithItemSubFolder(SeidraBlocks.YEW_PLANKS, Suffixes.WOOD);
-        
+
         saplingBlockWithItem(SeidraBlocks.ASH_SAPLING);
         saplingBlockWithItem(SeidraBlocks.PINE_SAPLING);
         saplingBlockWithItem(SeidraBlocks.YEW_SAPLING);
-        
+
         blockWithItemSubFolder(SeidraBlocks.ASH_LEAVES, Groups.PLANT);
         blockWithItemSubFolder(SeidraBlocks.PINE_LEAVES, Groups.PLANT);
         blockWithItemSubFolder(SeidraBlocks.YEW_LEAVES, Groups.PLANT);
-        
+
+        woodGroup(SeidraBlocks.ASH_STAIRS, SeidraBlocks.ASH_SLAB, SeidraBlocks.ASH_FENCE, SeidraBlocks.ASH_FENCE_GATE, SeidraBlocks.ASH_BUTTON, SeidraBlocks.ASH_PRESSURE_PLATE, SeidraBlocks.ASH_PLANKS);
+        woodGroup(SeidraBlocks.PINE_STAIRS, SeidraBlocks.PINE_SLAB, SeidraBlocks.PINE_FENCE, SeidraBlocks.PINE_FENCE_GATE, SeidraBlocks.PINE_BUTTON, SeidraBlocks.PINE_PRESSURE_PLATE, SeidraBlocks.PINE_PLANKS);
+        woodGroup(SeidraBlocks.YEW_STAIRS, SeidraBlocks.YEW_SLAB, SeidraBlocks.YEW_FENCE, SeidraBlocks.YEW_FENCE_GATE, SeidraBlocks.YEW_BUTTON, SeidraBlocks.YEW_PRESSURE_PLATE, SeidraBlocks.YEW_PLANKS);
+
         blockWithItemSubFolder(SeidraBlocks.BISMUTH_BLOCK, Suffixes.ORE);
         blockWithItemSubFolder(SeidraBlocks.SILVER_BLOCK, Suffixes.ORE);
         blockWithItemSubFolder(SeidraBlocks.TUNGSTEN_BLOCK, Suffixes.ORE);
@@ -68,21 +69,21 @@ public class SeidraBlockStateProvider extends BlockStateProvider
         blockWithItemSubFolder(SeidraBlocks.RAW_BISMUTH_BLOCK, Suffixes.ORE);
         blockWithItemSubFolder(SeidraBlocks.RAW_SILVER_BLOCK, Suffixes.ORE);
         blockWithItemSubFolder(SeidraBlocks.RAW_TUNGSTEN_BLOCK, Suffixes.ORE);
-        
+
         blockWithItemSubFolder(SeidraBlocks.BISMUTH_ORE, Suffixes.ORE);
         blockWithItemSubFolder(SeidraBlocks.SILVER_ORE, Suffixes.ORE);
         blockWithItemSubFolder(SeidraBlocks.TUNGSTEN_ORE, Suffixes.ORE);
         blockWithItemSubFolder(SeidraBlocks.AMBER_ORE, Suffixes.ORE);
         blockWithItemSubFolder(SeidraBlocks.LABRADORITE_ORE, Suffixes.ORE);
         blockWithItemSubFolder(SeidraBlocks.THULITE_ORE, Suffixes.ORE);
-        
+
         blockWithItemSubFolder(SeidraBlocks.DEEPSLATE_BISMUTH_ORE, Suffixes.ORE);
         blockWithItemSubFolder(SeidraBlocks.DEEPSLATE_SILVER_ORE, Suffixes.ORE);
         blockWithItemSubFolder(SeidraBlocks.DEEPSLATE_TUNGSTEN_ORE, Suffixes.ORE);
         blockWithItemSubFolder(SeidraBlocks.DEEPSLATE_AMBER_ORE, Suffixes.ORE);
         blockWithItemSubFolder(SeidraBlocks.DEEPSLATE_LABRADORITE_ORE, Suffixes.ORE);
         blockWithItemSubFolder(SeidraBlocks.DEEPSLATE_THULITE_ORE, Suffixes.ORE);
-        
+
         blockWithItemSubFolder(SeidraBlocks.FELDSPAR, Suffixes.STONE);
         blockWithItemSubFolder(SeidraBlocks.FELDSPAR_BRICK, Suffixes.STONE);
         blockWithItemSubFolder(SeidraBlocks.POLISHED_FELDSPAR, Suffixes.STONE);
@@ -91,7 +92,7 @@ public class SeidraBlockStateProvider extends BlockStateProvider
         blockWithItemSubFolder(SeidraBlocks.CRACKED_POLISHED_FELDSPAR, Suffixes.STONE);
         blockWithItemSubFolder(SeidraBlocks.CHISELED_FELDSPAR_BRICK, Suffixes.STONE);
         axisBlockSubFolder(SeidraBlocks.FELDSPAR_PILLAR, Suffixes.STONE, Misc.TOP);
-        
+
         blockWithItem(SeidraBlocks.ARCANE_CRAFTING_BLOCK);
 
         ResourceLocation crackedDeepslateBricks = ResourceLocation.withDefaultNamespace(buildName('/', Groups.BLOCK, buildName(Prefixes.CRACKED, Prefixes.DEEPSLATE, Suffixes.BRICK + "s")));
@@ -135,7 +136,7 @@ public class SeidraBlockStateProvider extends BlockStateProvider
     public VariantBlockStateBuilder.PartialBlockstate wakestoneState(boolean active, Direction.Axis axis)
     {
         return this.getVariantBuilder(SeidraBlocks.WAKESTONE.get()).partialState()
-            .with(RotatedPillarBlock.AXIS, axis).with(WakestoneBlock.ACTIVE, active);
+                .with(RotatedPillarBlock.AXIS, axis).with(WakestoneBlock.ACTIVE, active);
     }
 
     public void blockWithItem(DeferredBlock<?> deferredBlock)
@@ -169,7 +170,7 @@ public class SeidraBlockStateProvider extends BlockStateProvider
     public ModelFile cubeAllSubFolder(DeferredBlock<?> deferredBlock, String subFolder, String toReplace, String replacement)
     {
         ResourceLocation blockId = deferredBlock.getId();
-        
+
         ResourceLocation location = modRes(buildName('/', Groups.BLOCK, subFolder, blockId.getPath().replace(toReplace, replacement)));
 
         return this.models().cubeAll(deferredBlock.getId().getPath(), location);
@@ -188,22 +189,40 @@ public class SeidraBlockStateProvider extends BlockStateProvider
     public void axisBlockSubFolder(DeferredBlock<?> deferredBlock, String subFolder, String endName, String toReplace, String replacement)
     {
         ResourceLocation blockId = deferredBlock.getId();
-        
+
         ResourceLocation location = modRes(buildName('/', Groups.BLOCK, subFolder, blockId.getPath().replace(toReplace, replacement)));
 
         ResourceLocation end = !endName.isEmpty() ? extend(location, "_" + endName) : location;
 
         axisBlock(((RotatedPillarBlock) deferredBlock.get()),
-                  this.models().cubeColumn(blockId.getPath(), location, end),
-                  this.models().cubeColumnHorizontal(blockId.getPath(), location, end)
+                this.models().cubeColumn(blockId.getPath(), location, end),
+                this.models().cubeColumnHorizontal(blockId.getPath(), location, end)
         );
 
         simpleBlockItem(deferredBlock.get(), this.models().cubeColumn(blockId.getPath(), location, end));
     }
-    
+
     private void blockItem(DeferredBlock<Block> deferredBlock)
     {
-        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile(modRes(buildName(Groups.BLOCK, deferredBlock.getId().getPath()))));
+        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile(modRes(buildName('/', Groups.BLOCK, deferredBlock.getId().getPath()))));
+    }
+
+    private void woodGroup(DeferredBlock<Block> stair, DeferredBlock<Block> slab, DeferredBlock<Block> fence, DeferredBlock<Block> fenceGate, DeferredBlock<Block> button, DeferredBlock<Block> pressurePlate, DeferredBlock<Block> parentBlock)
+    {
+        ResourceLocation textureLoc = modRes(buildName('/', Groups.BLOCK, Suffixes.WOOD, parentBlock.getId().getPath()));
+        ResourceLocation doubleSlabLoc = modRes(buildName('/', Groups.BLOCK, parentBlock.getId().getPath()));
+
+        stairsBlock(((StairBlock) stair.get()), textureLoc);
+        slabBlock(((SlabBlock) slab.get()), doubleSlabLoc, textureLoc);
+        fenceBlock(((FenceBlock) fence.get()), textureLoc);
+        fenceGateBlock(((FenceGateBlock) fenceGate.get()), textureLoc);
+        pressurePlateBlock(((PressurePlateBlock) pressurePlate.get()), textureLoc);
+        buttonBlock(((ButtonBlock) button.get()), textureLoc);
+
+        blockItem(stair);
+        blockItem(slab);
+        blockItem(fenceGate);
+        blockItem(pressurePlate);
     }
 
     public ResourceLocation extend(ResourceLocation rl, String suffix)

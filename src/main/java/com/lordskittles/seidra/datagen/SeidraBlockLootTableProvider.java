@@ -99,6 +99,10 @@ public class SeidraBlockLootTableProvider extends BlockLootSubProvider
 		
 		add(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), this::createSlabItemTable);
 		dropSelf(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS);
+
+		woodGroup(SeidraBlocks.ASH_STAIRS, SeidraBlocks.ASH_SLAB, SeidraBlocks.ASH_FENCE, SeidraBlocks.ASH_FENCE_GATE, SeidraBlocks.ASH_BUTTON, SeidraBlocks.ASH_PRESSURE_PLATE);
+		woodGroup(SeidraBlocks.PINE_STAIRS, SeidraBlocks.PINE_SLAB, SeidraBlocks.PINE_FENCE, SeidraBlocks.PINE_FENCE_GATE, SeidraBlocks.PINE_BUTTON, SeidraBlocks.PINE_PRESSURE_PLATE);
+		woodGroup(SeidraBlocks.YEW_STAIRS, SeidraBlocks.YEW_SLAB, SeidraBlocks.YEW_FENCE, SeidraBlocks.YEW_FENCE_GATE, SeidraBlocks.YEW_BUTTON, SeidraBlocks.YEW_PRESSURE_PLATE);
 	}
 	
 	protected void createOreDrops(DeferredBlock<?> block, DeferredItem<?> drop)
@@ -138,7 +142,17 @@ public class SeidraBlockLootTableProvider extends BlockLootSubProvider
 	{
 		add(block.get(), this.createLeavesDrops(block.get(), drop.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 	}
-	
+
+	private void woodGroup(DeferredBlock<Block> stair, DeferredBlock<Block> slab, DeferredBlock<Block> fence, DeferredBlock<Block> fenceGate, DeferredBlock<Block> button, DeferredBlock<Block> pressurePlate)
+	{
+		dropSelf(stair);
+		add(slab.get(), this::createSlabItemTable);
+		dropSelf(fence);
+		dropSelf(fenceGate);
+		dropSelf(button);
+		dropSelf(pressurePlate);
+	}
+
 	@Override
 	protected @NotNull Iterable<Block> getKnownBlocks()
 	{
