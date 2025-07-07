@@ -27,6 +27,14 @@
     "seidra:cracked_feldspar",
     "seidra:cracked_feldspar_brick",
     "seidra:cracked_feldspar_polished",
-    "seidra:feldspar_pillar"
+    "seidra:feldspar_pillar",
+    "seidra:feldspar_stairs",
+    "seidra:feldspar_brick_stairs",
+    "seidra:feldspar_polished_stairs",
+    "seidra:feldspar_slab",
+    "seidra:feldspar_brick_slab",
+    "seidra:feldspar_polished_slab",
+    "seidra:feldspar_button",
+    "seidra:feldspar_pressure_plate"
   ]
 }

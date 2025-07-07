@@ -101,6 +101,18 @@ public class SeidraCreativeModeTabs
 			SeidraBlocks.CRACKED_POLISHED_FELDSPAR,
 			SeidraBlocks.CHISELED_FELDSPAR_BRICK,
 			SeidraBlocks.FELDSPAR_PILLAR,
+
+			SeidraBlocks.FELDSPAR_STAIRS,
+			SeidraBlocks.FELDSPAR_BRICK_STAIRS,
+			SeidraBlocks.POLISHED_FELDSPAR_STAIRS,
+			SeidraBlocks.FELDSPAR_SLAB,
+			SeidraBlocks.FELDSPAR_BRICK_SLAB,
+			SeidraBlocks.POLISHED_FELDSPAR_SLAB,
+			SeidraBlocks.FELDSPAR_WALL,
+			SeidraBlocks.FELDSPAR_BRICK_WALL,
+			SeidraBlocks.POLISHED_FELDSPAR_WALL,
+			SeidraBlocks.FELDSPAR_BUTTON,
+			SeidraBlocks.FELDSPAR_PRESSURE_PLATE,
 			
 			SeidraItems.AMBER_GEM,
 			SeidraItems.LABRADORITE_GEM,

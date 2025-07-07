@@ -2,6 +2,9 @@
   "values": [
     "seidra:ash_stairs",
     "seidra:pine_stairs",
-    "seidra:yew_stairs"
+    "seidra:yew_stairs",
+    "seidra:feldspar_stairs",
+    "seidra:feldspar_brick_stairs",
+    "seidra:feldspar_polished_stairs"
   ]
 }

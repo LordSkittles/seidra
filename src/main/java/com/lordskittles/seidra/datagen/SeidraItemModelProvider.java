@@ -43,6 +43,12 @@ public class SeidraItemModelProvider extends ItemModelProvider
         woodGroup(SeidraBlocks.ASH_FENCE, SeidraBlocks.ASH_BUTTON, SeidraBlocks.ASH_PLANKS);
         woodGroup(SeidraBlocks.PINE_FENCE, SeidraBlocks.PINE_BUTTON, SeidraBlocks.PINE_PLANKS);
         woodGroup(SeidraBlocks.YEW_FENCE, SeidraBlocks.YEW_BUTTON, SeidraBlocks.YEW_PLANKS);
+
+        wallItem(SeidraBlocks.FELDSPAR_WALL, SeidraBlocks.FELDSPAR, Suffixes.STONE);
+        wallItem(SeidraBlocks.FELDSPAR_BRICK_WALL, SeidraBlocks.FELDSPAR_BRICK, Suffixes.STONE);
+        wallItem(SeidraBlocks.POLISHED_FELDSPAR_WALL, SeidraBlocks.POLISHED_FELDSPAR, Suffixes.STONE);
+
+        buttonItem(SeidraBlocks.FELDSPAR_BUTTON, SeidraBlocks.FELDSPAR, Suffixes.STONE);
     }
 
     private void saplingItem(DeferredBlock<?> item)

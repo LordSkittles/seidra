@@ -2,6 +2,9 @@
   "values": [
     "seidra:ash_slab",
     "seidra:pine_slab",
-    "seidra:yew_slab"
+    "seidra:yew_slab",
+    "seidra:feldspar_slab",
+    "seidra:feldspar_brick_slab",
+    "seidra:feldspar_polished_slab"
   ]
 }

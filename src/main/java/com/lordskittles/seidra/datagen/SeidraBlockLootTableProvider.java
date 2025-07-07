@@ -103,6 +103,13 @@ public class SeidraBlockLootTableProvider extends BlockLootSubProvider
 		woodGroup(SeidraBlocks.ASH_STAIRS, SeidraBlocks.ASH_SLAB, SeidraBlocks.ASH_FENCE, SeidraBlocks.ASH_FENCE_GATE, SeidraBlocks.ASH_BUTTON, SeidraBlocks.ASH_PRESSURE_PLATE);
 		woodGroup(SeidraBlocks.PINE_STAIRS, SeidraBlocks.PINE_SLAB, SeidraBlocks.PINE_FENCE, SeidraBlocks.PINE_FENCE_GATE, SeidraBlocks.PINE_BUTTON, SeidraBlocks.PINE_PRESSURE_PLATE);
 		woodGroup(SeidraBlocks.YEW_STAIRS, SeidraBlocks.YEW_SLAB, SeidraBlocks.YEW_FENCE, SeidraBlocks.YEW_FENCE_GATE, SeidraBlocks.YEW_BUTTON, SeidraBlocks.YEW_PRESSURE_PLATE);
+
+		stoneGroup(SeidraBlocks.FELDSPAR_STAIRS, SeidraBlocks.FELDSPAR_SLAB, SeidraBlocks.FELDSPAR_WALL);
+		stoneGroup(SeidraBlocks.FELDSPAR_BRICK_STAIRS, SeidraBlocks.FELDSPAR_BRICK_SLAB, SeidraBlocks.FELDSPAR_BRICK_WALL);
+		stoneGroup(SeidraBlocks.POLISHED_FELDSPAR_STAIRS, SeidraBlocks.POLISHED_FELDSPAR_SLAB, SeidraBlocks.POLISHED_FELDSPAR_WALL);
+
+		dropSelf(SeidraBlocks.FELDSPAR_BUTTON);
+		dropSelf(SeidraBlocks.FELDSPAR_PRESSURE_PLATE);
 	}
 	
 	protected void createOreDrops(DeferredBlock<?> block, DeferredItem<?> drop)
@@ -151,6 +158,13 @@ public class SeidraBlockLootTableProvider extends BlockLootSubProvider
 		dropSelf(fenceGate);
 		dropSelf(button);
 		dropSelf(pressurePlate);
+	}
+
+	private void stoneGroup(DeferredBlock<Block> stair, DeferredBlock<Block> slab, DeferredBlock<Block> wall)
+	{
+		dropSelf(stair);
+		add(slab.get(), this::createSlabItemTable);
+		dropSelf(wall);
 	}
 
 	@Override

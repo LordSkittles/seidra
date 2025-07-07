@@ -93,6 +93,10 @@ public class SeidraBlockStateProvider extends BlockStateProvider
         blockWithItemSubFolder(SeidraBlocks.CHISELED_FELDSPAR_BRICK, Suffixes.STONE);
         axisBlockSubFolder(SeidraBlocks.FELDSPAR_PILLAR, Suffixes.STONE, Misc.TOP);
 
+        stoneGroup(SeidraBlocks.FELDSPAR_STAIRS, SeidraBlocks.FELDSPAR_SLAB, SeidraBlocks.FELDSPAR_WALL, SeidraBlocks.FELDSPAR_BUTTON, SeidraBlocks.FELDSPAR_PRESSURE_PLATE, SeidraBlocks.FELDSPAR);
+        stoneGroup(SeidraBlocks.FELDSPAR_BRICK_STAIRS, SeidraBlocks.FELDSPAR_BRICK_SLAB, SeidraBlocks.FELDSPAR_BRICK_WALL, null, null, SeidraBlocks.FELDSPAR_BRICK);
+        stoneGroup(SeidraBlocks.POLISHED_FELDSPAR_STAIRS, SeidraBlocks.POLISHED_FELDSPAR_SLAB, SeidraBlocks.POLISHED_FELDSPAR_WALL, null, null, SeidraBlocks.POLISHED_FELDSPAR);
+
         blockWithItem(SeidraBlocks.ARCANE_CRAFTING_BLOCK);
 
         ResourceLocation crackedDeepslateBricks = ResourceLocation.withDefaultNamespace(buildName('/', Groups.BLOCK, buildName(Prefixes.CRACKED, Prefixes.DEEPSLATE, Suffixes.BRICK + "s")));
@@ -223,6 +227,29 @@ public class SeidraBlockStateProvider extends BlockStateProvider
         blockItem(slab);
         blockItem(fenceGate);
         blockItem(pressurePlate);
+    }
+
+    private void stoneGroup(DeferredBlock<Block> stair, DeferredBlock<Block> slab, DeferredBlock<Block> wall, DeferredBlock<Block> button, DeferredBlock<Block> pressurePlate, DeferredBlock<Block> parentBlock)
+    {
+        ResourceLocation textureLoc = modRes(buildName('/', Groups.BLOCK, Suffixes.STONE, parentBlock.getId().getPath()));
+        ResourceLocation doubleSlabLoc = modRes(buildName('/', Groups.BLOCK, parentBlock.getId().getPath()));
+
+        stairsBlock(((StairBlock) stair.get()), textureLoc);
+        slabBlock(((SlabBlock) slab.get()), doubleSlabLoc, textureLoc);
+        wallBlock(((WallBlock) wall.get()), textureLoc);
+
+        if(pressurePlate != null)
+        {
+            pressurePlateBlock(((PressurePlateBlock) pressurePlate.get()), textureLoc);
+            blockItem(pressurePlate);
+        }
+        if(button != null)
+        {
+            buttonBlock(((ButtonBlock) button.get()), textureLoc);
+        }
+
+        blockItem(stair);
+        blockItem(slab);
     }
 
     public ResourceLocation extend(ResourceLocation rl, String suffix)

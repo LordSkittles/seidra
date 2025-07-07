@@ -113,6 +113,21 @@ public class SeidraBlocks
     public static final DeferredBlock<Block> CHISELED_FELDSPAR_BRICK = register(buildName(Prefixes.CHISELED, Types.FELDSPAR, Suffixes.BRICK), Blocks.CHISELED_STONE_BRICKS);
     public static final DeferredBlock<Block> FELDSPAR_PILLAR = register(buildName(Types.FELDSPAR, Suffixes.PILLAR), RotatedPillarBlock::new, Blocks.POLISHED_ANDESITE);
 
+    public static final DeferredBlock<Block> FELDSPAR_STAIRS = registerBlock(buildName(Types.FELDSPAR, Suffixes.STAIRS), () -> new StairBlock(FELDSPAR.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(FELDSPAR.get())));
+    public static final DeferredBlock<Block> FELDSPAR_BRICK_STAIRS = registerBlock(buildName(Types.FELDSPAR, Suffixes.BRICK, Suffixes.STAIRS), () -> new StairBlock(FELDSPAR_BRICK.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(FELDSPAR_BRICK.get())));
+    public static final DeferredBlock<Block> POLISHED_FELDSPAR_STAIRS = registerBlock(buildName(Types.FELDSPAR, Suffixes.POLISHED, Suffixes.STAIRS), () -> new StairBlock(POLISHED_FELDSPAR.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(POLISHED_FELDSPAR.get())));
+
+    public static final DeferredBlock<Block> FELDSPAR_SLAB = registerBlock(buildName(Types.FELDSPAR, Suffixes.SLAB), () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(FELDSPAR.get())));
+    public static final DeferredBlock<Block> FELDSPAR_BRICK_SLAB = registerBlock(buildName(Types.FELDSPAR, Suffixes.BRICK, Suffixes.SLAB), () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(FELDSPAR_BRICK.get())));
+    public static final DeferredBlock<Block> POLISHED_FELDSPAR_SLAB = registerBlock(buildName(Types.FELDSPAR, Suffixes.POLISHED, Suffixes.SLAB), () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(POLISHED_FELDSPAR.get())));
+
+    public static final DeferredBlock<Block> FELDSPAR_WALL = registerBlock(buildName(Types.FELDSPAR, Suffixes.WALL), () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(FELDSPAR.get())));
+    public static final DeferredBlock<Block> FELDSPAR_BRICK_WALL = registerBlock(buildName(Types.FELDSPAR, Suffixes.BRICK, Suffixes.WALL), () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(FELDSPAR_BRICK.get())));
+    public static final DeferredBlock<Block> POLISHED_FELDSPAR_WALL = registerBlock(buildName(Types.FELDSPAR, Suffixes.POLISHED, Suffixes.WALL), () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(POLISHED_FELDSPAR.get())));
+
+    public static final DeferredBlock<Block> FELDSPAR_PRESSURE_PLATE = registerBlock(buildName(Types.FELDSPAR, Suffixes.PRESSURE_PLATE), () -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.ofFullCopy(FELDSPAR.get())));
+    public static final DeferredBlock<Block> FELDSPAR_BUTTON = registerBlock(buildName(Types.FELDSPAR, Suffixes.BUTTON), () -> new ButtonBlock(BlockSetType.STONE, 20, BlockBehaviour.Properties.ofFullCopy(FELDSPAR.get()).noCollission()));
+
     public static final DeferredBlock<WakestoneBlock> WAKESTONE = register(buildName(Types.WAKESTONE), WakestoneBlock::new);
     public static final DeferredBlock<ArcaneCraftingBlock> ARCANE_CRAFTING_BLOCK = registerBlockEntity(buildName(Types.ARCANE_CRAFTING, Groups.BLOCK), ArcaneCraftingBlock.class);
 

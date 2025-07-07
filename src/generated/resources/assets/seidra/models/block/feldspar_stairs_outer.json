@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "seidra:block/stone/feldspar",
+    "side": "seidra:block/stone/feldspar",
+    "top": "seidra:block/stone/feldspar"
+  }
+}

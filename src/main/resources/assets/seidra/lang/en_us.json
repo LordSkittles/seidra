@@ -96,6 +96,21 @@
   "block.seidra.cracked_feldspar_brick": "Cracked Polished Brick",
   "block.seidra.cracked_feldspar_polished": "Cracked Polished Feldspar",
 
+  "block.seidra.feldspar_stairs": "Feldspar Stairs",
+  "block.seidra.feldspar_brick_stairs": "Feldspar Brick Stairs",
+  "block.seidra.feldspar_polished_stairs": "Polished Feldspar Stairs",
+
+  "block.seidra.feldspar_slab": "Feldspar Slab",
+  "block.seidra.feldspar_brick_slab": "Feldspar Brick Slab",
+  "block.seidra.feldspar_polished_slab": "Polished Feldspar Slab",
+
+  "block.seidra.feldspar_wall": "Feldspar Wall",
+  "block.seidra.feldspar_brick_wall": "Feldspar Brick Wall",
+  "block.seidra.feldspar_polished_wall": "Polished Feldspar Wall",
+
+  "block.seidra.feldspar_button": "Feldspar Button",
+  "block.seidra.feldspar_pressure_plate": "Feldspar Pressure Plate",
+
   "block.seidra.cracked_deepslate_brick_slab": "Cracked Deepslate Brick Slab",
   "block.seidra.cracked_deepslate_brick_stairs": "Cracked Deepslate Brick Stairs",
 

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "seidra:block/stone/feldspar_polished",
+    "side": "seidra:block/stone/feldspar_polished",
+    "top": "seidra:block/stone/feldspar_polished"
+  }
+}

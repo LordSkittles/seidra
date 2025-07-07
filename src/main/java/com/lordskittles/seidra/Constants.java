@@ -59,6 +59,7 @@ public class Constants
 		public static final String SLAB = "slab";
 		public static final String STAIRS = "stairs";
 		public static final String FENCE = "fence";
+		public static final String WALL = "wall";
 		public static final String FENCE_GATE = "fence_gate";
 		public static final String BUTTON = "button";
 		public static final String PRESSURE_PLATE = "pressure_plate";

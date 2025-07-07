@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "seidra:block/feldspar_slab"
+    },
+    "type=double": {
+      "model": "seidra:block/feldspar"
+    },
+    "type=top": {
+      "model": "seidra:block/feldspar_slab_top"
+    }
+  }
+}

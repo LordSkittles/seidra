@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "seidra:block/stone/feldspar_polished"
+  }
+}
