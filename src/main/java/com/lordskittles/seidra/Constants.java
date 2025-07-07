@@ -58,6 +58,10 @@ public class Constants
 		public static final String PILLAR = "pillar";
 		public static final String SLAB = "slab";
 		public static final String STAIRS = "stairs";
+		public static final String FENCE = "fence";
+		public static final String FENCE_GATE = "fence_gate";
+		public static final String BUTTON = "button";
+		public static final String PRESSURE_PLATE = "pressure_plate";
 		public static final String TREE = "tree";
 		public static final String PIECE = "piece";
 		public static final String STONE = "stone";
@@ -66,7 +70,8 @@ public class Constants
 	public static class Groups
 	{
 		public static final String BLOCK = "block";
-		
+		public static final String ITEM = "item";
+
 		public static final String ENTITY = "entity";
 		public static final String METAL = "metal";
 		public static final String PLANT = "plant";
@@ -95,9 +100,15 @@ public class Constants
 		
 		for (int i = 0; i < parts.length; i++)
 		{
-			builder.append(parts[i]);
+			boolean didSet = false;
+			String part = parts[i];
+			if(part.length() > 1)
+			{
+				builder.append(part);
+				didSet = true;
+			}
 			
-			if (i + 1 < parts.length)
+			if (i + 1 < parts.length && didSet)
 			{
 				builder.append(separator);
 			}

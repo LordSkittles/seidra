@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "seidra:block/ash_slab"
+    },
+    "type=double": {
+      "model": "seidra:block/ash_planks"
+    },
+    "type=top": {
+      "model": "seidra:block/ash_slab_top"
+    }
+  }
+}

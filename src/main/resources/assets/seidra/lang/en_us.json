@@ -34,21 +34,9 @@
   "block.seidra.raw_silver_block": "Raw Silver Block",
   "block.seidra.raw_tungsten_block": "Raw Tungsten Block",
 
-  "block.seidra.ash_leaves": "Ash Leaves",
-  "block.seidra.pine_leaves": "Pine Leaves",
-  "block.seidra.yew_leaves": "Yew Leaves",
-
   "block.seidra.ash_log": "Ash Log",
   "block.seidra.pine_log": "Pine Log",
   "block.seidra.yew_log": "Yew Log",
-
-  "block.seidra.ash_planks": "Ash Planks",
-  "block.seidra.pine_planks": "Pine Planks",
-  "block.seidra.yew_planks": "Yew Planks",
-
-  "block.seidra.ash_sapling": "Ash Sapling",
-  "block.seidra.pine_sapling": "Pine Sapling",
-  "block.seidra.yew_sapling": "Yew Sapling",
 
   "block.seidra.ash_wood": "Ash wood",
   "block.seidra.pine_wood": "Pine wood",
@@ -57,9 +45,46 @@
   "block.seidra.stripped_ash_log": "Stripped Ash Log",
   "block.seidra.stripped_ash_wood": "Stripped Ash Wood",
   "block.seidra.stripped_pine_log": "Stripped Pine Log",
+
   "block.seidra.stripped_pine_wood": "Stripped Pine Wood",
   "block.seidra.stripped_yew_log": "Stripped Yew Log",
   "block.seidra.stripped_yew_wood": "Stripped Yew Wood",
+
+  "block.seidra.ash_planks": "Ash Planks",
+  "block.seidra.pine_planks": "Pine Planks",
+  "block.seidra.yew_planks": "Yew Planks",
+
+  "block.seidra.ash_leaves": "Ash Leaves",
+  "block.seidra.pine_leaves": "Pine Leaves",
+  "block.seidra.yew_leaves": "Yew Leaves",
+
+  "block.seidra.ash_sapling": "Ash Sapling",
+  "block.seidra.pine_sapling": "Pine Sapling",
+  "block.seidra.yew_sapling": "Yew Sapling",
+
+  "block.seidra.ash_stairs": "Ash Stairs",
+  "block.seidra.pine_stairs": "Pine Stairs",
+  "block.seidra.yew_stairs": "Yew Stairs",
+
+  "block.seidra.ash_slab": "Ash Slab",
+  "block.seidra.pine_slab": "Pine Slab",
+  "block.seidra.yew_slab": "Yew Slab",
+
+  "block.seidra.ash_fence": "Ash Fence",
+  "block.seidra.pine_fence": "Pine Fence",
+  "block.seidra.yew_fence": "Yew Fence",
+
+  "block.seidra.ash_fence_gate": "Ash Fence Gate",
+  "block.seidra.pine_fence_gate": "Pine Fence Gate",
+  "block.seidra.yew_fence_gate": "Yew Fence Gate",
+
+  "block.seidra.ash_button": "Ash Button",
+  "block.seidra.pine_button": "Pine Button",
+  "block.seidra.yew_button": "Yew Button",
+
+  "block.seidra.ash_pressure_plate": "Ash Pressure Plate",
+  "block.seidra.pine_pressure_plate": "Pine Pressure Plate",
+  "block.seidra.yew_pressure_plate": "Yew Pressure Plate",
 
   "block.seidra.feldspar": "Feldspar",
   "block.seidra.feldspar_brick": "Feldspar Brick",

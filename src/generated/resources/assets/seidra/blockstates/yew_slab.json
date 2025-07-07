@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "seidra:block/yew_slab"
+    },
+    "type=double": {
+      "model": "seidra:block/yew_planks"
+    },
+    "type=top": {
+      "model": "seidra:block/yew_slab_top"
+    }
+  }
+}

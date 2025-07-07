@@ -40,7 +40,28 @@ public class SeidraCreativeModeTabs
 			SeidraBlocks.ASH_PLANKS,
 			SeidraBlocks.PINE_PLANKS,
 			SeidraBlocks.YEW_PLANKS,
-			
+
+			SeidraBlocks.ASH_STAIRS,
+			SeidraBlocks.ASH_SLAB,
+			SeidraBlocks.ASH_FENCE,
+			SeidraBlocks.ASH_FENCE_GATE,
+			SeidraBlocks.ASH_BUTTON,
+			SeidraBlocks.ASH_PRESSURE_PLATE,
+
+			SeidraBlocks.PINE_STAIRS,
+			SeidraBlocks.PINE_SLAB,
+			SeidraBlocks.PINE_FENCE,
+			SeidraBlocks.PINE_FENCE_GATE,
+			SeidraBlocks.PINE_BUTTON,
+			SeidraBlocks.PINE_PRESSURE_PLATE,
+
+			SeidraBlocks.YEW_STAIRS,
+			SeidraBlocks.YEW_SLAB,
+			SeidraBlocks.YEW_FENCE,
+			SeidraBlocks.YEW_FENCE_GATE,
+			SeidraBlocks.YEW_BUTTON,
+			SeidraBlocks.YEW_PRESSURE_PLATE,
+
 			SeidraBlocks.ASH_SAPLING,
 			SeidraBlocks.PINE_SAPLING,
 			SeidraBlocks.YEW_SAPLING,
