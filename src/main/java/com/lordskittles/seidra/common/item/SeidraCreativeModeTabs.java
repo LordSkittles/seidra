@@ -152,7 +152,6 @@ public class SeidraCreativeModeTabs
 				{
 					for (ItemLike item : displayItems)
 					{
-						Seidra.LOGGER.debug("Adding item: " + item.toString());
 						output.accept(item);
 					}
 				})

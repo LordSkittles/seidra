@@ -44,18 +44,8 @@ public class ArcaneCraftingBlockMenu extends SeidraContainerMenu
 
         this.addSlot(new OutputSlot(this.blockEntity.inventory, 9, 129, 51));
 
-        for (int y = 0; y < 3; y++)
-        {
-            for (int x = 0; x < 9; x++)
-            {
-                this.addSlot(new Slot(inventory, x + y * 9 + 9, 8 + x * 18, 108 + y * 18));
-            }
-        }
-
-        for (int slot = 0; slot < 9; slot++)
-        {
-            this.addSlot(new Slot(inventory, slot, 8 + slot * 18, 166));
-        }
+        this.addPlayerInventory(inventory, 8, 108);
+        this.addPlayerHotbar(inventory, 8, 166);
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommonsAdd commentMore actions
