@@ -5,15 +5,15 @@ import api.lordskittles.seidra.common.sai.schools.BuildSchoolSpellContentsEvent;
 import api.lordskittles.seidra.common.sai.schools.School;
 import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.block.SeidraBlocks;
+import com.lordskittles.seidra.common.crafting.SeidraRecipes;
 import com.lordskittles.seidra.common.menu.SeidraMenuTypes;
-import com.lordskittles.seidra.common.entities.BlockEntityTypes;
+import com.lordskittles.seidra.common.entities.SeidraBlockEntityTypes;
 import com.lordskittles.seidra.common.item.SeidraCreativeModeTabs;
 import com.lordskittles.seidra.common.item.SeidraItems;
 import com.lordskittles.seidra.common.sai.schools.SeidraSchools;
 import com.lordskittles.seidra.common.sai.spells.SeidraSpells;
 import com.lordskittles.seidra.common.worldgen.structure.SeidraStructureTypes;
 import com.lordskittles.seidra.common.worldgen.structure.pieces.SeidraStructurePieceTypes;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModLoadingContext;
@@ -33,8 +33,10 @@ public class CommonProxy
 		SeidraSchools.SCHOOLS.register(eventBus);
 		SeidraStructureTypes.STRUCTURE_TYPES.register(eventBus);
 		SeidraStructurePieceTypes.STRUCTURE_PIECE_TYPES.register(eventBus);
-		BlockEntityTypes.BLOCK_ENTITY_TYPES.register(eventBus);
+		SeidraBlockEntityTypes.BLOCK_ENTITY_TYPES.register(eventBus);
 		SeidraMenuTypes.MENU_TYPES.register(eventBus);
+		SeidraRecipes.Types.TYPES.register(eventBus);
+		SeidraRecipes.Serializers.SERIALIZERS.register(eventBus);
 	}
 
 	@SubscribeEvent

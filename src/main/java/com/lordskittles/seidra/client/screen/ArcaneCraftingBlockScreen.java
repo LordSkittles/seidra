@@ -1,6 +1,6 @@
 package com.lordskittles.seidra.client.screen;
 
-import com.lordskittles.seidra.common.menu.ArcaneCraftingBlockMenu;
+import com.lordskittles.seidra.common.menu.container.ArcaneCraftingBlockMenu;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -14,7 +14,7 @@ import static com.lordskittles.seidra.Constants.*;
 
 public class ArcaneCraftingBlockScreen extends AbstractContainerScreen<ArcaneCraftingBlockMenu>
 {
-	private static final ResourceLocation GUI_TEXTURE = modRes(buildName('/', Groups.TEXTURES, Groups.GUI, Types.ARCANE_CRAFTING, Groups.BLOCK) + "gui.png");
+	private static final ResourceLocation GUI_TEXTURE = modRes(buildName('/', Groups.TEXTURES, Groups.GUI, buildName(Types.ARCANE_CRAFTING, Groups.BLOCK, "gui.png")));
 	
 	public ArcaneCraftingBlockScreen(ArcaneCraftingBlockMenu menu, Inventory playerInventory, Component title)
 	{
@@ -24,14 +24,14 @@ public class ArcaneCraftingBlockScreen extends AbstractContainerScreen<ArcaneCra
 	@Override
 	protected void init()
 	{
-		super.init();
-		
 		this.imageHeight = 190;
 		this.inventoryLabelX = 10000;
 		this.inventoryLabelY = 10000;
 		
 		this.titleLabelX = 10000;
 		this.titleLabelY = 10000;
+
+		super.init();
 	}
 	
 	@Override
@@ -43,7 +43,7 @@ public class ArcaneCraftingBlockScreen extends AbstractContainerScreen<ArcaneCra
 		
 		int x = (width - imageWidth) / 2;
 		int y = (height - imageHeight) / 2;
-		
+
 		guiGraphics.blit(GUI_TEXTURE, x, y, 0, 0, 176, 190);
 	}
 	
