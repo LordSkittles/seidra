@@ -78,6 +78,7 @@ public class Constants
 		public static final String PLANT = "plant";
 		public static final String TEXTURES = "textures";
 		public static final String GUI = "gui";
+		public static final String STORAGE_BLOCK = "storage_block";
 	}
 	
 	public static class Misc

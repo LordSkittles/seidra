@@ -60,15 +60,15 @@ public class SeidraBlockStateProvider extends BlockStateProvider
         woodGroup(SeidraBlocks.PINE_STAIRS, SeidraBlocks.PINE_SLAB, SeidraBlocks.PINE_FENCE, SeidraBlocks.PINE_FENCE_GATE, SeidraBlocks.PINE_BUTTON, SeidraBlocks.PINE_PRESSURE_PLATE, SeidraBlocks.PINE_PLANKS);
         woodGroup(SeidraBlocks.YEW_STAIRS, SeidraBlocks.YEW_SLAB, SeidraBlocks.YEW_FENCE, SeidraBlocks.YEW_FENCE_GATE, SeidraBlocks.YEW_BUTTON, SeidraBlocks.YEW_PRESSURE_PLATE, SeidraBlocks.YEW_PLANKS);
 
-        blockWithItemSubFolder(SeidraBlocks.BISMUTH_BLOCK, Suffixes.ORE);
-        blockWithItemSubFolder(SeidraBlocks.SILVER_BLOCK, Suffixes.ORE);
-        blockWithItemSubFolder(SeidraBlocks.TUNGSTEN_BLOCK, Suffixes.ORE);
-        blockWithItemSubFolder(SeidraBlocks.AMBER_BLOCK, Suffixes.ORE);
-        blockWithItemSubFolder(SeidraBlocks.LABRADORITE_BLOCK, Suffixes.ORE);
-        blockWithItemSubFolder(SeidraBlocks.THULITE_BLOCK, Suffixes.ORE);
-        blockWithItemSubFolder(SeidraBlocks.RAW_BISMUTH_BLOCK, Suffixes.ORE);
-        blockWithItemSubFolder(SeidraBlocks.RAW_SILVER_BLOCK, Suffixes.ORE);
-        blockWithItemSubFolder(SeidraBlocks.RAW_TUNGSTEN_BLOCK, Suffixes.ORE);
+        blockWithItemSubFolder(SeidraBlocks.BISMUTH_BLOCK, Groups.STORAGE_BLOCK);
+        blockWithItemSubFolder(SeidraBlocks.SILVER_BLOCK, Groups.STORAGE_BLOCK);
+        blockWithItemSubFolder(SeidraBlocks.TUNGSTEN_BLOCK, Groups.STORAGE_BLOCK);
+        blockWithItemSubFolder(SeidraBlocks.AMBER_BLOCK, Groups.STORAGE_BLOCK);
+        blockWithItemSubFolder(SeidraBlocks.LABRADORITE_BLOCK, Groups.STORAGE_BLOCK);
+        blockWithItemSubFolder(SeidraBlocks.THULITE_BLOCK, Groups.STORAGE_BLOCK);
+        blockWithItemSubFolder(SeidraBlocks.RAW_BISMUTH_BLOCK, Groups.STORAGE_BLOCK);
+        blockWithItemSubFolder(SeidraBlocks.RAW_SILVER_BLOCK, Groups.STORAGE_BLOCK);
+        blockWithItemSubFolder(SeidraBlocks.RAW_TUNGSTEN_BLOCK, Groups.STORAGE_BLOCK);
 
         blockWithItemSubFolder(SeidraBlocks.BISMUTH_ORE, Suffixes.ORE);
         blockWithItemSubFolder(SeidraBlocks.SILVER_ORE, Suffixes.ORE);
