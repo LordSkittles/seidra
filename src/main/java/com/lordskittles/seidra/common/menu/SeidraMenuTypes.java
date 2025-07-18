@@ -1,6 +1,7 @@
 package com.lordskittles.seidra.common.menu;
 
 import com.lordskittles.seidra.Seidra;
+import com.lordskittles.seidra.common.menu.container.ArcaneCraftingBlockMenu;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;

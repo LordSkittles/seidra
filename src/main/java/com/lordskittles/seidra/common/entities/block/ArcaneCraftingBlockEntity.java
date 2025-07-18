@@ -1,8 +1,8 @@
 package com.lordskittles.seidra.common.entities.block;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.menu.ArcaneCraftingBlockMenu;
-import com.lordskittles.seidra.common.entities.BlockEntityTypes;
+import com.lordskittles.seidra.common.entities.SeidraBlockEntityTypes;
+import com.lordskittles.seidra.common.menu.container.ArcaneCraftingBlockMenu;
 import com.lordskittles.seidra.common.block.SeidraBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -47,7 +47,7 @@ public class ArcaneCraftingBlockEntity extends SeidraBlockEntity implements Menu
 
     public ArcaneCraftingBlockEntity(BlockPos pos, BlockState blockState)
     {
-        super(BlockEntityTypes.ARCANE_CRAFTING_BLOCK_ENTITY.get(), pos, blockState);
+        super(SeidraBlockEntityTypes.ARCANE_CRAFTING_BLOCK_ENTITY.get(), pos, blockState);
     }
 
     public void clearContents()

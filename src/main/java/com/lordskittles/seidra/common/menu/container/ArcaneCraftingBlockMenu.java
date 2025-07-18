@@ -1,14 +1,18 @@
-package com.lordskittles.seidra.common.menu;
+package com.lordskittles.seidra.common.menu.container;
 
-import com.lordskittles.seidra.common.entities.block.ArcaneCraftingBlockEntity;
 import com.lordskittles.seidra.common.block.SeidraBlocks;
+import com.lordskittles.seidra.common.entities.block.ArcaneCraftingBlockEntity;
+import com.lordskittles.seidra.common.menu.SeidraMenuTypes;
+import com.lordskittles.seidra.common.menu.slot.OutputSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.neoforged.neoforge.items.SlotItemHandler;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
@@ -30,14 +34,28 @@ public class ArcaneCraftingBlockMenu extends SeidraContainerMenu
         this.blockEntity = (ArcaneCraftingBlockEntity) blockEntity;
         this.level = blockEntity.getLevel();
 
-        this.addPlayerInventory(inventory, 8, 96);
-        this.addPlayerHotbar(inventory, 8, 154);
-
-        /*for(int y = 0; y < 3; ++ y) {
-            for(int x = 0; x < 3; ++ x) {
-                this.addSlot(new Slot(this.craftMatrix, x + y * 3, 20 + x * 20, 20 + y * 20));
+        for (int y = 0; y < 3; y++)
+        {
+            for (int x = 0; x < 3; x++)
+            {
+                this.addSlot(new SlotItemHandler(this.blockEntity.inventory, x + y * 3, 20 + x * 20, 20 + y * 20));
             }
-        }*/
+        }
+
+        this.addSlot(new OutputSlot(this.blockEntity.inventory, 9, 129, 51));
+
+        for (int y = 0; y < 3; y++)
+        {
+            for (int x = 0; x < 9; x++)
+            {
+                this.addSlot(new Slot(inventory, x + y * 9 + 9, 8 + x * 18, 108 + y * 18));
+            }
+        }
+
+        for (int slot = 0; slot < 9; slot++)
+        {
+            this.addSlot(new Slot(inventory, slot, 8 + slot * 18, 166));
+        }
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommonsAdd commentMore actions
@@ -61,8 +79,7 @@ public class ArcaneCraftingBlockMenu extends SeidraContainerMenu
     @Override
     public @NotNull ItemStack quickMoveStack(@NotNull Player playerIn, int pIndex)
     {
-        return ItemStack.EMPTY;  //EMPTY_ITEM
-        /*Slot sourceSlot = slots.get(pIndex);
+        Slot sourceSlot = slots.get(pIndex);
         if (!sourceSlot.hasItem())
         {
             return ItemStack.EMPTY;  //EMPTY_ITEM
@@ -103,7 +120,7 @@ public class ArcaneCraftingBlockMenu extends SeidraContainerMenu
             sourceSlot.setChanged();
         }
         sourceSlot.onTake(playerIn, sourceStack);
-        return copyOfSourceStack;*/
+        return copyOfSourceStack;
     }
 
     @Override
