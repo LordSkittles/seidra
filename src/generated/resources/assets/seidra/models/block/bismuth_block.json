@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "seidra:block/ore/bismuth_block"
+    "all": "seidra:block/storage_block/bismuth_block"
   }
 }

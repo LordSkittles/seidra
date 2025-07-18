@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "seidra:block/ore/labradorite_block"
+    "all": "seidra:block/storage_block/labradorite_block"
   }
 }
