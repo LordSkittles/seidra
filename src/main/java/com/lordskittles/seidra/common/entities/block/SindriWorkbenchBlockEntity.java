@@ -35,7 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class ArcaneCraftingBlockEntity extends SeidraBlockEntity implements MenuProvider
+public class SindriWorkbenchBlockEntity extends SeidraBlockEntity implements MenuProvider
 {
     public final ItemStackHandler inventory = new ItemStackHandler(10)
     {
@@ -88,7 +88,7 @@ public class ArcaneCraftingBlockEntity extends SeidraBlockEntity implements Menu
     private boolean needsCraftingUpdate = false;
     private boolean shouldIgnoreChanges = false;
 
-    public ArcaneCraftingBlockEntity(BlockPos pos, BlockState blockState)
+    public SindriWorkbenchBlockEntity(BlockPos pos, BlockState blockState)
     {
         super(SeidraBlockEntityTypes.ARCANE_CRAFTING_BLOCK_ENTITY.get(), pos, blockState);
     }
@@ -102,7 +102,7 @@ public class ArcaneCraftingBlockEntity extends SeidraBlockEntity implements Menu
     }
 
     @Override
-    public void drops()
+    public void dropContents()
     {
         SimpleContainer inv = new SimpleContainer(inventory.getSlots());
         for (int i = 0; i < inventory.getSlots(); i++)
@@ -117,7 +117,7 @@ public class ArcaneCraftingBlockEntity extends SeidraBlockEntity implements Menu
     @Override
     public @NotNull Component getDisplayName()
     {
-        return Component.translatable(Seidra.MODID + ".blockentity." + SeidraBlocks.ARCANE_CRAFTING_BLOCK.getId().getPath());
+        return Component.translatable(Seidra.MODID + ".blockentity." + SeidraBlocks.SINDRI_WORKBENCH.getId().getPath());
     }
 
     @Override

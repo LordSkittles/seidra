@@ -58,7 +58,7 @@ public abstract class SeidraEntityBlock<BE extends SeidraBlockEntity> extends Ba
                 BE entity = blockEntityClass.cast(level.getBlockEntity(pos));
                 assert entity != null;
 
-                entity.drops();
+                entity.dropContents();
                 level.updateNeighbourForOutputSignal(pos, this);
             }
         }

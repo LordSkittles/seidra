@@ -12,7 +12,7 @@ public class SeidraBlockEntity extends BlockEntity
         super(type, pos, blockState);
     }
 
-    public void drops()
+    public void dropContents()
     {
 
     }
