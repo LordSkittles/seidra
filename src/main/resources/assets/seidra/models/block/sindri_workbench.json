@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "block/sindri_workbench",
-		"particle": "block/sindri_workbench"
+		"0": "seidra:block/sindri_workbench",
+		"particle": "seidra:block/stone/feldspar_polished"
 	},
 	"elements": [
 		{
