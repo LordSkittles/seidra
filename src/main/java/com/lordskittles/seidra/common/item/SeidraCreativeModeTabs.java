@@ -17,8 +17,8 @@ public class SeidraCreativeModeTabs
 {
 	public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Seidra.MODID);
 	
-	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MAIN = register("main", () -> SeidraBlocks.ARCANE_CRAFTING_BLOCK, List.of(
-			SeidraBlocks.ARCANE_CRAFTING_BLOCK,
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MAIN = register("main", () -> SeidraBlocks.SINDRI_WORKBENCH, List.of(
+			SeidraBlocks.SINDRI_WORKBENCH,
 			SeidraBlocks.WAKESTONE
 	));
 	

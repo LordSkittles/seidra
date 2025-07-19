@@ -95,7 +95,7 @@ public class SeidraBlockLootTableProvider extends BlockLootSubProvider
 		dropSelf(SeidraBlocks.FELDSPAR_PILLAR);
 		
 		dropSelf(SeidraBlocks.WAKESTONE.get());
-		dropSelf(SeidraBlocks.ARCANE_CRAFTING_BLOCK.get());
+		dropSelf(SeidraBlocks.SINDRI_WORKBENCH.get());
 		
 		add(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_SLAB.get(), this::createSlabItemTable);
 		dropSelf(SeidraBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS);

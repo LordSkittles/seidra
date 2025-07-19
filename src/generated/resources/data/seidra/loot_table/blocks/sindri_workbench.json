@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "seidra:arcane_crafting_block"
+          "name": "seidra:sindri_workbench"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "seidra:blocks/arcane_crafting_block"
+  "random_sequence": "seidra:blocks/sindri_workbench"
 }

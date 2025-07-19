@@ -7,10 +7,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
-import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
-import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
-import net.neoforged.neoforge.client.model.generators.ModelFile;
-import net.neoforged.neoforge.client.model.generators.VariantBlockStateBuilder;
+import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
@@ -97,7 +94,7 @@ public class SeidraBlockStateProvider extends BlockStateProvider
         stoneGroup(SeidraBlocks.FELDSPAR_BRICK_STAIRS, SeidraBlocks.FELDSPAR_BRICK_SLAB, SeidraBlocks.FELDSPAR_BRICK_WALL, null, null, SeidraBlocks.FELDSPAR_BRICK);
         stoneGroup(SeidraBlocks.POLISHED_FELDSPAR_STAIRS, SeidraBlocks.POLISHED_FELDSPAR_SLAB, SeidraBlocks.POLISHED_FELDSPAR_WALL, null, null, SeidraBlocks.POLISHED_FELDSPAR);
 
-        blockWithItem(SeidraBlocks.ARCANE_CRAFTING_BLOCK);
+        existingBlockModel(SeidraBlocks.SINDRI_WORKBENCH);
 
         ResourceLocation crackedDeepslateBricks = ResourceLocation.withDefaultNamespace(buildName('/', Groups.BLOCK, buildName(Prefixes.CRACKED, Prefixes.DEEPSLATE, Suffixes.BRICK + "s")));
 
@@ -141,6 +138,12 @@ public class SeidraBlockStateProvider extends BlockStateProvider
     {
         return this.getVariantBuilder(SeidraBlocks.WAKESTONE.get()).partialState()
                 .with(RotatedPillarBlock.AXIS, axis).with(WakestoneBlock.ACTIVE, active);
+    }
+
+    public void existingBlockModel(DeferredBlock<?> block)
+    {
+        ResourceLocation modelRes = modRes(buildName('/', Groups.BLOCK, block.getId().getPath()));
+        simpleBlockWithItem(block.get(), new ModelFile.UncheckedModelFile(modelRes));
     }
 
     public void blockWithItem(DeferredBlock<?> deferredBlock)

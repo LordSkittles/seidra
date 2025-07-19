@@ -30,6 +30,7 @@ public class Constants
 		public static final String FELDSPAR = "feldspar";
 		
 		public static final String ARCANE_CRAFTING = "arcane_crafting";
+		public static final String SINDRI = "sindri_workbench";
 		public static final String WAKESTONE = "wakestone";
 	}
 	

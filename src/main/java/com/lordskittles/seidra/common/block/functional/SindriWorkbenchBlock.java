@@ -1,7 +1,7 @@
 package com.lordskittles.seidra.common.block.functional;
 
 import com.lordskittles.seidra.common.entities.SeidraBlockEntityTypes;
-import com.lordskittles.seidra.common.entities.block.ArcaneCraftingBlockEntity;
+import com.lordskittles.seidra.common.entities.block.SindriWorkbenchBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -21,20 +21,20 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class ArcaneCraftingBlock extends SeidraEntityBlock<ArcaneCraftingBlockEntity>
+public class SindriWorkbenchBlock extends SeidraEntityBlock<SindriWorkbenchBlockEntity>
 {
     private static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
-    private static final MapCodec<ArcaneCraftingBlock> CODEC = simpleCodec(ArcaneCraftingBlock::new);
+    private static final MapCodec<SindriWorkbenchBlock> CODEC = simpleCodec(SindriWorkbenchBlock::new);
 
-    public ArcaneCraftingBlock(Properties properties)
+    public SindriWorkbenchBlock(Properties properties)
     {
-        super(CODEC, SHAPE, ArcaneCraftingBlockEntity.class, Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.CRAFTING_TABLE).noOcclusion());
+        super(CODEC, SHAPE, SindriWorkbenchBlockEntity.class, Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.CRAFTING_TABLE).noOcclusion());
     }
 
     @Override
     public @Nullable BlockEntity newBlockEntity(@NotNull BlockPos blockPos, @NotNull BlockState blockState)
     {
-        return new ArcaneCraftingBlockEntity(blockPos, blockState);
+        return new SindriWorkbenchBlockEntity(blockPos, blockState);
     }
 
     @Override
@@ -43,7 +43,7 @@ public class ArcaneCraftingBlock extends SeidraEntityBlock<ArcaneCraftingBlockEn
         if (!level.isClientSide())
         {
             BlockEntity entity = level.getBlockEntity(pos);
-            if (entity instanceof ArcaneCraftingBlockEntity arcaneCraftingBlock)
+            if (entity instanceof SindriWorkbenchBlockEntity arcaneCraftingBlock)
             {
                 player.openMenu(new SimpleMenuProvider(arcaneCraftingBlock, Component.literal("Arcane Crafting Block")), pos);
             }

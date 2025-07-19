@@ -1,7 +1,7 @@
 package com.lordskittles.seidra.common.block;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.block.functional.ArcaneCraftingBlock;
+import com.lordskittles.seidra.common.block.functional.SindriWorkbenchBlock;
 import com.lordskittles.seidra.common.block.simple.WakestoneBlock;
 import com.lordskittles.seidra.common.item.SeidraItems;
 import com.lordskittles.seidra.common.worldgen.tree.SeidraTreeGrowers;
@@ -128,15 +128,15 @@ public class SeidraBlocks
     public static final DeferredBlock<Block> FELDSPAR_PRESSURE_PLATE = registerBlock(buildName(Types.FELDSPAR, Suffixes.PRESSURE_PLATE), () -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.ofFullCopy(FELDSPAR.get())));
     public static final DeferredBlock<Block> FELDSPAR_BUTTON = registerBlock(buildName(Types.FELDSPAR, Suffixes.BUTTON), () -> new ButtonBlock(BlockSetType.STONE, 20, BlockBehaviour.Properties.ofFullCopy(FELDSPAR.get()).noCollission()));
 
-    public static final DeferredBlock<WakestoneBlock> WAKESTONE = register(buildName(Types.WAKESTONE), WakestoneBlock::new);
-    public static final DeferredBlock<ArcaneCraftingBlock> ARCANE_CRAFTING_BLOCK = registerBlockEntity(buildName(Types.ARCANE_CRAFTING, Groups.BLOCK), ArcaneCraftingBlock.class);
+    public static final DeferredBlock<Block> WAKESTONE = register(buildName(Types.WAKESTONE), WakestoneBlock::new);
+    public static final DeferredBlock<Block> SINDRI_WORKBENCH = registerBlockEntity(Types.SINDRI, SindriWorkbenchBlock.class);
 
     public static final DeferredBlock<Block> CRACKED_DEEPSLATE_BRICK_SLAB = BLOCKS.registerBlock(buildName(Prefixes.CRACKED, Prefixes.DEEPSLATE, Suffixes.BRICK, Suffixes.SLAB), SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CRACKED_DEEPSLATE_BRICKS));
     public static final DeferredBlock<Block> CRACKED_DEEPSLATE_BRICK_STAIRS = BLOCKS.register(buildName(Prefixes.CRACKED, Prefixes.DEEPSLATE, Suffixes.BRICK, Suffixes.STAIRS), () -> new StairBlock(Blocks.CRACKED_DEEPSLATE_BRICKS.defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.CRACKED_DEEPSLATE_BRICKS)));
 
-    private static <BLOCK extends Block> DeferredBlock<BLOCK> registerBlockEntity(String id, Class<BLOCK> clazz)
+    private static <BLOCK extends Block> DeferredBlock<Block> registerBlockEntity(String id, Class<BLOCK> clazz)
     {
-        DeferredBlock<BLOCK> deferredBlock = BLOCKS.register(id, () -> instantiateBlockEntity(clazz));
+        DeferredBlock<Block> deferredBlock = BLOCKS.register(id, () -> instantiateBlockEntity(clazz));
 
         SeidraItems.ITEMS.register(id, () -> new BlockItem(deferredBlock.get(), new Item.Properties()));
 

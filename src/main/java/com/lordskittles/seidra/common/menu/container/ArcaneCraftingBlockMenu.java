@@ -1,7 +1,7 @@
 package com.lordskittles.seidra.common.menu.container;
 
 import com.lordskittles.seidra.common.block.SeidraBlocks;
-import com.lordskittles.seidra.common.entities.block.ArcaneCraftingBlockEntity;
+import com.lordskittles.seidra.common.entities.block.SindriWorkbenchBlockEntity;
 import com.lordskittles.seidra.common.menu.SeidraMenuTypes;
 import com.lordskittles.seidra.common.menu.slot.OutputSlot;
 import net.minecraft.network.FriendlyByteBuf;
@@ -19,11 +19,12 @@ import java.util.Objects;
 
 public class ArcaneCraftingBlockMenu extends SeidraContainerMenu
 {
-    public final ArcaneCraftingBlockEntity blockEntity;
+    public final SindriWorkbenchBlockEntity blockEntity;
     private final Level level;
 
     public ArcaneCraftingBlockMenu(int containerId, Inventory inventory, FriendlyByteBuf extraData)
     {
+        //noinspection resource
         this(containerId, inventory, Objects.requireNonNull(inventory.player.level().getBlockEntity(extraData.readBlockPos())));
     }
 
@@ -31,7 +32,7 @@ public class ArcaneCraftingBlockMenu extends SeidraContainerMenu
     {
         super(SeidraMenuTypes.ARCANE_CRAFTING_BLOCK.get(), containerId);
 
-        this.blockEntity = (ArcaneCraftingBlockEntity) blockEntity;
+        this.blockEntity = (SindriWorkbenchBlockEntity) blockEntity;
         this.level = blockEntity.getLevel();
 
         for (int y = 0; y < 3; y++)
@@ -78,7 +79,7 @@ public class ArcaneCraftingBlockMenu extends SeidraContainerMenu
         ItemStack copyOfSourceStack = sourceStack.copy();
 
         // Check if this is the output slot
-        if (pIndex == ArcaneCraftingBlockEntity.OUTPUT_SLOT) // Shift-clicking from output slot
+        if (pIndex == SindriWorkbenchBlockEntity.OUTPUT_SLOT) // Shift-clicking from output slot
         {
             if (!blockEntity.lastResult.isEmpty())
             {
@@ -173,6 +174,6 @@ public class ArcaneCraftingBlockMenu extends SeidraContainerMenu
     @Override
     public boolean stillValid(@NotNull Player player)
     {
-        return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()), player, SeidraBlocks.ARCANE_CRAFTING_BLOCK.get());
+        return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()), player, SeidraBlocks.SINDRI_WORKBENCH.get());
     }
 }
