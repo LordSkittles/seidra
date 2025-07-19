@@ -15,7 +15,7 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public record ArcaneCraftingRecipe(ShapedRecipePattern pattern, int saiCost, ItemStack result) implements Recipe<ArcaneCraftingInput>
+public record ArcaneCraftingRecipe(String group, ShapedRecipePattern pattern, ItemStack result, int saiCost, boolean showNotification) implements Recipe<ArcaneCraftingInput>
 {
     @Override
     public boolean matches(ArcaneCraftingInput input, @NotNull Level level)
@@ -47,6 +47,12 @@ public record ArcaneCraftingRecipe(ShapedRecipePattern pattern, int saiCost, Ite
         return this.pattern.ingredients();
     }
 
+    @Override
+    public boolean showNotification()
+    {
+        return this.showNotification;
+    }
+
     public int getWidth()
     {
         return this.pattern.width();
@@ -60,6 +66,12 @@ public record ArcaneCraftingRecipe(ShapedRecipePattern pattern, int saiCost, Ite
     public int getSaiCost()
     {
         return this.saiCost;
+    }
+
+    @Override
+    public String group()
+    {
+        return this.group;
     }
 
     @Override
@@ -78,27 +90,31 @@ public record ArcaneCraftingRecipe(ShapedRecipePattern pattern, int saiCost, Ite
     {
         public static final MapCodec<ArcaneCraftingRecipe> CODEC = RecordCodecBuilder.mapCodec(
                 builder -> builder.group(
+                        Codec.STRING.fieldOf("group").forGetter(ArcaneCraftingRecipe::getGroup),
                         ShapedRecipePattern.MAP_CODEC.forGetter(ArcaneCraftingRecipe::pattern),
+                        ItemStack.CODEC.fieldOf("result").forGetter(ArcaneCraftingRecipe::result),
                         Codec.INT.fieldOf("sai").forGetter(ArcaneCraftingRecipe::saiCost),
-                        ItemStack.CODEC.fieldOf("result").forGetter(ArcaneCraftingRecipe::result)
+                        Codec.BOOL.fieldOf("showNotification").forGetter(ArcaneCraftingRecipe::showNotification)
                 ).apply(builder, ArcaneCraftingRecipe::new)
         );
 
         public static final StreamCodec<RegistryFriendlyByteBuf, ArcaneCraftingRecipe> STREAM_CODEC = StreamCodec.composite(
+                StreamCodec.of(FriendlyByteBuf::writeUtf, FriendlyByteBuf::readUtf), ArcaneCraftingRecipe::group,
                 ShapedRecipePattern.STREAM_CODEC, ArcaneCraftingRecipe::pattern,
-                StreamCodec.of(FriendlyByteBuf::writeVarInt, FriendlyByteBuf::readVarInt), ArcaneCraftingRecipe::saiCost,
                 ItemStack.STREAM_CODEC, ArcaneCraftingRecipe::result,
+                StreamCodec.of(FriendlyByteBuf::writeVarInt, FriendlyByteBuf::readVarInt), ArcaneCraftingRecipe::saiCost,
+                StreamCodec.of(FriendlyByteBuf::writeBoolean, FriendlyByteBuf::readBoolean), ArcaneCraftingRecipe::showNotification,
                 ArcaneCraftingRecipe::new
         );
 
         @Override
-        public MapCodec<ArcaneCraftingRecipe> codec()
+        public @NotNull MapCodec<ArcaneCraftingRecipe> codec()
         {
             return CODEC;
         }
 
         @Override
-        public StreamCodec<RegistryFriendlyByteBuf, ArcaneCraftingRecipe> streamCodec()
+        public @NotNull StreamCodec<RegistryFriendlyByteBuf, ArcaneCraftingRecipe> streamCodec()
         {
             return STREAM_CODEC;
         }

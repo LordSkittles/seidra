@@ -1,0 +1,18 @@
+{
+  "type": "seidra:arcane_crafting",
+  "group": "",
+  "key": {
+    "X": {
+      "item": "minecraft:allium"
+    }
+  },
+  "pattern": [
+    "XXX"
+  ],
+  "result": {
+    "count": 5,
+    "id": "seidra:amber_gem"
+  },
+  "sai": 5,
+  "showNotification": false
+}

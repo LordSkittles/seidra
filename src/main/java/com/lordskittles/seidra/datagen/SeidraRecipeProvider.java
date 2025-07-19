@@ -4,12 +4,14 @@ import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.block.SeidraBlocks;
 import com.lordskittles.seidra.common.item.SeidraItems;
 import com.lordskittles.seidra.common.tag.ItemTags;
+import com.lordskittles.seidra.datagen.builders.ArcaneCraftingRecipeBuilder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -73,6 +75,14 @@ public class SeidraRecipeProvider extends RecipeProvider implements IConditionBu
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(SeidraBlocks.FELDSPAR.get()), RecipeCategory.DECORATIONS, SeidraBlocks.CRACKED_FELDSPAR.get(), 0.1f, 200)
                 .unlockedBy("has_feldspar", has(SeidraBlocks.FELDSPAR.get()))
                 .save(recipeOutput, modRes("cracked_feldspar_from_feldspar"));
+
+        ArcaneCraftingRecipeBuilder.of(RecipeCategory.MISC, SeidraItems.AMBER_GEM, 5, 5)
+                .showNotification(false)
+                .group("arcane_crafting")
+                .define('X', Items.ALLIUM)
+                .pattern("XXX")
+                .unlockedBy("has_allium", has(Items.ALLIUM))
+                .save(recipeOutput, modRes("arcane_crafting_allium"));
     }
 
     private void simpleRecipe2x2(RecipeCategory category, DeferredBlock<?> output, DeferredBlock<?> input, RecipeOutput recipeOutput)
