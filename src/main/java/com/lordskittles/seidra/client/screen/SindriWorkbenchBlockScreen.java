@@ -1,6 +1,6 @@
 package com.lordskittles.seidra.client.screen;
 
-import com.lordskittles.seidra.common.menu.container.ArcaneCraftingBlockMenu;
+import com.lordskittles.seidra.common.menu.container.SindriWorkbenchBlockMenu;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -12,11 +12,11 @@ import org.jetbrains.annotations.NotNull;
 
 import static com.lordskittles.seidra.Constants.*;
 
-public class ArcaneCraftingBlockScreen extends AbstractContainerScreen<ArcaneCraftingBlockMenu>
+public class SindriWorkbenchBlockScreen extends AbstractContainerScreen<SindriWorkbenchBlockMenu>
 {
 	private static final ResourceLocation GUI_TEXTURE = modRes(buildName('/', Groups.TEXTURES, Groups.GUI, buildName(Types.ARCANE_CRAFTING, Groups.BLOCK, "gui.png")));
 	
-	public ArcaneCraftingBlockScreen(ArcaneCraftingBlockMenu menu, Inventory playerInventory, Component title)
+	public SindriWorkbenchBlockScreen(SindriWorkbenchBlockMenu menu, Inventory playerInventory, Component title)
 	{
 		super(menu, playerInventory, title);
 	}

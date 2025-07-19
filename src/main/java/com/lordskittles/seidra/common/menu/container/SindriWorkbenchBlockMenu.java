@@ -17,20 +17,20 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-public class ArcaneCraftingBlockMenu extends SeidraContainerMenu
+public class SindriWorkbenchBlockMenu extends SeidraContainerMenu
 {
     public final SindriWorkbenchBlockEntity blockEntity;
     private final Level level;
 
-    public ArcaneCraftingBlockMenu(int containerId, Inventory inventory, FriendlyByteBuf extraData)
+    public SindriWorkbenchBlockMenu(int containerId, Inventory inventory, FriendlyByteBuf extraData)
     {
         //noinspection resource
         this(containerId, inventory, Objects.requireNonNull(inventory.player.level().getBlockEntity(extraData.readBlockPos())));
     }
 
-    public ArcaneCraftingBlockMenu(int containerId, Inventory inventory, BlockEntity blockEntity)
+    public SindriWorkbenchBlockMenu(int containerId, Inventory inventory, BlockEntity blockEntity)
     {
-        super(SeidraMenuTypes.ARCANE_CRAFTING_BLOCK.get(), containerId);
+        super(SeidraMenuTypes.SINDRI_WORKBENCH.get(), containerId);
 
         this.blockEntity = (SindriWorkbenchBlockEntity) blockEntity;
         this.level = blockEntity.getLevel();

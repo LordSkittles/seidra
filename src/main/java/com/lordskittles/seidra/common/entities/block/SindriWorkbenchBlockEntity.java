@@ -1,12 +1,12 @@
 package com.lordskittles.seidra.common.entities.block;
 
+import static com.lordskittles.seidra.Constants.*;
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.block.SeidraBlocks;
 import com.lordskittles.seidra.common.crafting.SeidraCraftingManager;
 import com.lordskittles.seidra.common.crafting.input.ArcaneCraftingInput;
 import com.lordskittles.seidra.common.crafting.recipe.ArcaneCraftingRecipe;
 import com.lordskittles.seidra.common.entities.SeidraBlockEntityTypes;
-import com.lordskittles.seidra.common.menu.container.ArcaneCraftingBlockMenu;
+import com.lordskittles.seidra.common.menu.container.SindriWorkbenchBlockMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -90,7 +90,7 @@ public class SindriWorkbenchBlockEntity extends SeidraBlockEntity implements Men
 
     public SindriWorkbenchBlockEntity(BlockPos pos, BlockState blockState)
     {
-        super(SeidraBlockEntityTypes.ARCANE_CRAFTING_BLOCK_ENTITY.get(), pos, blockState);
+        super(SeidraBlockEntityTypes.SINDRI_WORKBENCH_BE.get(), pos, blockState);
     }
 
     public void clearContents()
@@ -117,14 +117,14 @@ public class SindriWorkbenchBlockEntity extends SeidraBlockEntity implements Men
     @Override
     public @NotNull Component getDisplayName()
     {
-        return Component.translatable(Seidra.MODID + ".blockentity." + SeidraBlocks.SINDRI_WORKBENCH.getId().getPath());
+        return Component.translatable(buildName(Groups.BLOCK + Groups.ENTITY, Seidra.MODID, Types.SINDRI));
     }
 
     @Override
     public @Nullable AbstractContainerMenu createMenu(int containerId, @NotNull Inventory inventory, @NotNull Player player)
     {
         assert level != null;
-        return new ArcaneCraftingBlockMenu(containerId, inventory, this);
+        return new SindriWorkbenchBlockMenu(containerId, inventory, this);
     }
 
     @Override
@@ -296,7 +296,7 @@ public class SindriWorkbenchBlockEntity extends SeidraBlockEntity implements Men
         assert level != null;
         for (Player player : level.players())
         {
-            if (player.containerMenu instanceof ArcaneCraftingBlockMenu menu)
+            if (player.containerMenu instanceof SindriWorkbenchBlockMenu menu)
             {
                 if (menu.blockEntity == this)
                 {

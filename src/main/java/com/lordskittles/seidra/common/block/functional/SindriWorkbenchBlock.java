@@ -1,5 +1,6 @@
 package com.lordskittles.seidra.common.block.functional;
 
+import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.entities.SeidraBlockEntityTypes;
 import com.lordskittles.seidra.common.entities.block.SindriWorkbenchBlockEntity;
 import com.mojang.serialization.MapCodec;
@@ -20,6 +21,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import static com.lordskittles.seidra.Constants.*;
 
 public class SindriWorkbenchBlock extends SeidraEntityBlock<SindriWorkbenchBlockEntity>
 {
@@ -45,7 +48,7 @@ public class SindriWorkbenchBlock extends SeidraEntityBlock<SindriWorkbenchBlock
             BlockEntity entity = level.getBlockEntity(pos);
             if (entity instanceof SindriWorkbenchBlockEntity arcaneCraftingBlock)
             {
-                player.openMenu(new SimpleMenuProvider(arcaneCraftingBlock, Component.literal("Arcane Crafting Block")), pos);
+                player.openMenu(new SimpleMenuProvider(arcaneCraftingBlock, Component.translatable(buildName(Groups.BLOCK + Groups.ENTITY, Seidra.MODID, Types.SINDRI))), pos);
             }
             else
             {
@@ -65,7 +68,7 @@ public class SindriWorkbenchBlock extends SeidraEntityBlock<SindriWorkbenchBlock
             return null;
         }
 
-        return createTickerHelper(blockEntityType, SeidraBlockEntityTypes.ARCANE_CRAFTING_BLOCK_ENTITY.get(),
+        return createTickerHelper(blockEntityType, SeidraBlockEntityTypes.SINDRI_WORKBENCH_BE.get(),
                 ((level1, blockPos, blockState1, blockEntity) -> blockEntity.tick(level1, blockPos, blockState1)));
     }
 }

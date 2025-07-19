@@ -1,7 +1,7 @@
 package com.lordskittles.seidra.common.menu;
 
 import com.lordskittles.seidra.Seidra;
-import com.lordskittles.seidra.common.menu.container.ArcaneCraftingBlockMenu;
+import com.lordskittles.seidra.common.menu.container.SindriWorkbenchBlockMenu;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -16,7 +16,7 @@ public class SeidraMenuTypes
 {
     public static final DeferredRegister<MenuType<?>> MENU_TYPES = DeferredRegister.create(Registries.MENU, Seidra.MODID);
 
-    public static final DeferredHolder<MenuType<?>, MenuType<ArcaneCraftingBlockMenu>> ARCANE_CRAFTING_BLOCK = registerMenuType(buildName(Types.ARCANE_CRAFTING, Groups.BLOCK), ArcaneCraftingBlockMenu::new);
+    public static final DeferredHolder<MenuType<?>, MenuType<SindriWorkbenchBlockMenu>> SINDRI_WORKBENCH = registerMenuType(Types.SINDRI, SindriWorkbenchBlockMenu::new);
 
     private static <T extends AbstractContainerMenu>DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory)
     {
