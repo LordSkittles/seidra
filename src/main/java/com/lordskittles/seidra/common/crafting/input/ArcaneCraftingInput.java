@@ -124,7 +124,7 @@ public class ArcaneCraftingInput implements RecipeInput
 
     public ItemStack getItem(int row, int col)
     {
-        return this.items.get(row + col * this.width);
+        return this.items.get(col + row * this.width);
     }
 
     @Override

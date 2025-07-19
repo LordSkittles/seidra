@@ -72,24 +72,81 @@ public class ArcaneCraftingBlockMenu extends SeidraContainerMenu
         Slot sourceSlot = slots.get(pIndex);
         if (!sourceSlot.hasItem())
         {
-            return ItemStack.EMPTY;  //EMPTY_ITEM
+            return ItemStack.EMPTY;
         }
         ItemStack sourceStack = sourceSlot.getItem();
         ItemStack copyOfSourceStack = sourceStack.copy();
 
-        // Check if the slot clicked is one of the vanilla container slots
-        if (pIndex < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT)
+        // Check if this is the output slot
+        if (pIndex == ArcaneCraftingBlockEntity.OUTPUT_SLOT) // Shift-clicking from output slot
         {
-            // This is a vanilla container slot so merge the stack into the tile inventory
+            if (!blockEntity.lastResult.isEmpty())
+            {
+                ItemStack resultTemplate = blockEntity.lastResult.copy();
+                int totalCrafted = 0;
+
+                // Keep crafting until we can't anymore
+                while (true)
+                {
+                    // Check if we still have a valid recipe
+                    int possibleCrafts = blockEntity.calculateMaxCrafts(1);
+                    if (possibleCrafts <= 0)
+                    {
+                        break; // No more ingredients
+                    }
+
+                    // Get the current recipe result (might be different count than original)
+                    ItemStack currentResult = blockEntity.lastResult.copy();
+                    if (currentResult.isEmpty() || !ItemStack.isSameItemSameComponents(resultTemplate, currentResult))
+                    {
+                        break; // Recipe changed or disappeared
+                    }
+
+                    // Try to move this result to player inventory
+                    ItemStack toMove = currentResult.copy();
+
+                    // First try hotbar (reversed), then main inventory
+                    if (!this.moveItemStackTo(toMove, VANILLA_FIRST_SLOT_INDEX + 27, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, true) &&
+                            !this.moveItemStackTo(toMove, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + 27, false))
+                    {
+                        // Can't fit any more items, stop here
+                        break;
+                    }
+
+                    // Calculate how many items were actually moved
+                    int moved = currentResult.getCount() - toMove.getCount();
+                    if (moved <= 0)
+                    {
+                        break; // Nothing was moved
+                    }
+
+                    // Successfully moved some results, consume ingredients for one craft
+                    blockEntity.consumeIngredients(1);
+                    totalCrafted += moved;
+
+                    // Force update the crafting result for next iteration
+                    blockEntity.updateCraftingResultForShiftClick();
+                }
+
+                if (totalCrafted > 0)
+                {
+                    sourceSlot.onTake(playerIn, copyOfSourceStack);
+                    return copyOfSourceStack;
+                }
+            }
+            return ItemStack.EMPTY;
+        }
+        // ... rest of your existing logic unchanged
+        else if (pIndex < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT)
+        {
             if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX, TE_INVENTORY_FIRST_SLOT_INDEX
                     + TE_INVENTORY_SLOT_COUNT, false))
             {
-                return ItemStack.EMPTY;  // EMPTY_ITEM
+                return ItemStack.EMPTY;
             }
         }
         else if (pIndex < TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT)
         {
-            // This is a TE slot so merge the stack into the players inventory
             if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false))
             {
                 return ItemStack.EMPTY;
@@ -100,7 +157,7 @@ public class ArcaneCraftingBlockMenu extends SeidraContainerMenu
             System.out.println("Invalid slotIndex:" + pIndex);
             return ItemStack.EMPTY;
         }
-        // If stack size == 0 (the entire stack was moved) set slot contents to null
+
         if (sourceStack.getCount() == 0)
         {
             sourceSlot.set(ItemStack.EMPTY);

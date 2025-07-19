@@ -4,6 +4,7 @@ import com.lordskittles.seidra.Seidra;
 import com.lordskittles.seidra.common.block.SeidraBlocks;
 import com.lordskittles.seidra.common.crafting.SeidraCraftingManager;
 import com.lordskittles.seidra.common.crafting.input.ArcaneCraftingInput;
+import com.lordskittles.seidra.common.crafting.recipe.ArcaneCraftingRecipe;
 import com.lordskittles.seidra.common.entities.SeidraBlockEntityTypes;
 import com.lordskittles.seidra.common.menu.container.ArcaneCraftingBlockMenu;
 import net.minecraft.core.BlockPos;
@@ -53,22 +54,39 @@ public class ArcaneCraftingBlockEntity extends SeidraBlockEntity implements Menu
             {
                 level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
 
-                if(slot < 9)
+                if (slot < OUTPUT_SLOT)
                 {
-                    needsCraftingUpdate = true;
+                    if (!shouldIgnoreChanges)
+                    {
+                        needsCraftingUpdate = true;
+                    }
                 }
                 else
                 {
-                    if(getStackInSlot(0).isEmpty() && !lastResult.isEmpty())
+                    if(getStackInSlot(OUTPUT_SLOT).isEmpty())
                     {
-                        lastResult.setCount(0);
+                        if(!lastResult.isEmpty() && !shouldIgnoreChanges)
+                        {
+                            shouldIgnoreChanges = true;
+                            for (int i = 0; i < OUTPUT_SLOT; i++)
+                            {
+                                getStackInSlot(i).shrink(1);
+                            }
+                            shouldIgnoreChanges = false;
+                        }
+
+                        lastResult = ItemStack.EMPTY;
+                        needsCraftingUpdate = true;
                     }
                 }
             }
         }
     };
+    public static final int OUTPUT_SLOT = 9;
+    public ItemStack lastResult = ItemStack.EMPTY;
+
     private boolean needsCraftingUpdate = false;
-    private ItemStack lastResult = ItemStack.EMPTY;
+    private boolean shouldIgnoreChanges = false;
 
     public ArcaneCraftingBlockEntity(BlockPos pos, BlockState blockState)
     {
@@ -151,34 +169,126 @@ public class ArcaneCraftingBlockEntity extends SeidraBlockEntity implements Menu
     private void updateCraftingResult()
     {
         List<ItemStack> items = new ArrayList<>();
-        for (int i = 0; i < 9; i++)
+        boolean hasAnyItems = false;
+
+        for (int i = 0; i < OUTPUT_SLOT; i++)
         {
-            items.add(inventory.getStackInSlot(i));
+            ItemStack stack = inventory.getStackInSlot(i);
+            items.add(stack);
+            if (!stack.isEmpty())
+            {
+                hasAnyItems = true;
+            }
         }
 
-        ArcaneCraftingInput input = ArcaneCraftingInput.of(3, 3, items, 0);
         ItemStack newResult = ItemStack.EMPTY;
-        assert level != null;
-        Optional<RecipeHolder<? extends Recipe<ArcaneCraftingInput>>> foundRecipe = SeidraCraftingManager.getRecipeFor(input, level);
 
-        if (foundRecipe.isPresent())
+        // Only try to craft if there are actually items in the grid
+        if (hasAnyItems)
         {
-            Recipe<ArcaneCraftingInput> recipe = foundRecipe.get().value();
-            ItemStack result = recipe.getResultItem(level.registryAccess());
-            if (result.isItemEnabled(level.enabledFeatures()))
+            int availableSai = Integer.MAX_VALUE;
+            ArcaneCraftingInput input = ArcaneCraftingInput.of(3, 3, items, availableSai);
+            assert level != null;
+            Optional<RecipeHolder<? extends Recipe<ArcaneCraftingInput>>> foundRecipe = SeidraCraftingManager.getRecipeFor(input, level);
+
+            if (foundRecipe.isPresent())
             {
-                newResult = result;
+                Recipe<ArcaneCraftingInput> recipe = foundRecipe.get().value();
+
+                boolean canCraft = true;
+                if(recipe instanceof ArcaneCraftingRecipe arcaneRecipe)
+                {
+                    canCraft = availableSai >= arcaneRecipe.saiCost();
+                }
+
+                if(canCraft)
+                {
+                    ItemStack result = recipe.assemble(input, level.registryAccess());
+                    if (result.isItemEnabled(level.enabledFeatures()))
+                    {
+                        newResult = result;
+                    }
+                }
             }
         }
 
         if (!ItemStack.isSameItemSameComponents(lastResult, newResult))
         {
+            shouldIgnoreChanges = true;
             lastResult = newResult.copy();
-            inventory.setStackInSlot(9, newResult);
+            inventory.setStackInSlot(OUTPUT_SLOT, newResult);
+            shouldIgnoreChanges = false;
             setChanged();
 
             notifyOpenMenus();
         }
+    }
+
+    public int calculateMaxCrafts(int maxCount)
+    {
+        if (lastResult.isEmpty()) return 0;
+
+        List<ItemStack> items = new ArrayList<>();
+        for (int i = 0; i < OUTPUT_SLOT; i++)
+        {
+            items.add(inventory.getStackInSlot(i));
+        }
+
+        int availableSai = Integer.MAX_VALUE;
+        ArcaneCraftingInput input = ArcaneCraftingInput.of(3, 3, items, availableSai);
+        assert level != null;
+        Optional<RecipeHolder<? extends Recipe<ArcaneCraftingInput>>> foundRecipe = SeidraCraftingManager.getRecipeFor(input, level);
+
+        if (foundRecipe.isEmpty()) return 0;
+
+        Recipe<ArcaneCraftingInput> recipe = foundRecipe.get().value();
+
+        // Calculate how many we can actually craft
+        int possibleCrafts = maxCount;
+
+        // Check ingredient limits
+        for (int i = 0; i < OUTPUT_SLOT; i++)
+        {
+            ItemStack ingredient = inventory.getStackInSlot(i);
+            if (!ingredient.isEmpty())
+            {
+                possibleCrafts = Math.min(possibleCrafts, ingredient.getCount());
+            }
+        }
+
+        // Check sai cost if applicable
+        if (recipe instanceof ArcaneCraftingRecipe arcaneRecipe)
+        {
+            int saiCrafts = availableSai / arcaneRecipe.saiCost();
+            possibleCrafts = Math.min(possibleCrafts, saiCrafts);
+        }
+
+        return Math.max(0, possibleCrafts);
+    }
+
+    public void consumeIngredients(int count)
+    {
+        if (count <= 0) return;
+
+        shouldIgnoreChanges = true;
+        for (int i = 0; i < OUTPUT_SLOT; i++)
+        {
+            ItemStack ingredient = inventory.getStackInSlot(i);
+            if (!ingredient.isEmpty())
+            {
+                ingredient.shrink(count);
+            }
+        }
+        shouldIgnoreChanges = false;
+
+        // Don't set needsCraftingUpdate here - we'll handle it manually in shift-click
+    }
+
+    public void updateCraftingResultForShiftClick()
+    {
+        // Force an immediate crafting update without waiting for tick
+        needsCraftingUpdate = false;
+        updateCraftingResult();
     }
 
     private void notifyOpenMenus()
